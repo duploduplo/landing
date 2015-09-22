@@ -1,5 +1,11 @@
+body {background-color: #F5F5F5;}
 .jumbotron {
     background-image: url(img/header.jpg);
     background-size: cover;
-    background-position: center 75%;
+    background-position: center 65%;
+    color:#F5F5F5;
+}
+
+#header .red {				/*this sets the main red color for text (ie. "Pet" in the title) */
+	color:#9e1d20;
 }
