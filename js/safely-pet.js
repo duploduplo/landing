@@ -1,0 +1,2 @@
+$(documnent).ready(function () {
+});
