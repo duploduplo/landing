@@ -1,0 +1,348 @@
+@charset "utf-8";
+
+/*
+Tthis css styles the marker for the map. 
+* First section contains the GENERAL STYLING and the fallback styles for the PIN. 
+* Second section contains the PULSE CLASS for the bottom pulsing div
+* Third section contains the ANIMATION for both the PIN and the PULSE
+* Fourth section contains CUSTOMIZATION for the PIN content and color
+
+the reference which has been used to build this can be found here
+      http://codepen.io/andreasstorm/pen/ClguF
+      
+*/
+/*********************************/ 
+/******   POIs WATERDROPS   ******/
+/*********************************/ 
+
+.pin-cont {                         /*this is meant to create an extra external container for positioning the pin and extra effects (like rotation) */
+  position:relative;
+  }
+  
+.pin {                                      /* main pin shape*/
+  width: 24px;  height: 24px;             /* pin sizes*/
+  -webkit-border-radius: 50% 50% 50% 0;
+  border-radius: 50% 50% 50% 0;
+  background: #9e1d20;                    /* fallback background-color */
+  position: absolute;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: 50%;  top: 50%;                   /*centering in div*/
+  margin: -20px 0 0 -20px;
+  z-index:3;
+  }
+
+.pin:after {                        /* pin content*/
+  content: '\f067';                       /* fallback content text */
+  font-family:fontAwesome;                /*this call for the use of fontAwesome*/
+  color:#9d1e20;
+  font-size: 0.9em;
+  width: 16px;  height: 16px;
+  margin: 4px 0 0 4px;
+  background: #f5f5f5;
+  position: absolute;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  text-align: center;
+  line-height: 17px;                  /*fallback line-height in case it's needed*/
+  }
+
+
+/*************************************************/
+/*        PULSE ITEM AS STATIC OBJECT        */
+/*************************************************/
+
+.pulse {                        /*this manage the SHADOW of the pin */
+  background: rgba(0,0,0,0.2);            /*color for pulse and shadow*/
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 15px; width: 15px;            /*sizes for the shadow*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 0px 0px 0px -16px;             /*precision positioning for shadow*/
+  -webkit-transform: rotateX(55deg);
+  -moz-transform: rotateX(55deg);
+  -o-transform: rotateX(55deg);
+  -ms-transform: rotateX(55deg);
+  transform: rotateX(55deg);
+  z-index:12;
+ }
+.pulse:after {                      /*this manage the PULSE of the pin as static*/
+  content: "";
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  margin: 0px 0 0 -16px;
+  z-index:5;
+  opacity: 0;
+  -webkit-box-shadow: 0 0 1px 2px #A26E71;      /*pulsating shadow color*/
+  box-shadow: 0 0 1px 2px #A26E71;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  }
+
+/*************************************************/
+/***      ANIMATIONS FOR PIN AND PULSE       ***/
+/*************************************************/
+
+.pin {
+  -webkit-animation-name: bounce;
+  -moz-animation-name: bounce;
+  -o-animation-name: bounce;
+  -ms-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  animation-duration: 1s;
+  }
+.pulse:after {
+  -webkit-animation: pulsate 1s ease-out;
+  -moz-animation: pulsate 1s ease-out;
+  -o-animation: pulsate 1s ease-out;
+  -ms-animation: pulsate 1s ease-out;
+  animation: pulsate 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-delay: 1.1s;
+  -moz-animation-delay: 1.1s;
+  -o-animation-delay: 1.1s;
+  -ms-animation-delay: 1.1s;
+  animation-delay: 1.1s;
+  }
+  
+/*basic pins animations keyframes*/  
+  
+
+
+
+/*************************************************/
+/*    CUSTOMIZATIONS FOR PIN CONTENT & COLORS    */
+/*************************************************/
+/*
+how to:
+<name> = name of the class for the point of interest category
+
+* .pin.<name>       sets the primary color
+* .pin.<name>:after   sets the icon (see fontAwesome cheatsheet) and color
+* .pulse.<name>:after sets the matching shadow-color for the pulse effect 
+
+to get the white circle leave the properties as they are (just change content and color)
+to remove the white circle add a background color to .pin.<name>:after matching the main color
+
+
+*/
+
+/*** pin ALERT ***/
+  .pin.alert {background:red}             /*primary color*/
+  .pin.alert:after {
+    content:'\f071';                /*icon | see fontawesome cheatsheet*/
+    color:white;                  /*icon text color*/
+    background:red;                 /*icon circle background color*/
+  }
+  .pulse.alert:after {
+    -webkit-box-shadow: 0 0 1px 2px red;      /*pulsating shadow color*/
+    box-shadow: 0 0 1px 2px red;
+  }
+/*** pin DOG area ***/
+  .pin.dog {background:#00AF13}             /*primary color*/
+  .pin.dog:after {
+    content:'\f1b0';                /*icon | see fontawesome cheatsheet*/
+    color:#00AF13;                  /*icon text color*/
+    }
+  .pulse.dog:after {
+      -webkit-box-shadow: 0 0 1px 2px #00AF13;      /*pulsating shadow color*/
+      box-shadow: 0 0 1px 2px #00AF13;
+  }
+/*** pin FRIEND ***/
+  .pin.friend {background:#42D7B9}              /*primary color*/
+  .pin.friend:after {
+    content:'\f1ae';                /*icon | see fontawesome cheatsheet*/
+    color:#42D7B9;                  /*icon circle background color*/
+    }
+  .pulse.friend:after {
+    -webkit-box-shadow: 0 0 1px 2px #42D7B9;      /*pulsating shadow color*/
+    box-shadow: 0 0 1px 2px #42D7B9;
+  }
+/*** pin INFOrmation ***/
+  .pin.info {background:#82A0CF}              /*primary color*/
+  .pin.info:after {
+    content:'\f129';                /*icon | see fontawesome cheatsheet*/
+    color:white;                  /*icon text color*/
+    background:#82A0CF;                 /*icon circle background color*/
+   }
+  .pulse.info:after {
+    -webkit-box-shadow: 0 0 1px 2px #82A0CF;      /*pulsating shadow color*/
+    box-shadow: 0 0 1px 2px #82A0CF;
+  }
+/*** pin VET clinic ***/
+  .pin.vet {background:purple;}
+  .pin.vet:after {content:'\f0f1'; color:purple}
+  .pulse.vet:after {
+    -webkit-box-shadow: 0 0 1px 2px purple;     /*pulsating shadow color*/
+    box-shadow: 0 0 1px 2px #purple;
+  }
+/*** pin HOME ***/
+  .pin.home {background:#636363;}
+  .pin.home:after {content:'\f015'; color:#636363}
+  .pulse.home:after {
+    -webkit-box-shadow: 0 0 1px 2px #636363;      /*pulsating shadow color*/
+    box-shadow: 0 0 1px 2px #636363;
+  }
+/*** pin pet SHOP ***/
+  .pin.shop {background:#E98A01;}
+  .pin.shop:after {content:'\f07a'; color:#E98A01}
+  .pulse.shop:after {
+      -webkit-box-shadow: 0 0 1px 2px #E98A01;      /*pulsating shadow color*/
+      box-shadow: 0 0 1px 2px #E98A01;
+  }  
+/*** pin HOTEL ***/
+  .pin.hotel {background:#E000A0;}
+  .pin.hotel:after {content:'\f236'; color:#E000A0;}
+  .pulse.hotel:after {
+    -webkit-box-shadow: 0 0 1px 2px #E000A0;      /*pulsating shadow color*/
+    box-shadow: 0 0 1px 2px #E000A0;
+  }
+/*** pin FOOD ***/
+  .pin.food {background:#E87BE1;}
+  .pin.food:after {content:'\f1b1'; color:#E87BE1}
+  .pulse.food:after {
+    -webkit-box-shadow: 0 0 1px 2px #E87BE1;      /*pulsating shadow color*/
+    box-shadow: 0 0 1px 2px #E87BE1;
+  }
+/*** pin HOTEL ***/
+  .pin.auto {background:#3331F3;}
+  .pin.auto:after {content:'\f1b9'; color:#3331F3}
+  .pulse.auto:after {
+    -webkit-box-shadow: 0 0 1px 2px #3331F3;      /*pulsating shadow color*/
+    box-shadow: 0 0 1px 2px #3331F3;
+  }
+
+
+/*************************************************/
+/*    CUSTOMIZATIONS FOR PIN POSITION LANDING    */
+/*************************************************/
+/*
+this is meant for the landing page 
+sets the position for the PIN CONTainers on the map so that they can be placed around a fake map
+add the NUMBER class at the .pin-cont element to set its position
+in case it's needed add a Z-INDEX property to manage pins' visibility
+*/
+
+/*list of custom position */
+
+  .pin-cont.pin1 {          /*home pin*/
+    top:150px;
+    right:-25px;
+  }
+  .pin-cont.pin2 {          /*alert 1 pin*/
+    top:115px;
+    right:43px;
+  }
+  .pin-cont.pin3 {          /*alert 2 pin*/
+    top:160px;
+    right:10px;
+  }
+  .pin-cont.pin4 {          /*info 1 pin */
+    top:64%;
+    right:43%;
+  }
+  .pin-cont.pin5 {          /*info 2 pin*/
+    top:70%;
+    right:63%;
+  }
+  .pin-cont.pin6 {          /*info point*/
+    top:83%;
+    right:75%;
+  }
+  .pin-cont.pin7 {          /*info point*/
+    top:105%;
+    right:29%;
+  }
+  .pin-cont.pin8 {          /*info 1 pin */
+    top:66%;
+    right:17%;
+  }
+  .pin-cont.pin9 {          /*info 2 pin*/
+    top:42%;
+    right:68%;
+  }
+  .pin-cont.pin10 {         /*info point*/
+    top:97%;
+    right:36%;
+  }
+  .pin-cont.pin11 {         /*info point*/
+    top:98%;
+    right:82%;
+  }
+  .pin-cont.pin12 {         /*info point*/
+    top:56%;
+    right:6%;
+  }
+  .pin-cont.pin13 {         /*info point*/
+    top:47%;
+    right:79%;
+  }
+
+
+/*************************************************/
+/*        EXTRA ANIMATIONS FOR LANDING PAGE      */
+/***** *******************************************/
+
+
+@keyframes shadow {from {opacity:0} to {opacity:0.7}}
+@keyframes appear {
+  from {top:100px; opacity: 0;} 
+  to {top:0px; opacity:1;}
+ }
+
+.map {                                  /*this manages the slide in of the map*/
+   opacity:0;                      /*this is for the animation to function*/  
+   -webkit-animation: appear 1s 0.5s ease-in-out forwards;
+   -moz-animation: appear 1s 0.5s ease-in-out forwards;
+   -o-animation: appear 1s 0.5s ease-in-out forwards;
+   -ms-animation: appear 1s 0.5s ease-in-out forwards;
+   animation: appear 1s 0.5s ease-in-out forwards;
+   }
+.pin {                                  /*this manages the general timing for the pins to come down*/  
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
+  -o-animation-delay: 1.5s;
+  -ms-animation-delay: 1.5s;
+  animation-delay: 1.5s;
+ }
+.pulse {                                /*this load the animation for the bottom shadow (pulse)*/
+  opacity:0;                        /*this is for the animation to function*/  
+  -webkit-animation: shadow 0.2s 1.6s linear forwards;
+  -moz-animation: shadow 0.2s 1.6s linear forwards;
+  -o-animation: shadow 0.2s 1.6s linear forwards;
+  -ms-animation: shadow 0.2s 1.6s linear forwards;
+  animation: shadow 0.2s 1.6s linear forwards;
+  }
+.pulse:after {                          /*this sets the delay for the pulse to be seen*/
+  -webkit-animation-delay: 2.6s;
+  -moz-animation-delay: 2.6s;
+  -o-animation-delay: 2.6s;
+  -ms-animation-delay: 2.6s;
+  animation-delay: 2.6s;
+ }

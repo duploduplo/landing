@@ -1,11 +1,103 @@
-body {background-color: #F5F5F5;}
-.jumbotron {
-    background-image: url(img/header.jpg);
+
+/****************************
+	Extra general styling
+****************************/
+/*this extra styling is for special classes 
+  which are not included in bootstrap       */
+
+
+* {
+	margin:0; 
+	padding:0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+html, body {min-height:100%;}
+body {
+	background-color: #F5F5F5;
+}
+
+
+/****************************
+		Header styling
+****************************/
+
+
+
+header {										/*main style for the header*/
+	display:block;
+	position:absolute;
+	height: 100%;
+	left:0; right:0; 
+	background-image: url(img/header.jpg);
     background-size: cover;
     background-position: center 65%;
     color:#F5F5F5;
+    height:100%;
+	box-shadow: 0 0 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+.hd-overlay{
+	background:rgba(255,255,255,0.4);
+	position:absolute;
+	top:0; bottom:0;
+	left:0; right:0;
 }
 
-#header .red {				/*this sets the main red color for text (ie. "Pet" in the title) */
+header > .jumbotron {							/*this removes the standard background for the jumbotron*/
+	background:transparent;
+	}
+
+header .red {									/*this sets the main red color for text (ie. "Pet" in the title) */
 	color:#9e1d20;
+	}
+header .learnmore {								/* manages the bottom line of the header*/
+	position:absolute;
+	bottom:0;
+	left:0; right:0;
+	background-color:rgba(255,255,255,0.65);
+	color:#000000;
+	height:50px;
+	font-size: 1.3em;
+	line-height:50px;
+	font-variant: small-caps;
+	}
+	header .learnmore i {
+		font-size:2.5em; 
+		line-height:40px;
+		color:#9e1d20;
+		vertical-align: middle; 
+	}
+
+
+
+/****************************
+	main wrapper styling
+****************************/
+.wrapper {
+	display:block;
+	position:absolute;
+	min-height: 100%;
+	top:100%;}
+
+/****************************
+		MAP styling
+****************************/
+
+
+.map {											/*this is the main styling for the map content (position and rotation) */
+	position:relative;
+	margin: 0 auto;
+	width:350px;
+	height:300px;
+	background-image:url(img/landing-basic-map.png);
+	background-size:cover;
+	background-position:50% 50%;
+	-webkit-transform: rotateX(-60deg) rotateZ(15deg);
+	transform: rotateX(-60deg) rotateZ(15deg);
+	z-index: 1;
+	-webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.30);
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.30);
+	border: 1px solid #AFAFAF;
+	border-radius:10%;
 }

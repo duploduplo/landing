@@ -1,48 +1,59 @@
 <!doctype html>
-<html lang="en">
-    <head>
+<head>
         <meta charset="utf-8">
         <title>safely.pet</title>
         <meta name="description" content="safely.pet">
         <meta name="author" content="Lorenzo Berni">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">    <link rel="stylesheet" href="css/styles.css?v=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">    
+        <link rel="stylesheet" href="css/styles.css?v=1.0">
+        <link href="css/map-pin.css" rel="stylesheet" type="text/css">
         <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-    </head>
+</head>
+<html lang="en">
     <body>
-        <div id="header" class="jumbotron">
+        <header class="header-bg jumbotron">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class ="row">
-                            <div class="col-lg-12">
-                                <img src="css/img/logo.png" alt="Safely.Pet" class ="img-responsive pull-left">
-                                <h1 class="pull-left">Safely<span class="red">Pet</span></h1>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class ="row">
+                                <div class="col-lg-12"> <!-- logo and name -->
+                                    <img src="css/img/logo.png" alt="Safely.Pet" class ="img-responsive pull-left">
+                                    <h1 class="pull-left">Safely<span class="red">Pet</span></h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12"> <!-- subtitle -->
+                                    <p class="">Subtitle and description here</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p class="">Subtitle and description here</p>
-                            </div>
+                        <div class="col-lg-4 text-center">  <!-- subscribe button -->
+                            <p>
+                                <a class="btn btn-primary btn-lg btn-danger" href="#" role="button">Get in touch</a>
+                            </p>
                         </div>
-                    </div>
-                    <div class="col-lg-4 text-center">
-                        <p><a class="btn btn-primary btn-lg btn-danger" href="#" role="button">Get in touch</a></p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div id="body" class="container">
-            <div class="row text-center">
-                <div class="col-md-7">
+            <div class="fluid-container"><!-- this is the bottom bar of the header "learn more"-->
+               <div class="row text-center learnmore">
+                    <div class ="col-lg-12">
+                    <span>scroll </span><i class="fa fa-angle-double-down"></i><span>  down</span>
+                    </div>
+                </div>                
+            </div>    
+        </header>    
+        <div id="body" class="container wrapper">
+            <div class="row">
+                <div class="col-md-7  text-center">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1>here go the title</h1>
+                            <h1>here goes the title</h1>
                         </div>
                     </div>
                     <div class="row">
@@ -51,9 +62,55 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">here go the images</div>
-            </div>    
-        </div>
+                <div class="col-md-5 map-cont">
+                    
+                    <!--here would go the pin divs-->
+                    
+                    <div class="map"></div>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-md-7  text-center">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>here goes the title</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>here go the text paragraph</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 map-cont">
+                    
+                    <!--here would go the pin divs-->
+                    
+                    <div class="map"></div>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col-md-7  text-center">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>here goes the title</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>here go the text paragraph</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 map-cont">
+                    
+                    <!--here would go the pin divs-->
+                    
+                    <div class="map"></div>
+                </div>
+            </div>                            
+            <div class="row">
+            </div>
         </div>
         <script src="js/safely-pet.js"></script>
     </body>
