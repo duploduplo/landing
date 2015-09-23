@@ -8,9 +8,9 @@ var myScrollFunc = function () {
     var y = window.scrollY;
 /*this sets the height when the classes switch */    
     if (y >= 600) {
-        myID.className = "show"
+        myID.className = "down"
     } else {
-        myID.className = "hide"
+        myID.className = "up"
     }
 };
 

@@ -18,7 +18,6 @@
 		-webkit-transition: opacity 0.5s ease-in-out;
 		transition: top 0.5s ease-in-out;
 		-webkit-transition: top 0.5s ease-in-out;
-	
 	}
 	html, body {
 		min-height:100%;
@@ -26,7 +25,7 @@
 	}
 	body {
 		background-color: #F5F5F5;
-		font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	    font-family: 'Josefin Sans', sans-serif;
 	}
 
 	#body .row {					/*sets extra padding-top to make space for #topbar */
@@ -49,7 +48,8 @@
 
 		#body p {
 			font-style: normal;
-			font-size: 1em;
+			font-size: 3em;
+			font-weight: 600;
 		}
 
 	/*styling for title name*/
@@ -93,16 +93,17 @@
 	#body.full {
 		display:block;
 		position:absolute;
-		min-height: 100%;
-		width:80%;
+		height: 100%;
+		width:100%;
 		top:100%;							/*move #body to fit the landing div*/
-		margin: 0 10%;			
+		margin: 0 auto;			
 	}
 	#body.full > .row {						/*this SHOULD set the height of the rows to 100%*/
 		position:relative;
 		top:0;
 		height:100%;
 		margin: 0 auto;
+		padding-top:15%;
 	}
 
 /****************************
@@ -115,31 +116,33 @@
 		display:inline-block;
 		width:100%;
 		height:60px;
-		padding: 0 10% 0;
+		padding: 0 2% 0;
 		background-color:rgba(255,255,255,0.90);
 	    font-family: 'Josefin Sans', sans-serif;		
 		transition: all 02s ease-in-out;
 		-webkit-transition: all 0.2s ease-in-out;
-		box-shadow: 0 0px 5px rgba(0,0,0,0.4);
+/*		box-shadow: 0 0px 5px rgba(0,0,0,0.4);
 		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-	}
+*/	}
 
 
 	/*styles and keyframe for sliding topbar*/
-		.show {
+		.down {
 			opacity: 1;
 			top:0px;
 			animation: slidedown 0.2s linear forwards;
 		}
-		.hide {
-			opacity: 1;
+		.up {
+			opacity: 0;
 			top: 71px;
 			animation: slideup 0.2s linear forwards;
 		}
 		@keyframes slidedown {from {top:-71px; opacity:0;} to {top: 0px; opacity:1;} }
 		@keyframes slideup {from {top:0; opacity:1;} to{ top:-71px; opacity:0;}}
 
-	#topbar .row {padding: 0;}
+	#topbar .row {
+		padding: 0;
+	}
 	#topbar img {
 		width:auto;	height: 60px;
 		}
@@ -148,6 +151,9 @@
 		padding: 0 5px;
 		vertical-align: middle
 		}
+	#topbar .more {
+		top:12px;
+	}
 
 /****************************
 	Header styling #landing
@@ -158,10 +164,10 @@
 	    background-size: cover;
 	    background-position: center 65%;
 	    color:#F5F5F5;
-	    font-family: 'Josefin Sans', sans-serif;
 	    height:100%;
 		box-shadow: 0 0 3px rgba(0,0,0,0.5);
 		-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
+		z-index: 80;
 	}
 	#landing .jumbotron {								/* removes jumbotron bg on #landing*/
 		background:transparent;
@@ -173,14 +179,14 @@
 		width:100%;
 		}
 	#landing .learnmore {								/* manages the bottom line of the header*/
-		position:relative;
+		position:absolute;
 		bottom:0;
+		margin: 0 auto;
 		margin-top: 50px;
-		background-color:rgba(255,255,255,0.5);		/* background for the bar */
-		color:#000000;
+		background-color:rgba(200,100,100,0.5);		/* background for the bar */
+		color:#F5F5F5;
 		min-height:50px; 
 		font-size: 1.3em;
-		line-height:50px;
 		font-variant: small-caps;
 		}
 		#landing .learnmore i {							/* style for the fontAwesome "down" icon */
@@ -189,22 +195,24 @@
 			color:#9e1d20;
 			vertical-align: middle; 
 		}
+	#landing .row {margin:0;}	
+	#landing .col-xs-12 {margin:0; padding:0;}
 
-		.firstbutton {									/* styling for form-link ROW*/
-			position: absolute;
-			left:0; right:0;
-			bottom:5%;
-			text-align:right;
-			}
-			.firstbutton * {								/* sets all the items vertically aligned*/
-				display:inline-block;
-				margin:0 auto;
-				margin-right: 10px;
-				vertical-align: middle;
-			}
-			.firstbutton > h1 {
-				margin-bottom: 0;
-			}
+	.firstbutton {									/* styling for form-link ROW*/
+		position: absolute;
+		left:0; right:0;
+		bottom:5%;
+		text-align:right;
+		}
+		.firstbutton * {								/* sets all the items vertically aligned*/
+			display:inline-block;
+			margin:0 auto;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+		.firstbutton > h1 {
+			margin-bottom: 0;
+		}
 
 	#landing img {
 		width:130px;
@@ -251,16 +259,6 @@
 		background-color: #9e1d20;
 		color:#F5F5F5;
 	}
-		#form-cont:before {
-			content:'\f1d8';
-			font-family: FontAwesome;
-			font-size:3em;
-			text-align: center;
-			position:absolute;
-			width: 100%;
-			top:0;
-			color:#FFFFFF;
-		}
 	#form-cont h1 {
 		color:#F5F5F5;
 		margin-bottom:5%;
