@@ -311,19 +311,6 @@ in case it's needed add a Z-INDEX property to manage pins' visibility
 
 
 @keyframes shadow {from {opacity:0} to {opacity:0.7}}
-@keyframes appear {
-  from {top:100px; opacity: 0;} 
-  to {top:0px; opacity:1;}
- }
-
-.map {                                  /*this manages the slide in of the map*/
-   opacity:0;                      /*this is for the animation to function*/  
-   -webkit-animation: appear 1s 0.5s ease-in-out forwards;
-   -moz-animation: appear 1s 0.5s ease-in-out forwards;
-   -o-animation: appear 1s 0.5s ease-in-out forwards;
-   -ms-animation: appear 1s 0.5s ease-in-out forwards;
-   animation: appear 1s 0.5s ease-in-out forwards;
-   }
 .pin {                                  /*this manages the general timing for the pins to come down*/  
   -webkit-animation-delay: 1.5s;
   -moz-animation-delay: 1.5s;

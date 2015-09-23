@@ -1,0 +1,88 @@
+/*
+
+Here is the styling for the map div and its animation
+including the "secondary" classes which will be called
+on the div with javascript when needed such as
+* idle class	> 	stays where it is on 
+					the first row of the content: 
+* static class	> 	transform in fixed div
+					so it will stay put on the page 
+					And also bring the loading animation
+* end class		>	which actually could be the idle one
+					clears the styling e hide the div
+
+// MAP SHOULD BE IN THE FINAL ROW OF ITS APPEARANCE
+
+It will contain all the animations and special
+styling for the pins too for
+* positioning of single .pin-cont.pin#
+* timings of the animations (when they'll appear)
+
+Every pin will have a static position but will be
+hidden until the class that activates the animation 
+is called with javascript. after that they'll be visible
+and will disappear with all the map once we're through
+on the page 
+
+/****************************
+		MAP styling
+****************************/
+
+	}
+
+	#map {											/*this is the main styling for the map content (position and rotation) */
+		position: relative;
+		margin: 0 auto;
+		width:350px;
+		height:300px;
+		background-image:url(img/landing-basic-map.png);
+		background-size:cover;
+		background-position:50% 50%;
+		-webkit-transform: rotateX(-60deg) rotateZ(15deg);
+		transform: rotateX(-60deg) rotateZ(15deg);
+		z-index: 1;
+		-webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.30);
+		box-shadow: 1px 1px 5px rgba(0,0,0,0.30);
+		border: 1px solid #AFAFAF;
+		border-radius:10%;
+		opacity:1;
+		}
+
+		.initial {									/*the map is not visible*/
+			visibility:hidden;
+			position:relative;
+			/*add positioning relative to the ext div*/
+		}
+
+
+		.load {										/*should be called when the map appear*/
+			visibility: visible;
+			/*position:fixed;					comment should be removed for final version*/
+		    opacity:0;                      /*this is for the animation to function*/  
+		    -webkit-animation: appear 1s 0.5s ease-in-out forwards;
+		    -moz-animation: appear 1s 0.5s ease-in-out forwards;
+		    -o-animation: appear 1s 0.5s ease-in-out forwards;
+		    -ms-animation: appear 1s 0.5s ease-in-out forwards;
+		    animation: appear 1s 0.5s ease-in-out forwards;	
+		}
+		.idle {									/*last class for the map*/
+			visibility: visible;
+			position:relative;
+		    opacity:1;                      /*this is for the animation to function*/
+		    /*add positioning :: same as final on .load */  
+		}
+
+
+
+
+/****************************
+		MAP animations
+****************************/
+
+
+	@keyframes appear {						/*anim for map appearance*/
+	  from {top:100px; opacity: 0;} 
+	  to {top:0px; opacity:1;}
+	 }
+
+		

@@ -2,102 +2,177 @@
 /****************************
 	Extra general styling
 ****************************/
-/*this extra styling is for special classes 
-  which are not included in bootstrap       */
+	/*
+		this extra styling is for special classes 
+	  	which are not included in bootstrap 
+		and for the general customizazion of the page
+	  */
 
 
-* {
-	margin:0; 
-	padding:0;
-	box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-}
-html, body {min-height:100%;}
-body {
-	background-color: #F5F5F5;
-}
+	* {
+		margin:0; 
+		padding:0;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		transition: all 0.5s ease-in-out;
+		-webkit-transition: all 0.5s ease-in-out;
+	}
+	html, body {
+		min-height:100%;
+		overflow-X:hidden;
+	}
+	body {
+		background-color: #F5F5F5;
+		font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
 
+	#body .row {					/*sets extra padding-top to make space for #topbar */
+		padding-top: 60px;
+	}
+
+	/*Styling for text in main wrapper*/
+	#body h1 {
+		font-size:2.2em;
+		color:#9e1d20;
+		text-align: center;
+		font-family: 'Josefin Sans', sans-serif;
+	}
+	#body h4 {
+		font-style: italic;
+		color:#AFAFAF;
+		text-align: center;
+		font-family: 'Josefin Sans', sans-serif;
+	}
+
+	#body p {
+		font-style: normal;
+		font-size: 1em;
+	}
+
+/****************************
+	custom 100% sizes
+****************************/
+
+	/*
+	just add .full in div#landing e div#body to set the layout with 100% height
+	if we decide to go with the full height layout, these should be included in the proper classes and ids styling
+	*/
+	#landing.full {
+		display:relative;
+		position:absolute;
+		height:100%;
+		left:0; right:0;
+	}
+	#landing.full, #landing .full {
+		position:absolute;
+		top:0; bottom:0;
+		left:0; right:0;
+	}
+	#landing.full .learnmore {
+		position:absolute;
+		bottom:0;
+		left:0; right:0;
+	}
+	#body.full {
+		display:block;
+		position:absolute;
+		min-height: 100%;
+		width:80%;
+		top:100%;							/*move #body to fit the landing div*/
+		margin: 0 10%;			
+	}
+	#body.full > .row {						/*this SHOULD set the height of the rows to 100%*/
+		position:relative;
+		height:100%;
+		margin: 0 auto;
+	}
+
+/****************************
+		topbar styling
+****************************/
+
+	#topbar {										/*this is the topbar that will appear when the page is scrolled down*/
+		z-index:99;
+		position: fixed;
+		width:100%;
+		height:60px;
+		padding: 0 10% 0;
+		background-color:rgba(255,255,255,0.95);
+	    font-family: 'Josefin Sans', sans-serif;		
+		transition: all 02s ease-in-out;
+		-webkit-transition: all 0.2s ease-in-out;
+	}
+	/*styles and keyframe for sliding topbar*/
+		.show {
+			opacity: 1;
+			top:0px;
+			animation: slidedown 0.2s linear forwards;
+		}
+		.hide {
+			opacity: 1;
+			top: 71px;
+			animation: slideup 0.2s linear forwards;
+		}
+		@keyframes slidedown {from {top:-71px; opacity:0;} to {top: 0px; opacity:1;} }
+		@keyframes slideup {from {top:0; opacity:1;} to{ top:-71px; opacity:0;}}
+
+	#topbar .row {padding: 0px 0;}
+	#topbar img {
+		width:auto;	height: 60px;
+		}
 
 /****************************
 		Header styling
 ****************************/
 
-
-
-header {										/*main style for the header*/
-	display:block;
-	position:absolute;
-	height: 100%;
-	left:0; right:0; 
-	background-image: url(img/header.jpg);
-    background-size: cover;
-    background-position: center 65%;
-    color:#F5F5F5;
-    height:100%;
-	box-shadow: 0 0 3px rgba(0,0,0,0.5);
-	-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
-}
-.hd-overlay{
-	background:rgba(255,255,255,0.4);
-	position:absolute;
-	top:0; bottom:0;
-	left:0; right:0;
-}
-
-header > .jumbotron {							/*this removes the standard background for the jumbotron*/
-	background:transparent;
+	#landing {											/*main style for the header*/
+		background-image: url(img/header.jpg);
+	    background-size: cover;
+	    background-position: center 65%;
+	    color:#F5F5F5;
+	    font-family: 'Josefin Sans', sans-serif;
+	    height:100%;
+		box-shadow: 0 0 3px rgba(0,0,0,0.5);
+		-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
 	}
+	#landing .jumbotron {								/* removes jumbotron bg on #landing*/
+		background:transparent;
+	}
+	.overlay {											/*style for header image overlay */
+		position:absolute;
+		background:rgba(0,0,0,0.5);
+		left:0; right:0;
+		top:0; bottom:50px;
+	}
+	#landing .learnmore {								/* manages the bottom line of the header*/
+		position:relative;
+		bottom:0;
+		margin-top: 50px;
+		background-color:rgba(255,255,255,0.65);		/* background for the bar */
+		color:#000000;
+		height:50px;
+		font-size: 1.3em;
+		line-height:50px;
+		font-variant: small-caps;
+		}
+		#landing .learnmore i {							/* style for the fontAwesome "down" icon */
+			font-size:2.5em; 
+			line-height:40px;
+			color:#9e1d20;
+			vertical-align: middle; 
+		}
 
-header .red {									/*this sets the main red color for text (ie. "Pet" in the title) */
-	color:#9e1d20;
+	#landing img {
+		width:150px;
+		height:150px;
+
 	}
-header .learnmore {								/* manages the bottom line of the header*/
-	position:absolute;
-	bottom:0;
-	left:0; right:0;
-	background-color:rgba(255,255,255,0.65);
-	color:#000000;
-	height:50px;
-	font-size: 1.3em;
-	line-height:50px;
-	font-variant: small-caps;
-	}
-	header .learnmore i {
-		font-size:2.5em; 
-		line-height:40px;
+	.red {												/*this sets the main red color for text (ie. "Pet" in the title) */
 		color:#9e1d20;
-		vertical-align: middle; 
-	}
+		}
+	#landing h1 {font-size:5em; font-weight: 700}
+	#landing h3 {
+		padding:0;
+		padding-left:5px;
+		font-weight: 300;}
 
-
-
-/****************************
-	main wrapper styling
-****************************/
-.wrapper {
-	display:block;
-	position:absolute;
-	min-height: 100%;
-	top:100%;}
-
-/****************************
-		MAP styling
-****************************/
-
-
-.map {											/*this is the main styling for the map content (position and rotation) */
-	position:relative;
-	margin: 0 auto;
-	width:350px;
-	height:300px;
-	background-image:url(img/landing-basic-map.png);
-	background-size:cover;
-	background-position:50% 50%;
-	-webkit-transform: rotateX(-60deg) rotateZ(15deg);
-	transform: rotateX(-60deg) rotateZ(15deg);
-	z-index: 1;
-	-webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.30);
-	box-shadow: 1px 1px 5px rgba(0,0,0,0.30);
-	border: 1px solid #AFAFAF;
-	border-radius:10%;
-}
