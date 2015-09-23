@@ -12,14 +12,17 @@
 	* {
 		margin:0; 
 		padding:0;
-		box-sizing:border-box;
-		-webkit-box-sizing:border-box;
-		transition: all 0.5s ease-in-out;
-		-webkit-transition: all 0.5s ease-in-out;
+		transition: top 0.5s ease-in-out;
+		-webkit-transition: top 0.5s ease-in-out;
+		transition: opacity 0.5s ease-in-out;
+		-webkit-transition: opacity 0.5s ease-in-out;
+		transition: top 0.5s ease-in-out;
+		-webkit-transition: top 0.5s ease-in-out;
+	
 	}
 	html, body {
 		min-height:100%;
-		overflow-X:hidden;
+		
 	}
 	body {
 		background-color: #F5F5F5;
@@ -31,23 +34,36 @@
 	}
 
 	/*Styling for text in main wrapper*/
-	#body h1 {
-		font-size:2.2em;
-		color:#9e1d20;
-		text-align: center;
-		font-family: 'Josefin Sans', sans-serif;
-	}
-	#body h4 {
-		font-style: italic;
-		color:#AFAFAF;
-		text-align: center;
-		font-family: 'Josefin Sans', sans-serif;
-	}
+		#body h1 {
+			font-size:2.2em;
+			color:#9e1d20;
+			text-align: center;
+			font-family: 'Josefin Sans', sans-serif;
+		}
+		#body h4 {
+			font-style: italic;
+			color:#AFAFAF;
+			text-align: center;
+			font-family: 'Josefin Sans', sans-serif;
+		}
 
-	#body p {
-		font-style: normal;
-		font-size: 1em;
-	}
+		#body p {
+			font-style: normal;
+			font-size: 1em;
+		}
+
+	/*styling for title name*/
+		h1.title {
+		margin-top: 10px;							/* overwrite bootstra margins to set the title*/
+		font-weight: 300;
+		letter-spacing: -5px;
+		font-variant: small-caps;
+		}
+		h1.title span {
+			font-weight: 700; 
+			color:#9e1d20;
+		}
+
 
 /****************************
 	custom 100% sizes
@@ -61,6 +77,7 @@
 		display:relative;
 		position:absolute;
 		height:100%;
+		width:100%;
 		left:0; right:0;
 	}
 	#landing.full, #landing .full {
@@ -70,7 +87,7 @@
 	}
 	#landing.full .learnmore {
 		position:absolute;
-		bottom:0;
+		bottom:25%;
 		left:0; right:0;
 	}
 	#body.full {
@@ -83,25 +100,31 @@
 	}
 	#body.full > .row {						/*this SHOULD set the height of the rows to 100%*/
 		position:relative;
+		top:0;
 		height:100%;
 		margin: 0 auto;
 	}
 
 /****************************
-		topbar styling
+		#topbar styling
 ****************************/
 
 	#topbar {										/*this is the topbar that will appear when the page is scrolled down*/
 		z-index:99;
 		position: fixed;
+		display:inline-block;
 		width:100%;
 		height:60px;
 		padding: 0 10% 0;
-		background-color:rgba(255,255,255,0.95);
+		background-color:rgba(255,255,255,0.90);
 	    font-family: 'Josefin Sans', sans-serif;		
 		transition: all 02s ease-in-out;
 		-webkit-transition: all 0.2s ease-in-out;
+		box-shadow: 0 0px 5px rgba(0,0,0,0.4);
+		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.4);
 	}
+
+
 	/*styles and keyframe for sliding topbar*/
 		.show {
 			opacity: 1;
@@ -116,13 +139,18 @@
 		@keyframes slidedown {from {top:-71px; opacity:0;} to {top: 0px; opacity:1;} }
 		@keyframes slideup {from {top:0; opacity:1;} to{ top:-71px; opacity:0;}}
 
-	#topbar .row {padding: 0px 0;}
+	#topbar .row {padding: 0;}
 	#topbar img {
 		width:auto;	height: 60px;
 		}
+	#topbar h1, #topbar h4 {
+		display:inline-block;
+		padding: 0 5px;
+		vertical-align: middle
+		}
 
 /****************************
-		Header styling
+	Header styling #landing
 ****************************/
 
 	#landing {											/*main style for the header*/
@@ -140,17 +168,17 @@
 	}
 	.overlay {											/*style for header image overlay */
 		position:absolute;
-		background:rgba(0,0,0,0.5);
-		left:0; right:0;
-		top:0; bottom:50px;
-	}
+		background:rgba(0,0,0,0.4);
+		top:0; bottom:0;
+		width:100%;
+		}
 	#landing .learnmore {								/* manages the bottom line of the header*/
 		position:relative;
 		bottom:0;
 		margin-top: 50px;
-		background-color:rgba(255,255,255,0.65);		/* background for the bar */
+		background-color:rgba(255,255,255,0.5);		/* background for the bar */
 		color:#000000;
-		height:50px;
+		min-height:50px; 
 		font-size: 1.3em;
 		line-height:50px;
 		font-variant: small-caps;
@@ -162,17 +190,103 @@
 			vertical-align: middle; 
 		}
 
+		.firstbutton {									/* styling for form-link ROW*/
+			position: absolute;
+			left:0; right:0;
+			bottom:5%;
+			text-align:right;
+			}
+			.firstbutton * {								/* sets all the items vertically aligned*/
+				display:inline-block;
+				margin:0 auto;
+				margin-right: 10px;
+				vertical-align: middle;
+			}
+			.firstbutton > h1 {
+				margin-bottom: 0;
+			}
+
 	#landing img {
-		width:150px;
-		height:150px;
+		width:130px;
+		height:auto;
+	}
+
+
+	/* little extra styling for subtitle */
+		#landing h3 {
+			margin-top:0;									/*overwrites bootstrap margin-top style*/
+			margin-left:-15px;
+			font-weight: 300;
+			font-style: italic;
+			}
+
+/****************************
+	  Main wrapper #body
+****************************/
+
+	/*Styling for text in main wrapper*/
+		#body h1 {
+			font-size:2.2em;
+			color:#9e1d20;
+			text-align: center;
+			font-family: 'Josefin Sans', sans-serif;
+		}
+		#body h4 {
+			font-style: italic;
+			color:#AFAFAF;
+			text-align: center;
+			font-family: 'Josefin Sans', sans-serif;
+		}
+
+		#body p {
+			font-style: normal;
+			font-size: 1em;
+		}
+
+/****************************
+		form customs
+****************************/
+
+	#form-cont {										/* extra styling for form container */
+		background-color: #9e1d20;
+		color:#F5F5F5;
+	}
+		#form-cont:before {
+			content:'\f1d8';
+			font-family: FontAwesome;
+			font-size:3em;
+			text-align: center;
+			position:absolute;
+			width: 100%;
+			top:0;
+			color:#FFFFFF;
+		}
+	#form-cont h1 {
+		color:#F5F5F5;
+		margin-bottom:5%;
+		}
+	#form-cont p {
+		font-size:120%;
+		margin-top:10%;
+		}
+
+/****************************
+		varous & temp
+****************************/
+
+	.placeholder-big, .placeholder{
+		background-image: url(img/placeholder1.jpg);
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat; 
+	}
+		.placeholder-big {
+				height: 300px;
+				opacity:0.5;
+		}
+
+	.coming {											/* extra styling for coming soon features main header */
+		font-size: 120%;
 
 	}
-	.red {												/*this sets the main red color for text (ie. "Pet" in the title) */
-		color:#9e1d20;
-		}
-	#landing h1 {font-size:5em; font-weight: 700}
-	#landing h3 {
-		padding:0;
-		padding-left:5px;
-		font-weight: 300;}
 
