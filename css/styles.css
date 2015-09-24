@@ -3,14 +3,14 @@
 	Extra general styling
 ****************************/
 	/*
-		this extra styling is for special classes 
-	  	which are not included in bootstrap 
+		this extra styling is for special classes
+		which are not included in bootstrap
 		and for the general customizazion of the page
 	  */
 
 
 	* {
-		margin:0; 
+		margin:0;
 		padding:0;
 		transition: top 0.5s ease-in-out;
 		-webkit-transition: top 0.5s ease-in-out;
@@ -21,12 +21,12 @@
 	}
 	html, body {
 		min-height:100%;
-		
+
 	}
 	body {
 		background-color: #F5F5F5;
-	    font-family: 'Josefin Sans', sans-serif;
-	    font-size: 2em;
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 2em;
 	}
 
 	/*Styling for text in main wrapper*/
@@ -45,7 +45,7 @@
 		color:#F5F5F5;
 		}
 		h1.title span {
-			font-weight: 700; 
+			font-weight: 700;
 			color:#9e1d20;
 			font-variant: small-caps;
 
@@ -63,7 +63,7 @@
 		height:60px;
 		padding: 0 2% 0;
 		background-color:rgba(255,255,255,1);
-	    font-family: 'Josefin Sans', sans-serif;		
+		font-family: 'Josefin Sans', sans-serif;
 		transition: all 0.2s ease-in-out;
 		-webkit-transition: all 0.2s ease-in-out;  /*
 		box-shadow: 0 0px 5px rgba(0,0,0,0.4);
@@ -136,10 +136,10 @@
 
 	#landing {											/*main style for the header*/
 		background-image: url(img/header.jpg);
-	    background-size: cover;
-	    background-position: center 65%;
+		background-size: cover;
+		background-position: center 65%;
 		height:100%;
-	    color:#F5F5F5;
+		color:#F5F5F5;
 		box-shadow: 0 0 3px rgba(0,0,0,0.5);
 		-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
 		z-index: 80;
@@ -161,20 +161,20 @@
 		margin: 0 auto;
 		background-color:rgba(240,240,240,0.2);		/* background for the bar */
 		color:#F5F5F5;
-		min-height:50px; 
+		min-height:50px;
 		font-size: 1em;
 		font-variant: small-caps;
 		}
 		#landing .learnmore i {							/* style for the fontAwesome "down" icon */
-			font-size:2.5em; 
+			font-size:2.5em;
 			line-height:40px;
 			color:#9e1d20;
-			vertical-align: middle; 
+			vertical-align: middle;
 		}
 
-	#landing .row {margin:0;}	
+	#landing .row {margin:0;}
 	#landing .col-xs-12 {
-		margin:0; 
+		margin:0;
 		padding:0;
 	}
 
@@ -205,7 +205,7 @@
 		#landing h1.title {									/* sets main color for title*/
 			font-size: 4em;
 			color:#F5F5F5;
-		} 		
+		}
 		#landing h3 {
 			margin-top:0;									/*overwrites bootstrap margin-top style*/
 			margin-left:0px;
@@ -229,11 +229,14 @@
 	#form-cont h1 {
 		color:#F5F5F5;
 		margin-bottom:5%;
-		}
+	}
 	#form-cont p {
 		color:#F5F5F5;
-		}
+	}
 
+	#form-cont .center {
+		text-align: center;
+	}
 /****************************
 		various & temp
 ****************************/
@@ -247,7 +250,7 @@
 		background-image: url(img/placeholder1.jpg);
 		background-position: center;
 		background-size: cover;
-		background-repeat: no-repeat; 
+		background-repeat: no-repeat;
 		width:100%;
 		height: 100%;
 		opacity:0.5;
