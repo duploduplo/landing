@@ -30,10 +30,14 @@
 	}
 
 	/*Styling for text in main wrapper*/
+		a:link {
+			text-decoration: none;
+			font-weight: 400;
+		}
 		a:link, a:visited {color:#9e1d20;}
 		a:hover,a:active { color:#000000;}
 
-	/*styling for title name*/
+	/* general styling for title name*/
 		h1.title {
 		margin-top: 10px;							/* overwrite bootstra margins to set the title*/
 		font-weight: 300;
@@ -46,31 +50,7 @@
 			color:#9e1d20;
 		}
 
-/****************************
-	custom 100% sizes
-****************************/
 
-	/*
-	just add .full in div#landing e div#body to set the layout with 100% height
-	if we decide to go with the full height layout, these should be included in the proper classes and ids styling
-	*/
-	#landing.full {
-		display:relative;
-		position:absolute;
-		height:100%;
-		width:100%;
-		left:0; right:0;
-	}
-	#landing.full, #landing {
-		position:absolute;
-		top:0; bottom:0;
-		left:0; right:0;
-	}
-	#landing .learnmore {
-		position:absolute;
-		bottom:25%;
-		left:0; right:0;
-	}
 
 /****************************
 		#topbar styling
@@ -83,9 +63,9 @@
 		width:100%;
 		height:60px;
 		padding: 0 2% 0;
-		background-color:rgba(255,255,255,0.90);
+		background-color:rgba(255,255,255,1);
 	    font-family: 'Josefin Sans', sans-serif;		
-		transition: all 02s ease-in-out;
+		transition: all 0.2s ease-in-out;
 		-webkit-transition: all 0.2s ease-in-out;  /*
 		box-shadow: 0 0px 5px rgba(0,0,0,0.4);
 		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.4); */
@@ -117,6 +97,7 @@
 		padding: 0 5px;
 		vertical-align: middle;
 		}
+		#topbar h1 {color:#000000;}
 	#topbar .more {						/* sets the position for the btn*/
 		top:12px;
 	}
@@ -134,6 +115,7 @@
 			color:#9e1d20;
 			text-align: center;
 			font-family: 'Josefin Sans', sans-serif;
+			font-weight: 500;
 		}
 		#fullpage h4 {
 			font-style: italic;
@@ -144,7 +126,9 @@
 
 		#fullpage p {
 			font-style: normal;
-			font-size: 1em;
+			font-size: 1.1em;
+			color:#000000;
+
 		}
 
 /****************************
@@ -155,8 +139,8 @@
 		background-image: url(img/header.jpg);
 	    background-size: cover;
 	    background-position: center 65%;
+		height:100%;
 	    color:#F5F5F5;
-	    height:100%;
 		box-shadow: 0 0 3px rgba(0,0,0,0.5);
 		-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
 		z-index: 80;
@@ -166,19 +150,20 @@
 	}
 	.overlay {											/*style for header image overlay */
 		position:absolute;
-		background:rgba(0,0,0,0.4);
+		background:rgba(0,0,0,0.5);
 		top:0; bottom:0;
 		width:100%;
 		}
 	#landing .learnmore {								/* manages the bottom line of the header*/
 		position:absolute;
-		bottom:0;
+		top:50%;
+		left:0;
+		right:0;
 		margin: 0 auto;
-		margin-top: 50px;
-		background-color:rgba(240,240,240,0.3);		/* background for the bar */
+		background-color:rgba(240,240,240,0.2);		/* background for the bar */
 		color:#F5F5F5;
 		min-height:50px; 
-		font-size: 1.3em;
+		font-size: 1em;
 		font-variant: small-caps;
 		}
 		#landing .learnmore i {							/* style for the fontAwesome "down" icon */
@@ -187,8 +172,12 @@
 			color:#9e1d20;
 			vertical-align: middle; 
 		}
+
 	#landing .row {margin:0;}	
-	#landing .col-xs-12 {margin:0; padding:0;}
+	#landing .col-xs-12 {
+		margin:0; 
+		padding:0;
+	}
 
 	.firstbutton {									/* styling for form-link ROW*/
 		position: absolute;
@@ -207,18 +196,26 @@
 		}
 
 	#landing img {
-		width:130px;
+		width:50%;
+		min-width:130px;
 		height:auto;
 	}
 
 
 	/* little extra styling for texts */
+		#landing h1.title {									/* sets main color for title*/
+			font-size: 8vw;
+			color:#F5F5F5;
+		} 		
 		#landing h3 {
 			margin-top:0;									/*overwrites bootstrap margin-top style*/
-			margin-left:-15px;
+			margin-left:0px;
 			font-weight: 300;
 			font-style: italic;
 			}
+		#landing p {
+			color:#F5F5F5;
+		}
 		#landing a:link, #landing a:visited {color:#F5F5F5;}
 		#landing a:hover, #landing a:active { color:#9e1d20;}
 
@@ -236,44 +233,70 @@
 		margin-bottom:5%;
 		}
 	#form-cont p {
-		font-size:120%;
-		margin-top:10%;
+		color:#F5F5F5;
 		}
 
 /****************************
 		varous & temp
 ****************************/
 
-	.placeholder-big, .placeholder{
+/*random placeholder for images -- */
+	.placeholder:after{
+		content:'';
+		position:absolute;
+		left:0;
+		top:0;
 		background-image: url(img/placeholder1.jpg);
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat; 
+		width:100%;
+		height: 100%;
+		opacity:0.5;
 	}
-		.placeholder-big {
-				height: 100%;
-				opacity:0.5;
-				margin-top:-5%;
+		.placeholder {
+			height:300px;
+			}
+
+
+/* side images for sections */
+	[class*="sideimg-"] {
+		position:absolute;
+		top:0; bottom:0;
+		background-size: cover;
+	}
+		[class*="sideimg-"]:before {
+			content: '';
+			position: absolute;
+			top:0; left:0;
+			height:100%;
+			width:100%;
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
 
-	.coming {											/* extra styling for coming soon features main header */
-		font-size: 120%;
-
-	}
-
-.sideimg {
-	position:absolute;
-	top:60px; bottom:0;
-	padding-right:8.3%;
-}
-	.sideimg:before {
-		content: '';
-		position: absolute;
-		top:0; left:0;
-		height:100%;
-		width:100%;
+	/* specific classes for each section image - change as needed */
+	.sideimg-1 {
 		background-image: url(img/roune1.jpg);
-		background-size: cover;
-		background-repeat: no-repeat;
+		background-position: 50% 50%;
+	}
+	.sideimg-2 {
+		background-image: url(img/roune1.jpg);
+		background-position: 50% 50%;
+	}
+	.sideimg-3 {
+		background-image: url(img/roune1.jpg);
+		background-position: 50% 50%;
+	}
+	.sideimg-4 {
+		background-image: url(img/roune1.jpg);
+		background-position: 50% 50%;
+	}
+	.sideimg-5 {
+		background-image: url(img/roune1.jpg);
+		background-position: 50% 50%;
+	}
+	.sideimg-6 {
+		background-image: url(img/roune1.jpg);
 		background-position: 50% 50%;
 	}

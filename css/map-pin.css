@@ -230,7 +230,7 @@ to remove the white circle add a background color to .pin.<name>:after matching 
     -webkit-box-shadow: 0 0 1px 2px #E87BE1;      /*pulsating shadow color*/
     box-shadow: 0 0 1px 2px #E87BE1;
   }
-/*** pin HOTEL ***/
+/*** pin AUTO ***/
   .pin.auto {background:#3331F3;}
   .pin.auto:after {content:'\f1b9'; color:#3331F3}
   .pulse.auto:after {
@@ -240,7 +240,7 @@ to remove the white circle add a background color to .pin.<name>:after matching 
 
 
 /*************************************************/
-/*    CUSTOMIZATIONS FOR PIN POSITION LANDING    */
+/*        CUSTOMIZATIONS FOR PIN POSITION:       */
 /*************************************************/
 /*
 this is meant for the landing page 
