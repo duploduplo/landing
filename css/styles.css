@@ -26,10 +26,7 @@
 	body {
 		background-color: #F5F5F5;
 	    font-family: 'Josefin Sans', sans-serif;
-	}
-
-	#body .row {					/*sets extra padding-top to make space for #topbar */
-		padding-top: 60px;
+	    font-size: 2em;
 	}
 
 	/*Styling for text in main wrapper*/
@@ -52,6 +49,9 @@
 			font-weight: 600;
 		}
 
+		a:link, a:visited {color:#9e1d20;}
+		a:hover,a:active { color:#000000;}
+
 	/*styling for title name*/
 		h1.title {
 		margin-top: 10px;							/* overwrite bootstra margins to set the title*/
@@ -63,7 +63,6 @@
 			font-weight: 700; 
 			color:#9e1d20;
 		}
-
 
 /****************************
 	custom 100% sizes
@@ -120,10 +119,10 @@
 		background-color:rgba(255,255,255,0.90);
 	    font-family: 'Josefin Sans', sans-serif;		
 		transition: all 02s ease-in-out;
-		-webkit-transition: all 0.2s ease-in-out;
-/*		box-shadow: 0 0px 5px rgba(0,0,0,0.4);
-		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-*/	}
+		-webkit-transition: all 0.2s ease-in-out;  /*
+		box-shadow: 0 0px 5px rgba(0,0,0,0.4);
+		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.4); */
+	}
 
 
 	/*styles and keyframe for sliding topbar*/
@@ -155,6 +154,9 @@
 		top:12px;
 	}
 
+		#topbar a:link, #topbar a:visited {color:#000000;}
+		#topbar a:hover, #topbar a:active {color:#000000;}
+
 /****************************
 	Header styling #landing
 ****************************/
@@ -183,7 +185,7 @@
 		bottom:0;
 		margin: 0 auto;
 		margin-top: 50px;
-		background-color:rgba(200,100,100,0.5);		/* background for the bar */
+		background-color:rgba(240,240,240,0.3);		/* background for the bar */
 		color:#F5F5F5;
 		min-height:50px; 
 		font-size: 1.3em;
@@ -220,13 +222,15 @@
 	}
 
 
-	/* little extra styling for subtitle */
+	/* little extra styling for texts */
 		#landing h3 {
 			margin-top:0;									/*overwrites bootstrap margin-top style*/
 			margin-left:-15px;
 			font-weight: 300;
 			font-style: italic;
 			}
+		#landing a:link, #landing a:visited {color:#F5F5F5;}
+		#landing a:hover, #landing a:active { color:#9e1d20;}
 
 /****************************
 	  Main wrapper #body
@@ -279,8 +283,9 @@
 		background-repeat: no-repeat; 
 	}
 		.placeholder-big {
-				height: 300px;
+				height: 100%;
 				opacity:0.5;
+				margin-top:-5%;
 		}
 
 	.coming {											/* extra styling for coming soon features main header */
