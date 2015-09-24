@@ -41,16 +41,15 @@
 		h1.title {
 		margin-top: 10px;							/* overwrite bootstra margins to set the title*/
 		font-weight: 300;
-		letter-spacing: -5px;
-		font-variant: small-caps;
+		letter-spacing: -0.1em;
 		color:#F5F5F5;
 		}
 		h1.title span {
 			font-weight: 700; 
 			color:#9e1d20;
+			font-variant: small-caps;
+
 		}
-
-
 
 /****************************
 		#topbar styling
@@ -204,7 +203,7 @@
 
 	/* little extra styling for texts */
 		#landing h1.title {									/* sets main color for title*/
-			font-size: 8vw;
+			font-size: 4em;
 			color:#F5F5F5;
 		} 		
 		#landing h3 {
@@ -218,7 +217,6 @@
 		}
 		#landing a:link, #landing a:visited {color:#F5F5F5;}
 		#landing a:hover, #landing a:active { color:#9e1d20;}
-
 
 /****************************
 		form customs
@@ -237,7 +235,7 @@
 		}
 
 /****************************
-		varous & temp
+		various & temp
 ****************************/
 
 /*random placeholder for images -- */
@@ -276,27 +274,27 @@
 		}
 
 	/* specific classes for each section image - change as needed */
-	.sideimg-1 {
-		background-image: url(img/roune1.jpg);
-		background-position: 50% 50%;
-	}
-	.sideimg-2 {
-		background-image: url(img/roune1.jpg);
-		background-position: 50% 50%;
-	}
-	.sideimg-3 {
-		background-image: url(img/roune1.jpg);
-		background-position: 50% 50%;
-	}
-	.sideimg-4 {
-		background-image: url(img/roune1.jpg);
-		background-position: 50% 50%;
-	}
-	.sideimg-5 {
-		background-image: url(img/roune1.jpg);
-		background-position: 50% 50%;
-	}
-	.sideimg-6 {
-		background-image: url(img/roune1.jpg);
-		background-position: 50% 50%;
-	}
+		.sideimg-1 {
+			background-image: url(img/roune1.jpg);
+			background-position: 50% 50%;
+		}
+		.sideimg-2 {
+			background-image: url(img/roune1.jpg);
+			background-position: 50% 50%;
+		}
+		.sideimg-3 {
+			background-image: url(img/roune1.jpg);
+			background-position: 50% 50%;
+		}
+		.sideimg-4 {
+			background-image: url(img/roune1.jpg);
+			background-position: 50% 50%;
+		}
+		.sideimg-5 {
+			background-image: url(img/roune1.jpg);
+			background-position: 50% 50%;
+		}
+		.sideimg-6 {
+			background-image: url(img/roune1.jpg);
+			background-position: 50% 50%;
+		}
