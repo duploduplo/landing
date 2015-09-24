@@ -30,25 +30,6 @@
 	}
 
 	/*Styling for text in main wrapper*/
-		#body h1 {
-			font-size:2.2em;
-			color:#9e1d20;
-			text-align: center;
-			font-family: 'Josefin Sans', sans-serif;
-		}
-		#body h4 {
-			font-style: italic;
-			color:#AFAFAF;
-			text-align: center;
-			font-family: 'Josefin Sans', sans-serif;
-		}
-
-		#body p {
-			font-style: normal;
-			font-size: 3em;
-			font-weight: 600;
-		}
-
 		a:link, a:visited {color:#9e1d20;}
 		a:hover,a:active { color:#000000;}
 
@@ -58,6 +39,7 @@
 		font-weight: 300;
 		letter-spacing: -5px;
 		font-variant: small-caps;
+		color:#F5F5F5;
 		}
 		h1.title span {
 			font-weight: 700; 
@@ -79,37 +61,22 @@
 		width:100%;
 		left:0; right:0;
 	}
-	#landing.full, #landing .full {
+	#landing.full, #landing {
 		position:absolute;
 		top:0; bottom:0;
 		left:0; right:0;
 	}
-	#landing.full .learnmore {
+	#landing .learnmore {
 		position:absolute;
 		bottom:25%;
 		left:0; right:0;
-	}
-	#body.full {
-		display:block;
-		position:absolute;
-		height: 100%;
-		width:100%;
-		top:100%;							/*move #body to fit the landing div*/
-		margin: 0 auto;			
-	}
-	#body.full > .row {						/*this SHOULD set the height of the rows to 100%*/
-		position:relative;
-		top:0;
-		height:100%;
-		margin: 0 auto;
-		padding-top:15%;
 	}
 
 /****************************
 		#topbar styling
 ****************************/
 
-	#topbar {										/*this is the topbar that will appear when the page is scrolled down*/
+	#topbar {					/*topbar basic class */
 		z-index:99;
 		position: fixed;
 		display:inline-block;
@@ -148,14 +115,37 @@
 	#topbar h1, #topbar h4 {
 		display:inline-block;
 		padding: 0 5px;
-		vertical-align: middle
+		vertical-align: middle;
 		}
-	#topbar .more {
+	#topbar .more {						/* sets the position for the btn*/
 		top:12px;
 	}
 
 		#topbar a:link, #topbar a:visited {color:#000000;}
 		#topbar a:hover, #topbar a:active {color:#000000;}
+
+/****************************
+	Main wrapper #fullpage
+****************************/
+
+	/*Styling for text in main wrapper*/
+		#fullpage h1 {
+			font-size:2.2em;
+			color:#9e1d20;
+			text-align: center;
+			font-family: 'Josefin Sans', sans-serif;
+		}
+		#fullpage h4 {
+			font-style: italic;
+			color:#AFAFAF;
+			text-align: center;
+			font-family: 'Josefin Sans', sans-serif;
+		}
+
+		#fullpage p {
+			font-style: normal;
+			font-size: 1em;
+		}
 
 /****************************
 	Header styling #landing
@@ -232,28 +222,6 @@
 		#landing a:link, #landing a:visited {color:#F5F5F5;}
 		#landing a:hover, #landing a:active { color:#9e1d20;}
 
-/****************************
-	  Main wrapper #body
-****************************/
-
-	/*Styling for text in main wrapper*/
-		#body h1 {
-			font-size:2.2em;
-			color:#9e1d20;
-			text-align: center;
-			font-family: 'Josefin Sans', sans-serif;
-		}
-		#body h4 {
-			font-style: italic;
-			color:#AFAFAF;
-			text-align: center;
-			font-family: 'Josefin Sans', sans-serif;
-		}
-
-		#body p {
-			font-style: normal;
-			font-size: 1em;
-		}
 
 /****************************
 		form customs
@@ -293,3 +261,19 @@
 
 	}
 
+.sideimg {
+	position:absolute;
+	top:60px; bottom:0;
+	padding-right:8.3%;
+}
+	.sideimg:before {
+		content: '';
+		position: absolute;
+		top:0; left:0;
+		height:100%;
+		width:100%;
+		background-image: url(img/roune1.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+	}

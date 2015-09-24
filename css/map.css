@@ -28,7 +28,7 @@
 		MAP styling
 ****************************/
 
-	#map-cont {
+	#map-cont {										/*supposed class for map container*/
 		position:fixed;
 		right:0;
 		left:0;
@@ -38,7 +38,6 @@
 
 	#map {											/*this is the main styling for the map content (position and rotation) */
 		position: relative;
-		right:10px;
 		margin: 0 auto;
 		width:350px;
 		height:300px;
