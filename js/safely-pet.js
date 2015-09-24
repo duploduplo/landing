@@ -1,23 +1,15 @@
 $(document).ready(function () {
-	console.log("ready!");
-
-/* top bar script */
-
-myID = document.getElementById("topbar");
-var myScrollFunc = function () {
-    var y = window.scrollY;
-/*this sets the height when the classes switch */    
-    if (y >= 600) {
-        myID.className = "down"
-    } else {
-        myID.className = "up"
+  $('#fullpage').fullpage({
+    onLeave: function (index, nextIndex) {
+      var item = $('#topbar');
+      if (index === 1) {
+        item.removeClass("up");
+        item.addClass("down");
+      } else if (nextIndex === 1) {
+        item.removeClass("down");
+        item.addClass("up");
+      }
     }
-};
-
-window.addEventListener("scroll", myScrollFunc);
-
-/* end topbar script */
-
-
+  });
 });
 
