@@ -1,230 +1,473 @@
 <!doctype html>
-<head>
-    <meta charset="utf-8">
-    <title>safely.pet</title>
-    <meta name="description" content="safely.pet">
-    <meta name="author" content="Lorenzo Berni">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">    
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
-    <link rel="stylesheet" href="css/map-pin.css"type="text/css">
-    <link rel="stylesheet" href="css/map.css" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,300,400italic,600,100,700' rel='stylesheet' type='text/css'>
-    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-    <script src="js/smoothscroll.js" type="text/javascript"></script>
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-</head>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>safely.pet</title>
+        <meta name="description" content="safely.pet">
+        <meta name="author" content="Lorenzo Berni">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,300,400italic,600,100,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.1/jquery.fullPage.css">
+        <link rel="stylesheet" href="css/styles.css?v=1.0" type="text/css">
+        <link rel="stylesheet" href="css/map-pin.css" type="text/css">
+        <link rel="stylesheet" href="css/map.css" type="text/css">
+        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.1/jquery.fullPage.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.1/vendors/jquery.slimscroll.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
     <body>
-
-        <div id="topbar" class="fluid-container up">                                <!-- hidden topbar -->
+        <!-- hidden topbar -->
+        <div id="topbar" class="fluid-container up">
             <div class="row">
                 <div class="col-xs-8 pull-left">
-                    <a href="#top"><img src="css/img/logo.png" alt="Safely.Pet" class ="img-responsive hidden-xs pull-left">
-                    <h1 class="title">Safely.<span>Pet</span></h1></a>
-                    <h4 class="hidden-xs hidden-sm">Discover a new way to live with your pet</h4>
+                    <a href="">
+                        <img src="css/img/logo.png" alt="Safely.Pet" class ="img-responsive hidden-xs pull-left">
+                        <h1 class="title">Safely.<span>Pet</span></h1>
+                    </a>
+                    <h4 class="hidden-xs hidden-sm">A new way to live with your pet</h4>
                 </div>
-                <div class="col-xs-4 more text-right pull-right">  <!-- subscribe button -->
-                    <a href="#more"><button type="button" class="btn btn-default btn-md">Get in touch</button></a>
-                </div>   
-            </div>         
+                <div class="col-xs-4 more text-right pull-right">
+                    <button type="button" class="btn btn-default btn-md jump" data-jump="contact_form"><i class="fa fa-envelope-o"></i></button>
+                    <button type="button" class="btn btn-default btn-md jump" data-jump="heading"><i class="fa fa-angle-up"></i></button>
+                </div>
+            </div>
         </div>
-        
-        <div id="landing" class="fluid-container full">                             <!-- cont for landing img -->
-            <a name="top"></a>
-            <div class="overlay"></div> <!-- adds the overlay to bg img -->
-            <div class=" row jumbotron"> <!-- container for main contents of landing -->
-                <div class="col-md-12">
-                    <div class="col-xs-4">  <!-- logo and name col12 -->
-                        <img src="css/img/logo250.png" alt="Safely.Pet" class ="img-responsive pull-right">
-                    </div>
-                    <div class="col-xs-8 pull-right"> <!-- title and subtitle -->
-                        <div class="col-xs-12">
-                            <h1 class="title pull-left">Safely.<span>Pet</span></h1>
-                        </div>
-                        <div class="col-xs-12">
-                            <h3 class="">Discover a new way to live with your pet</h3>
+        <div id="fullpage">
+            <!-- heading section -->
+            <div class="section" data-section-name="heading">
+                <div id="landing" class="fluid-container">
+                    <div class="overlay"></div>
+                    <div class=" row jumbotron">
+                        <div class="col-md-12">
+                            <div class="col-xs-4">
+                                <img src="css/img/logo250.png" alt="Safely.Pet" class ="img-responsive pull-right">
+                            </div>
+                            <div class="col-xs-8 pull-right">
+                                <div class="col-xs-12">
+                                    <h1 class="title pull-left">Safely.<span>Pet</span></h1>
+                                </div>
+                                <div class="col-xs-12">
+                                    <h3>A new way to live with your pet</h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>            
-            <div class="row text-center learnmore"><!-- bar for header "learn more"-->
-                <div class="row">
-                    <div class="col-xs-12 pull-left">
-                        <p> Curious what's this all about?</p> 
+                <div id="bottomlanding" class="fluid-container">
+                    <div class="row text-center learnmore">
+                        <div class="row">
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-10">
+                                <h3>The one place where you can find all the information pet owners need.</h3>
+                            </div>
+                           <div class="col-xs-1"></div>
+                        </div>
+                        <div class="row">
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class ="col-xs-6 text-right scrolldown">
+                             <button type="button" class="btn btn-default btn-lg jump" data-jump="safety">Learn more <i class="fa fa-angle-double-down fa-lg"></i></button>
+                       </div>
+                        <div class="col-xs-6 text-left firstbutton">
+                            <button type="button" class="btn btn-default btn-lg jump" data-jump="contact_form"><i class="fa fa-envelope-o fa-lg"></i>Get in touch</button>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <!-- safety section -->
+            <div class="section" data-section-name="safety">
+                <div class="fluid-container">
                     <div class="row">
-                        <div class ="col-xs-12">
-                        <a href="#section1"><span>scroll </span><i class="fa fa-angle-double-down"></i><span>  down</span></a>
-                    </div>
-                </div>                
-            </div>
-            <div class="row firstbutton">
-                <div class="col-xs-12">  <!-- subscribe button -->
-                    <h3>or just contact us to be an insider  </h3>
-                    <a href="#more"><button type="button" class="btn btn-default btn-lg" target="#more">Get in touch</button></a>
-                </div>
-            </div>    
-        </div>    
-
-        <div id="body" class="fluid-container full">                                <!-- main wrapper -->
-            <a name="section1"></a>
-            <div class="row">                                                          <!-- Safety issue -->
-                <div class="col-sm-1 sideimg hidden-xs"></div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-4 text-center">
-                        <h1>It's not always safe out there</h1>
-                        <h4>Find out where is safe or not to be with your pet.</h4>
-                        <p>Find out where is safe or not to be with your pet.  
-                        Take advantage of our communitarian knowledge and learn about all the dangers that are spread around.  
-                        Find out about safe havens where your pet can enjoy being outside safely.</p>
-                </div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-5 map-cont" style="background:red">
-                    
-                    <!--here would go the pin divs-->
-                    
-                    <div id="map"></div>
-                </div>
-            </div> 
-            <div class="row">                                                       <!-- Find businesses -->
-                <div class="col-md-1"></div>
-                <div class="col-md-5  text-center">
-                    <div class="col-lg-12">
-                        <h1>Lots of businesses out there</h1>
-                        <h4>That will love you to have your pet around... all around the world!</h4>
-                        <p> Trainers, shops, clinics, pet sitter, beaches...  
-                        Even the best hotel and restaurants where you can be with your loved friends..  </p>
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-5 map-cont">
-                    
-                    <!--here would go the pin divs-->
-                    
-                    <div id="map"></div>
-                </div>
-            </div> 
-            <div class="row">                                                       <!-- Fav places -->
-                <div class="col-md-1"></div>
-                <div class="col-md-5  text-center">
-                    <div class="col-lg-12">
-                        <h1>Your places <em>always</em> at hand</h1>
-                        <h4>mark your favorite spots on the map, so you and others may know more about them.</h4>
-                        <p>Set as favourites your home, your friends, your favorite shop and clinic...  
-                        Even your pet trainer so that you may get all the new informations about those places and their surroundings with new events, offers, and alerts.  
-                        Get notified as soon as there's something new there!</p>
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-5 map-cont">
-                    
-                    <!--here would go the pin divs-->
-                    
-                    <div id="map"></div>
-                </div>
-            </div>                            
-            <div class="row">                                                       <!-- Share stuff -->
-                <div class="col-md-1"></div>
-                <div class="col-md-5  text-center">
-                        <div class="col-lg-12">
-                            <h1>Connect</h1>
-                            <h4>Find others with your passion for pets and get in touch for exciting adventures</h4>
-                            <p>Join packs, find friends and plan adventures and trips together.
-                            There's nothing better than enjoying nature with friends!
-                            Share your thoughts about where you've been and see with others and read theirs.</p>
+                        <div class="col-md-2 sideimg-1 hidden-sm hidden-xs"></div>
+                        <div class="col-md-3 hidden-sm hidden-xs"></div>
+                        <div class="col-xs-1 visible-sm-block visible-xs-block"></div>
+                        <div class="col-md-4 text-justify">
+                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
+                            <div class="col-md-12">
+                                <h1>Stay safe and comfortable</h1>
+                                <h4>Discover the locations and premises where you can safely go with your pet.</h4>
+                                <p>Not all places are as pet friendly as one might think, that's why we have created the platform to find out where is safe to be with your pet. Share the information and experiences to help other users.</p>
+                            </div>
+                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
                         </div>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-5 map-cont">
-                    
-                    <!--here would go the pin divs-->
-                    
-                    <div id="map"></div>
-                </div>
-            </div> 
-            <div class="row jumbotron">                                             <!-- Business adv -->
-                <div class="col-md-1"></div>
-                <div class="col-md-4 placeholder-big img-rounded"></div>
-                <div class="col-md-1"></div>
-                <div class="col-md-5">
-                   <div class="col-md-12">
-                        <h1>You work with pets</h1>
-                        <h4>And you love it? Let people know!</h4>
-                        <p>Advertise your business with us and let people living around you or just passing what do you do.  
-                        Everybody who own a pet might need your services in time. Help them find you!  
-                        [contact us] to know more and please     take a couple of minutes to answer [a few questions][formint]. Your opinion means a lot to us!</p>
+                        <div class="col-md-5">
+                            <!--here would go the pin divs-->
+                            <div class="pin-cont pin1">
+                                <div class="pin home"></div>
+                                <div class="pulse home"></div>
+                            </div>
+                            <div class="pin-cont pin2">
+                                <div class="pin dangers"></div>
+                                <div class="pulse dangers"></div>
+                            </div>
+                            <div class="pin-cont pin3">
+                                <div class="pin dangers"></div>
+                                <div class="pulse dangers"></div>
+                            </div>
+                            <div class="pin-cont pin4">
+                                <div class="pin dog"></div>
+                                <div class="pulse dog"></div>
+                            </div>
+                            <div class="pin-cont pin5">
+                                <div class="pin dog"></div>
+                                <div class="pulse dog"></div>
+                            </div>
+                            <div class="pin-cont pin6">
+                                <div class="pin dog"></div>
+                                <div class="pulse dog"></div>
+                            </div>
+                            <div class="map"></div>
+                            <div class="col-xs-1"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-1"></div>                
             </div>
-            <div class="row text-center bg-warning">                                <!-- coming next contents -->
-                <div class="col-lg-12 coming">                                      <!-- section title -->
-                    <h1>We keep working on new features every day</h1>
-                    <h4>we have so many things we want to do that these are just a few</h4>
+            <!-- find business section -->
+            <div class="section" data-section-name="business">
+                <div class="fluid-container">
+                    <div class="row">
+                        <div class="col-md-2 sideimg-2 hidden-sm hidden-xs"></div>
+                        <div class="col-md-3 hidden-sm hidden-xs"></div>
+                        <div class="col-xs-1 visible-sm-block visible-xs-block"></div>
+                        <div class="col-md-4  text-justify">
+                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
+                            <div class="col-md-12">
+                                <h1>Services and businesses</h1>
+                                <h4>Search and filter by your own needs.</h4>
+                                <p>Tired of searching info on numerous sources? We have gathered it all ready for you. Trainers, shops, clinics, pet sitters, beaches, restaurants, hotels. You name it. Find the pet friendly businesses and share your thoughts with other users.</p>
+                            </div>
+                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
+                        </div>
+                        <div class="col-md-5">
+                            <!--here would go the pin divs-->
+                            <div class="pin-cont pin1">
+                                <div class="pin home"></div>
+                                <div class="pulse home"></div>
+                            </div>
+                            <div class="pin-cont pin2">
+                                <div class="pin dangers"></div>
+                                <div class="pulse dangers"></div>
+                            </div>
+                            <div class="pin-cont pin3">
+                                <div class="pin dangers"></div>
+                                <div class="pulse dangers"></div>
+                            </div>
+                            <div class="pin-cont pin4">
+                                <div class="pin dog"></div>
+                                <div class="pulse dog"></div>
+                            </div>
+                            <div class="pin-cont pin5">
+                                <div class="pin dog"></div>
+                                <div class="pulse dog"></div>
+                            </div>
+                            <div class="pin-cont pin6">
+                                <div class="pin dog"></div>
+                                <div class="pulse dog"></div>
+                            </div>
+                            <div class="pin-cont pin7">
+                                <div class="pin shop"></div>
+                                <div class="pulse shop"></div>
+                            </div>
+                            <div class="pin-cont pin8">
+                                <div class="pin hotel"></div>
+                                <div class="pulse hotel"></div>
+                            </div>
+                            <div class="pin-cont pin9">
+                                <div class="pin trainer"></div>
+                                <div class="pulse trainer"></div>
+                            </div>
+                            <div class="pin-cont pin10">
+                                <div class="pin trainer"></div>
+                                <div class="pulse trainer"></div>
+                            </div>
+                            <div class="pin-cont pin11">
+                                <div class="pin vet"></div>
+                                <div class="pulse vet"></div>
+                            </div>
+                            <div class="pin-cont pin12">
+                                <div class="pin vet"></div>
+                                <div class="pulse vet"></div>
+                            </div>
+                            <div class="pin-cont pin13">
+                                <div class="pin food"></div>
+                                <div class="pulse food"></div>
+                            </div>
+                            <div class="pin-cont pin14">
+                                <div class="pin food"></div>
+                                <div class="pulse food"></div>
+                            </div>
+                            <div class="pin-cont pin15">
+                                <div class="pin food"></div>
+                                <div class="pulse food"></div>
+                            </div>
+                            <div class="map"></div>
+                        </div>
+                        <div class="col-xs-1"></div>
+                    </div>
                 </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-3">                                              <!-- Trip planner -->
-                        <h1>Adventure out!</h1>
-                        <h4>Plan trips and share your adventures, but most of all... have fun!</h4>
-                        <p class="text-justify">With all these oustanding places why not plan a trip or an adventure away from home?  
-                        Let us help you track down the better places to be with your furry friend and find the best way to get and stay there  </p>
-                </div>
-                <div class="col-md-4">                                              <!-- Lost+Found -->
-                    <h1>Found him!</h1>
-                    <h4>ever get separated from your pet again</h4>
-                    <p class="text-justify">Pets get loves to roam around and sometimes they lose their way home. 
-                    Let others know your pet and that him might need help, so they can help you find him soon.  
-                    ...or help pets you may have seen around to find their humans faster than ever with the help of our platform.</p>
-                </div>
-                <div class="col-md-3">                                              <!-- Learn section -->
-                    <h1>New stuff to learn</h1>
-                    <h4>There's always something new to learn</h4>
-                    <p class="text-justify">Have you planned a trip with your pet in another country?  
-                       Learn about what you must do there with your pet and what needs to be done before leaving home.  
-                       Discover new things about exciting locations, or just how to communicate better with your loyal friend... and more! </p>
-                </div>
-                <div class="col-md-1"></div>
             </div>
-            <div id="form-cont" class="row jumbotron">                               <!-- Contact form -->
-                <div class ="col-xs-12 text-center">                                 <!-- section title -->
-                    <a name="more"></a>
-                    <h1>Think all of this might interest you and your friend?</h1>
+            <!-- favorite places section -->
+            <div class="section" data-section-name="favorites">
+                <div class="fluid-container">
+                    <div class="row">
+                        <div class="col-md-2 sideimg-3 hidden-sm hidden-xs"></div>
+                        <div class="col-md-3 hidden-sm hidden-xs"></div>
+                        <div class="col-xs-1 visible-sm-block visible-xs-block"></div>
+                        <div class="col-md-4  text-justify">
+                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
+                            <div class="col-md-12">
+                                <h1>Personalize</h1>
+                                <h4>Set your favorite locations and services.</h4>
+                                <p>Put your home, shops, parks, vet or other places into your favourites and get notified as soon as something new happens in their surroundings.</p>
+                            </div>
+                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
+                        </div>
+                        <div class="col-md-5">
+                            <!--here would go the pin divs-->
+                            <div class="pin-cont pin1">
+                                <div class="pin home"></div>
+                                <div class="pulse home"></div>
+                            </div>
+                            <div class="pin-cont pin2">
+                                <div class="pin dangers"></div>
+                                <div class="pulse dangers"></div>
+                            </div>
+                            <div class="pin-cont pin3">
+                                <div class="pin dangers"></div>
+                                <div class="pulse dangers"></div>
+                            </div>
+                            <div class="pin-cont pin4">
+                                <div class="pin dog"></div>
+                                <div class="pulse dog"></div>
+                            </div>
+                            <div class="pin-cont pin5">
+                                <div class="pin dog"></div>
+                                <div class="pulse dog"></div>
+                            </div>
+                            <div class="pin-cont pin6">
+                                <div class="pin dog"></div>
+                                <div class="pulse dog"></div>
+                            </div>
+                            <div class="pin-cont pin7">
+                                <div class="pin shop"></div>
+                                <div class="pulse shop"></div>
+                            </div>
+                            <div class="pin-cont pin8">
+                                <div class="pin hotel"></div>
+                                <div class="pulse hotel"></div>
+                            </div>
+                            <div class="pin-cont pin9">
+                                <div class="pin trainer"></div>
+                                <div class="pulse trainer"></div>
+                            </div>
+                            <div class="pin-cont pin10">
+                                <div class="pin trainer"></div>
+                                <div class="pulse trainer"></div>
+                            </div>
+                            <div class="pin-cont pin11">
+                                <div class="pin vet"></div>
+                                <div class="pulse vet"></div>
+                            </div>
+                            <div class="pin-cont pin12">
+                                <div class="pin vet"></div>
+                                <div class="pulse vet"></div>
+                            </div>
+                            <div class="pin-cont pin13">
+                                <div class="pin food"></div>
+                                <div class="pulse food"></div>
+                            </div>
+                            <div class="pin-cont pin14">
+                                <div class="pin food"></div>
+                                <div class="pulse food"></div>
+                            </div>
+                            <div class="pin-cont pin15">
+                                <div class="pin food"></div>
+                                <div class="pulse food"></div>
+                            </div>
+                            <div class="map"></div>
+                        </div>
+                        <div class="col-xs-1"></div>
+                    </div>
                 </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-5 text-justify">                                   <!-- paragraph container-->
-                    <p>We're almost ready with some of the things we thought for you and your pet and we are going to release soon! If you'd like to know more when the time comes and be one of our first users to join and collaborate with other in this new gread adventure, leave us your contacts and we'll contact you as soon as we are ready!</p>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-4">                                              <!-- form container -->
-                    <form role="form">
-                      <div class="form-group">
-                        <input type="name" class="form-control" id="name" placeholder="your name">
-                      </div>
-                      <div class="form-group">
-                        <input type="email" class="form-control" id="email" placeholder="your email address">
-                      </div>
-                      <div class="form-group">
-                        <textarea type="text" class="form-control" id="message" rows="3" placeholder="want to share something with us?"></textarea>
-                      </div>
-                      <div class="checkbox">
-                        <label><input type="checkbox"> I'd like to be a user!</label>
-                      </div>                    
-                      <div class="checkbox">
-                        <label><input type="checkbox"> I'd like know more as a business</label>
-                      </div>
-                        <button type="submit" class="btn btn-default center-block">Contact us!</button>
-                    </form>
-                </div>
-                <div class="col-lg-1"></div>                
             </div>
-        </div>        
+            <!-- connect section -->
+            <div class="section" data-section-name="connect">
+                <div class="fluid-container">
+                    <div class="row">
+                        <div class="col-md-2 sideimg-4 hidden-sm hidden-xs"></div>
+                        <div class="col-md-3 hidden-sm hidden-xs"></div>
+                        <div class="col-xs-1 visible-sm-block visible-xs-block"></div>
+                        <div class="col-md-4  text-justify">
+                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
+                            <div class="col-md-12">
+                                <h1>Connect</h1>
+                                <h4>Find new friends for you and your pet!</h4>
+                                <p>Join packs, find people with similar interests and plan adventures and trips together. There's nothing better that enjoy the nature! Share your thoughts and tips about locations and learn from other users'.</p>
+                            </div>
+                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
+                        </div>
+                        <div class="col-md-5">
+                            <!--here would go the pin divs-->
+                            <div class="pin-cont pin1">
+                                <div class="pin home"></div>
+                                <div class="pin home"></div>
+                            </div>
+                            <div class="pin-cont pin2">
+                                <div class="pin dangers"></div>
+                                <div class="pulse dangers"></div>
+                            </div>
+                            <div class="pin-cont pin3">
+                                <div class="pin dangers"></div>
+                                <div class="pulse dangers"></div>
+                            </div>
+                            <div class="pin-cont pin4">
+                                <div class="pin dog"></div>
+                                <div class="pulse dog"></div>
+                            </div>
+                            <div class="pin-cont pin5">
+                                <div class="pin dog"></div>
+                                <div class="pulse dog"></div>
+                            </div>
+                            <div class="pin-cont pin6">
+                                <div class="pin dog"></div>
+                                <div class="pulse dog"></div>
+                            </div>
+                            <div class="pin-cont pin7">
+                                <div class="pin shop"></div>
+                                <div class="pulse shop"></div>
+                            </div>
+                            <div class="pin-cont pin8">
+                                <div class="pin hotel"></div>
+                                <div class="pulse hotel"></div>
+                            </div>
+                            <div class="pin-cont pin9">
+                                <div class="pin trainer"></div>
+                                <div class="pulse trainer"></div>
+                            </div>
+                            <div class="pin-cont pin10">
+                                <div class="pin trainer"></div>
+                                <div class="pulse trainer"></div>
+                            </div>
+                            <div class="pin-cont pin11">
+                                <div class="pin vet"></div>
+                                <div class="pulse vet"></div>
+                            </div>
+                            <div class="pin-cont pin12">
+                                <div class="pin vet"></div>
+                                <div class="pulse vet"></div>
+                            </div>
+                            <div class="pin-cont pin13">
+                                <div class="pin food"></div>
+                                <div class="pulse food"></div>
+                            </div>
+                            <div class="pin-cont pin14">
+                                <div class="pin food"></div>
+                                <div class="pulse food"></div>
+                            </div>
+                            <div class="pin-cont pin15">
+                                <div class="pin food"></div>
+                                <div class="pulse food"></div>
+                            </div>
+                            <div class="pin-cont pin16">
+                                <div class="pin friend"></div>
+                                <div class="pulse friend"></div>
+                            </div>
+                            <div class="pin-cont pin17">
+                                <div class="pin friend"></div>
+                                <div class="pulse friend"></div>
+                            </div>
+                            <div class="pin-cont pin18">
+                                <div class="pin friend"></div>
+                                <div class="pulse friend"></div>
+                            </div>
+                            <div class="pin-cont pin19">
+                                <div class="pin friend"></div>
+                                <div class="pulse friend"></div>
+                            </div>
+                            <div class="pin-cont pin20">
+                                <div class="pin friend"></div>
+                                <div class="pulse friend"></div>
+                            </div>
+                            <div class="pin-cont pin21">
+                                <div class="pin friend"></div>
+                                <div class="pulse friend"></div>
+                            </div>
+                            <div class="pin-cont pin22">
+                                <div class="pin friend"></div>
+                                <div class="pulse friend"></div>
+                            </div>
+                            <div class="pin-cont pin23">
+                                <div class="pin friend"></div>
+                                <div class="pulse friend"></div>
+                            </div>
+                            <div class="map"></div>
+                        </div>
+                        <div class="col-xs-1"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- business advertisement section -->
+            <div class="section" data-section-name="business_adv">
+                <div class="fluid-container">
+                    <div class="row jumbotron">
+                        <div class="col-md-2 sideimg-5 hidden-sm hidden-xs"></div>
+                        <div class="col-md-3 hidden-sm hidden-xs"></div>
+                        <div class="col-xs-1 visible-sm-block visible-xs-block"></div>
+                        <div class="col-md-8 text-center">
+                            <div class="col-xs-11 work-with-pets">
+                                <h1>You work with pets</h1>
+                                <h4>And you love it? Let people know!</h4>
+                                <p class="text-justify">Advertise your business with us and let people living around you or just passing what do you do.
+                                Everybody who own a pet might need your services in time. Help them find you!
+                                If you're interested please take a couple of minutes to answer <a href="https://goo.gl/bYGMcw" target="_blank">a couple of questions</a>. Your opinion means a lot to us!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- contact form section -->
+            <div class="section" data-section-name="contact_form">
+                <div id="form-cont" class="row jumbotron">
+                    <div class ="col-xs-12 text-center">
+                        <h1>Interested?</h1>
+                    </div>
+                    <div class="col-md-12 text-justify">
+                        <div class="col-xs-2"></div>
+                        <div class="col-xs-8">
+                            <p>We're almost ready with some of the things we thought for you and your pet and we are going to release soon! If you'd like to know more when the time comes and be one of our first users to join and collaborate with others in this new great adventure, leave us your email and we'll let you know as soon as we are ready!</p>
+                        </div>
+                        <div class="col-xs-2"></div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-xs-offset-2 col-xs-8">
+                            <!-- Begin MailChimp Signup Form -->
+                            <div id="mc_embed_signup" class="center">
+                                <form action="//safelypet.us11.list-manage.com/subscribe/post?u=ac785f092f9a83246f15a2fd3&amp;id=593ee162b4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-inline" target="_blank" novalidate>
+                                    <div id="mc_embed_signup_scroll">
+                                        <div class="form-group">
+                                            <input type="email" value="" name="EMAIL" class="form-control input-lg" id="mce-EMAIL" placeholder="Email">
+                                            <button type="submit" value="Subscribe" name="subscribe" class="btn btn-default btn-lg">Subscribe</button>
+                                        </div>
+                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                        <div style="position: absolute; left: -5000px;">
+                                            <input type="text" name="b_ac785f092f9a83246f15a2fd3_593ee162b4" tabindex="-1" value="">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!--End mc_embed_signup-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src="js/safely-pet.js"></script>
     </body>
 </html>
-
