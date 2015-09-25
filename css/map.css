@@ -32,7 +32,7 @@
 		background-color: #f5f5f5;
 			}
 
-	#map {											/*this is the main styling for the map content (position and rotation) */
+	.map {											/*this is the main styling for the map content (position and rotation) */
 		position: relative;
 		margin: 0 auto;
 		width:350px;
