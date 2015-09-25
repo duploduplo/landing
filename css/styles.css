@@ -51,6 +51,7 @@
 
 		}
 
+
 /****************************
 		#topbar styling
 ****************************/
@@ -65,9 +66,9 @@
 		background-color:rgba(255,255,255,1);
 	    font-family: 'Josefin Sans', sans-serif;		
 		transition: all 0.2s ease-in-out;
-		-webkit-transition: all 0.2s ease-in-out;  /*
-		box-shadow: 0 0px 5px rgba(0,0,0,0.4);
-		-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.4); */
+		-webkit-transition: all 0.2s ease-in-out;  
+		box-shadow: 0 1px 8px rgba(0,0,0,0.4);
+		-webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.4); 
 	}
 
 
@@ -113,20 +114,20 @@
 			font-size:2.2em;
 			color:#9e1d20;
 			text-align: center;
-			font-family: 'Josefin Sans', sans-serif;
 			font-weight: 500;
 		}
 		#fullpage h4 {
 			font-style: italic;
-			color:#AFAFAF;
+			color:#858585;
 			text-align: center;
-			font-family: 'Josefin Sans', sans-serif;
+			font-weight: 400;
 		}
 
 		#fullpage p {
 			font-style: normal;
 			font-size: 1.1em;
 			color:#000000;
+			font-weight: 400;
 
 		}
 
@@ -137,7 +138,7 @@
 	#landing {											/*main style for the header*/
 		background-image: url(img/header.jpg);
 	    background-size: cover;
-	    background-position: center 65%;
+	    background-position: 50% 0;
 		height:100%;
 	    color:#F5F5F5;
 		box-shadow: 0 0 3px rgba(0,0,0,0.5);
@@ -235,6 +236,55 @@
 		}
 
 /****************************
+	 side images styling
+****************************/
+
+	[class*="sideimg-"] {					/* general styling for side images*/
+		position:absolute;
+		top:0; bottom:0;
+		background-size: cover;
+		filter:grayscale(100%);
+		-webkit-filter:grayscale(100%);
+		-o-filter:grayscale(100%);
+		opacity: 0.4;
+	}
+  /*	[class*="sideimg-"]:before {		/* not sure what this is for? *//*
+			content: '';
+			position: absolute;
+			top:0; left:0;
+			height:100%;
+			width:100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+  */
+	/* specific classes for each section image - change as needed */
+		.sideimg-1 {
+			background-image: url(img/chzech1.jpg);
+			background-position: 50% 50%;
+		}
+		.sideimg-2 {
+			background-image: url(img/oldcat.jpg);
+			background-position: 50% 50%;
+		}
+		.sideimg-3 {
+			background-image: url(img/bullt.jpg);
+			background-position: 50% 50%;
+		}
+		.sideimg-4 {
+			background-image: url(img/ball.jpg);
+			background-position: 50% 50%;
+		}
+		.sideimg-5 {
+			background-image: url(img/kittykat.jpg);
+			background-position: 50% 50%;
+		}
+		.sideimg-6 {
+			background-image: url(img/roune1.jpg);
+			background-position: 50% 50%;
+		}
+
+/****************************
 		various & temp
 ****************************/
 
@@ -255,46 +305,3 @@
 		.placeholder {
 			height:300px;
 			}
-
-
-/* side images for sections */
-	[class*="sideimg-"] {
-		position:absolute;
-		top:0; bottom:0;
-		background-size: cover;
-	}
-		[class*="sideimg-"]:before {
-			content: '';
-			position: absolute;
-			top:0; left:0;
-			height:100%;
-			width:100%;
-			background-size: cover;
-			background-repeat: no-repeat;
-		}
-
-	/* specific classes for each section image - change as needed */
-		.sideimg-1 {
-			background-image: url(img/roune1.jpg);
-			background-position: 50% 50%;
-		}
-		.sideimg-2 {
-			background-image: url(img/roune1.jpg);
-			background-position: 50% 50%;
-		}
-		.sideimg-3 {
-			background-image: url(img/roune1.jpg);
-			background-position: 50% 50%;
-		}
-		.sideimg-4 {
-			background-image: url(img/roune1.jpg);
-			background-position: 50% 50%;
-		}
-		.sideimg-5 {
-			background-image: url(img/roune1.jpg);
-			background-position: 50% 50%;
-		}
-		.sideimg-6 {
-			background-image: url(img/roune1.jpg);
-			background-position: 50% 50%;
-		}
