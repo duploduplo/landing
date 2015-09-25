@@ -215,7 +215,7 @@
 		#landing p {
 			color:#F5F5F5;
 		}
-		#landing a:link, #landing a:visited {color:#F5F5F5;}
+		#landing a.link, #landing a:visited {color:#F5F5F5;}
 		#landing a:hover, #landing a:active { color:#9e1d20;}
 
 /****************************
