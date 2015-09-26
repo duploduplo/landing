@@ -1,3 +1,4 @@
+
 /****************************
 	Extra general styling
 ****************************/
@@ -25,6 +26,7 @@
 	body {
 		background-color: #F5F5F5;
 		font-family: 'Josefin Sans', sans-serif;
+		font-size: 2em;
 	}
 
 	/*Styling for text in main wrapper*/
@@ -34,11 +36,6 @@
 		}
 		a:link, a:visited {color:#9e1d20;}
 		a:hover, a:active {color:#000000;}
-		
-		i {											/* style for the fontAwesome icons in <i> */
-			padding-bottom: 0.2em;
-			color:#9e1d20;
-		}
 
 	/* general styling for title name*/
 		h1.title {
@@ -53,12 +50,12 @@
 			font-variant: small-caps;
 
 		}
-		
+
 /****************************
 		#topbar styling
 ****************************/
 
-	#topbar {										/*topbar basic class */
+	#topbar {					/*topbar basic class */
 		z-index:99;
 		position: fixed;
 		display:inline-block;
@@ -66,10 +63,11 @@
 		height:60px;
 		padding: 0 2% 0;
 		background-color:rgba(255,255,255,1);
+		font-family: 'Josefin Sans', sans-serif;
 		transition: all 0.2s ease-in-out;
 		-webkit-transition: all 0.2s ease-in-out;
-		box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-		-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+		box-shadow: 0 1px 8px rgba(0,0,0,0.4);
+		-webkit-box-shadow: 0 1px 8px rgba(0,0,0,0.4);
 	}
 
 
@@ -99,7 +97,7 @@
 		vertical-align: middle;
 		}
 		#topbar h1 {color:#000000;}
-	#topbar .more {								/* sets the position for the btn*/
+	#topbar .more {						/* sets the position for the btn*/
 		top:12px;
 	}
 
@@ -109,8 +107,10 @@
 /****************************
 	Main wrapper #fullpage
 ****************************/
+
 	/*Styling for text in main wrapper*/
 		#fullpage h1 {
+			font-size:2.2em;
 			color:#9e1d20;
 			text-align: center;
 			font-weight: 500;
@@ -124,6 +124,7 @@
 
 		#fullpage p {
 			font-style: normal;
+			font-size: 1.1em;
 			color:#000000;
 			font-weight: 400;
 
@@ -138,22 +139,39 @@
 	    background-size: cover;
 	    background-position: 50% 0;
 		color:#F5F5F5;
-		box-shadow: 0 0 5px rgba(0,0,0,0.7);
-		-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.7);
-		z-index: 51;
+		box-shadow: -1px 1px 5px rgba(0,0,0,0.7);
+		-webkit-box-shadow: -1px 1px 5px rgba(0,0,0,0.7);
+		z-index: 80;
 		position:absolute;
 		top:0;
+		height:80%;
 		left:0;
 		right:0;
 	}
 	#landing .jumbotron {
-		background:transparent;								/* removes jumbotron bg on #landing*/
+		padding-top: 10%;								/* removes jumbotron bg on #landing*/
+		background:transparent;
 	}
 	.overlay {											/*style for header image overlay */
 		position:absolute;
 		background:rgba(0,0,0,0.5);
 		top:0; bottom:0;
 		width:100%;
+		}
+	#bottomlanding .learnmore {								/* manages the bottom line of the header*/
+		margin: 0 auto;
+		background-color:rgba(240,240,240,0.2);		/* background for the bar */
+		color:#F5F5F5;
+		min-height:50px;
+		font-size: 1em;
+		margin-top:2%;
+		}
+		#bottomlanding  i {							/* style for the fontAwesome "down" icon */
+			margin-bottom: 0.2em;
+/*			font-size:1.5em;
+			line-height:40px;*/
+			color:#9e1d20;
+			vertical-align: middle;
 		}
 
 	#landing .row {margin:0;}
@@ -163,37 +181,53 @@
 	}
 
 
+	#landing img {
+		width:50%;
+		min-width:130px;
+		height:auto;
+	}
+
 	#bottomlanding {
 		position: absolute;
 		bottom:0;
 		width:100%;
+		height: 20%;
 		background: #F5F5F5;
 		font-variant: small-caps;
 	}
-	#bottomlanding .learnmore {						/* manages the bottom line of the header*/
-		margin: 0 auto;
-		color:#000000;
-		font-size: 1em;
-		margin-top:2%;
-		}
+	.scrolldown	{
+		margin-top:10%;
+	}
 		.firstbutton *, .scrolldown * {								/* sets all the items vertically aligned*/
 			display:inline-block;
 			margin:0 auto;
 			margin-right: 10px;
 			vertical-align: middle;
 		}
+		.firstbutton > h1 {
+			margin-bottom: 0;
+		}
 
 
 	/* little extra styling for texts */
-		#bottomlanding h2 {
+		#landing h1.title {									/* sets main color for title*/
+			font-size: 4em;
+			color:#F5F5F5;
+		}
+		#bottomlanding h3 {
 			color:#000000;
 			margin-top:0;									/*overwrites bootstrap margin-top style*/
 			margin-left:0px;
 			font-weight: 500;
+			font-size: 1.1em;
 			}
 		#landing p {
 			color:#F5F5F5;
 		}
+		#landing a:link, #landing a:visited {color:#000000;}
+		#landing a:hover, #landing a:active { color:#9e1d20;}
+		#scroll a:link, #scroll a:visited {color:#000000;}
+		#scroll a:hover, #scroll a:active { color:#9e1d20;}
 
 /****************************
 		form customs
@@ -214,7 +248,6 @@
 	#form-cont .center {
 		text-align: center;
 	}
-
 /****************************
 	 side images styling
 ****************************/
@@ -228,7 +261,17 @@
 		-o-filter:grayscale(100%);
 		opacity: 0.4;
 	}
-		/* specific classes for each section image - change as needed */
+  /*	[class*="sideimg-"]:before {		/* not sure what this is for? *//*
+			content: '';
+			position: absolute;
+			top:0; left:0;
+			height:100%;
+			width:100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+  */
+	/* specific classes for each section image - change as needed */
 		.sideimg-1 {
 			background-image: url(img/chzech1.jpg);
 			background-position: 50% 50%;
@@ -255,145 +298,34 @@
 		}
 
 /****************************
-		MEDIA QUERIES
+		various & temp
 ****************************/
 
-	/* custom || retina display */
-	@media only screen and (min-width:320px) {
-		#landing {height:75%;}
-
-		#landing img {
-			width:50%;
-			min-width:90px;
-			height:auto;
+	/*random placeholder for images -- */
+	/*	.placeholder:after{
+			content:'';
+			position:absolute;
+			left:0;
+			top:0;
+			background-image: url(img/placeholder1.jpg);
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			width:100%;
+			height: 100%;
+			opacity:0.5;
+			overflow:hidden;
+		}
+			.placeholder {
+				height:300px;
+				}
+			margin-top: 15%;
+			-webkitfilter:grayscale(20%);
+			-moz-filter:grayscale(20%);
+			-ms-filter:grayscale(20%);
+			-o-filter:grayscale(20%);
+			filter:grayscale(20%);
+			opacity: 0.8;
 		}
 
-		#landing h1.title {
-			font-size: 4em;
-			color:#f5f5f5;
-			margin-top: -5px;		
-		}
-		#landing h3 {
-			margin-top: -10px;
-			font-size: 1em;
-		}
-		#bottomlanding {
-			height: 25%;
-			z-index: 50;
-		}
-		#bottomlanding h2 {
-			margin-top:5px;
-			font-size: 1em;
-		}
-		/* text styling for main section */
-			#fullpage h1 {
-				font-size: 2em;
-			}
-			#fullpage h4 {
-				font-size: 1.1em;
-			}
-			#fullpage p {
-				font-size: 1em;
-			}
-		.form-btn {								/*subscribe btn extra styling */
-		margin-top:10px;
-	}
 
-	}
-
-	/* eXtraSmall devices || mobile phones */
-	@media only screen and (min-width:480px) {
-		#landing h1.title {
-			font-size:5em;
-		}		
-		#landing h3 {
-			font-size: 1.2em;
-		}
-		#bottomlanding h2 {
-			font-size: 1.3em;
-		}
-
-	}
-
-	/* SMall devices */
-	@media only screen and (min-width:768px) {
-		
-		#landing img {
-			min-width:130px;
-		}
-		#landing h1.title {
-			font-size:6em;
-		}		
-		#landing h3 {
-			font-size: 1.5em;
-		}	
-
-		#bottomlanding h2 {
-			margin-top:0;
-			font-size: 1.5em;
-		}
-		/* text styling for main section */
-			#fullpage h1 {
-				font-size: 4em;
-			}
-			#fullpage h4 {
-				font-size: 1.3em;
-			}
-			#fullpage p {
-				font-size: 1.6em;
-			}
-		.form-btn {								/*subscribe btn extra styling */
-			margin-top:0;
-		}
-
-	}
-
-	/* MeDium devices*/
-	@media only screen and (min-width:992px) {
-		#landing {
-			height:80%;
-		}
-
-		#landing img {
-			min-width: 150px;
-		}
-		#landing h1.title {
-			font-size: 8em;
-		}
-		#landing h3 {
-			font-size: 2em;
-		}
-		#bottomlanding {
-			height:20%;
-		}
-
-	}
-
-	/* LarGe devices*/
-	@media only screen and (min-width:1200px) {
-		#landing img {
-			max-width: 220px;
-		}
-
-		#landing h1.title {
-			font-size: 10em;
-		}
-		#landing h3 {
-			font-size: 2.5em;
-		}
-		/* text styling for main section */
-			#fullpage h1 {
-				font-size: 2.5em;
-			}
-			#fullpage h4 {
-				font-size: 1.5em;
-			}
-			#fullpage p {
-				font-size: 2em;
-			}
-
-	}
-
-/****************************
-			TESTS
-****************************/
