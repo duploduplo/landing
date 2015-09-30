@@ -1,440 +1,446 @@
 /****************************
-	Extra general styling
+Extra general styling
 ****************************/
-	/*
-		this extra styling is for special classes
-		which are not included in bootstrap
-		and for the general customizazion of the page
-	  */
+/*
+    this extra styling is for special classes
+    which are not included in bootstrap
+    and for the general customizazion of the page
+*/
 
 
-	* {
-		margin:0;
-		padding:0;
-		transition: top 0.5s ease-in-out;
-		-webkit-transition: top 0.5s ease-in-out;
-		transition: opacity 0.5s ease-in-out;
-		-webkit-transition: opacity 0.5s ease-in-out;
-	}
-	html, body {
-		min-height:100%;
+* {
+    margin:0;
+    padding:0;
+    transition: top 0.5s ease-in-out;
+    -webkit-transition: top 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+}
 
-	}
-	body {
-		background-color: #F5F5F5;
-		font-family: 'Josefin Sans', sans-serif;
-		position:relative;
-	}
+html, body {
+    min-height:100%;
+}
 
-	/*Styling for text in main wrapper*/
-		a:link {
-			text-decoration: none;
-			font-weight: 400;
-		}
-		a:link, a:visited {color:#9e1d20;}
-		a:hover, a:active {color:#000000;}
-		
-		i {											/* style for the fontAwesome icons in <i> */
-			padding-bottom: 0.2em;
-			color:#9e1d20;
-		}
+body {
+    background-color: #F5F5F5;
+    font-family: 'Josefin Sans', sans-serif;
+    position:relative;
+}
 
-	/* general styling for title name*/
-		h1.title {
-		margin-top: 10px;							/* overwrite bootstra margins to set the title*/
-		font-weight: 300;
-		letter-spacing: -0.1em;
-		color:#F5F5F5;
-		}
-		h1.title span {
-			font-weight: 700;
-			color:#9e1d20;
-			font-variant: small-caps;
+/*Styling for text in main wrapper*/
+a:link {
+    text-decoration: none;
+    font-weight: 400;
+}
 
-		}
-		
-/****************************
-		#topbar styling
-****************************/
-	#topbar.navbar-default .navbar-brand {
-	    color: rgba(119, 119, 119, 1);
-	    padding: 0;
-		
-	}
-	#topbar.navbar-default .navbar-brand img{
-		height:50px; width:auto;
-		margin-top: -8px;
-		display:inline-block;
-	}
+a:link, a:visited {color:#9e1d20;}
 
-	#topbar.navbar-default {
-	    font-size: 16px;
-	    background-color: rgba(255, 255, 255, 1);
-	}
-	#topbar.navbar-default .navbar-nav>li>a{
-	    color: rgba(119, 119, 119, 1);
-	    background-color: rgba(255, 255, 255, 1);
-	}
-	#topbar.navbar-default .navbar-nav>li>a:hover,
-	#topbar.navbar-default .navbar-nav>li>a:focus {
-	    color: rgba(245, 245, 245, 1);
-	    background-color: rgba(158, 29, 32, 1);
-	}
-	#topbar.navbar-default .navbar-nav>.active>a,
-	#topbar.navbar-default .navbar-nav>.active>a:hover,
-	#topbar.navbar-default .navbar-nav>.active>a:focus {
-	    color: rgba(245, 245, 245, 1);
-	    background-color: rgba(158, 29, 32, 1);
-	}
-	/* styling for menu expand button */
-	#topbar.navbar-default .navbar-toggle {
-	    border-color: transparent;
-	}
-	#topbar.navbar-default .navbar-toggle:hover,
-	#topbar.navbar-default .navbar-toggle:focus {
-	    background-color: #ffffff;
-	}
-	#topbar.navbar-default .navbar-toggle .icon-bar {
-	    background-color: #000000;
-	}
-	#topbar.navbar-default .navbar-toggle:hover .icon-bar,
-	#topbar.navbar-default .navbar-toggle:focus .icon-bar {
-	    background-color: #9e1d20;
-	}
-	/* hover text for links - use attribute "tooltip" on the links */
-	
-	#topbar.navbar-default .navbar-nav>li>a[tooltip]:hover:before,
-	#topbar.navbar-default .navbar-nav>li>a[tooltip]:focus:before {
-	  content: attr(tooltip);
-	  padding: 4px 8px;
-	  color: #f5f5f5;
-	  position: relative;
-	  margin-top:-50%;
-	  top: 50%;
-	  margin-left:-40%;
-	  z-index: 20;
-	  white-space: nowrap;
-	}
-	
-		#topbar {										/*topbar basic class */
-			z-index:99;
-			transition: all 0.2s ease-in-out;
-			-webkit-transition: all 0.2s ease-in-out;
-			box-shadow: 0 0px 3px rgba(0,0,0,0.4);
-			-webkit-box-shadow: 0 0px 3px rgba(0,0,0,0.4);
-		}
+a:hover, a:active {color:#000000;}
 
+/* style for the fontAwesome icons in <i> */
+i {
+    padding-bottom: 0.2em;
+    color:#9e1d20;
+}
 
-		/*styles and keyframe for sliding topbar*/
-			.down {
-				opacity: 1;
-				top:0px;
-				animation: slidedown 0.2s linear forwards;
-			}
-			.up {
-				opacity: 0;
-				top: 71px;
-				animation: slideup 0.2s linear forwards;
-			}
-			@keyframes slidedown {from {top:-71px; opacity:0;} to {top: 0px; opacity:1;} }
-			@keyframes slideup {from {top:0; opacity:1;} to{ top:-71px; opacity:0;}}
+/* general styling for title name*/
+h1.title {
+    /* overwrite bootstra margins to set the title*/
+    margin-top: 10px;
+    font-weight: 300;
+    letter-spacing: -0.1em;
+    color:#F5F5F5;
+}
 
-		#topbar .title, #topbar .subtitle {
-			display:inline-block;
-			padding: 0 5px;
-			vertical-align: middle;
-			}
-			#topbar h1 {color:#000000;}
+h1.title span {
+    font-weight: 700;
+    color:#9e1d20;
+    font-variant: small-caps;
+}
 
 /****************************
-	Main wrapper #fullpage
+    #topbar styling
 ****************************/
-	/*Styling for text in main wrapper*/
-		#fullpage h1 {
-			color:#9e1d20;
-			text-align: center;
-			font-weight: 500;
-		}
-		#fullpage h4 {
-			font-style: italic;
-			color:#858585;
-			text-align: center;
-			font-weight: 400;
-		}
+#topbar.navbar-default .navbar-brand {
+    color: rgba(119, 119, 119, 1);
+    padding: 0;
 
-		#fullpage p {
-			font-style: normal;
-			color:#000000;
-			font-weight: 400;
+}
 
-		}
+#topbar.navbar-default .navbar-brand img{
+    height:50px; width:auto;
+    margin-top: -8px;
+    display:inline-block;
+}
+
+#topbar.navbar-default {
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#topbar.navbar-default .navbar-nav>li>a{
+    color: rgba(119, 119, 119, 1);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#topbar.navbar-default .navbar-nav>li>a:hover,
+#topbar.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(245, 245, 245, 1);
+    background-color: rgba(158, 29, 32, 1);
+}
+
+#topbar.navbar-default .navbar-nav>.active>a,
+#topbar.navbar-default .navbar-nav>.active>a:hover,
+#topbar.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(245, 245, 245, 1);
+    background-color: rgba(158, 29, 32, 1);
+}
+
+/* styling for menu expand button */
+#topbar.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+#topbar.navbar-default .navbar-toggle:hover,
+#topbar.navbar-default .navbar-toggle:focus {
+    background-color: #ffffff;
+}
+
+#topbar.navbar-default .navbar-toggle .icon-bar {
+    background-color: #000000;
+}
+
+#topbar.navbar-default .navbar-toggle:hover .icon-bar,
+#topbar.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #9e1d20;
+}
+
+/* topbar basic class */
+#topbar {
+    z-index:99;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    box-shadow: 0 0px 3px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 0px 3px rgba(0,0,0,0.4);
+}
+
+/*styles and keyframe for sliding topbar*/
+.down {
+    opacity: 1;
+    top:0px;
+    animation: slidedown 0.2s linear forwards;
+}
+
+.up {
+    opacity: 0;
+    top: 71px;
+    animation: slideup 0.2s linear forwards;
+}
+
+@keyframes slidedown {from {top:-71px; opacity:0;} to {top: 0px; opacity:1;} }
+@keyframes slideup {from {top:0; opacity:1;} to{ top:-71px; opacity:0;}}
+
+#topbar .title, #topbar .subtitle {
+    display:inline-block;
+    padding: 0 5px;
+    vertical-align: middle;
+}
+
+#topbar h1 {color:#000000;}
 
 /****************************
-	Header styling #landing
-****************************/
+ * Main wrapper #fullpage
+ ****************************/
 
-	#landing {											/*main style for the header*/
-		background-image: url(img/header.jpg);
-	    background-size: cover;
-	    background-position: 50% 0;
-		color:#F5F5F5;
-		box-shadow: 0 0 5px rgba(0,0,0,0.7);
-		-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.7);
-		z-index: 51;
-		position:absolute;
-		top:0;
-		left:0;
-		right:0;
-	}
-	#landing .jumbotron {
-		background:transparent;								/* removes jumbotron bg on #landing*/
-	}
-	.overlay {											/*style for header image overlay */
-		position:absolute;
-		background:rgba(0,0,0,0.5);
-		top:0; bottom:0;
-		width:100%;
-		}
+/* Styling for text in main wrapper */
+#fullpage h1 {
+    color:#9e1d20;
+    text-align: center;
+    font-weight: 500;
+}
 
-	#landing .row {margin:0;}
-	#landing .col-xs-12, #bottomlanding .col-xs-12, #bottomlanding .col-xs-6 {
-		margin:0;
-		padding:0;
-	}
+#fullpage h4 {
+    font-style: italic;
+    color:#858585;
+    text-align: center;
+    font-weight: 400;
+}
 
+#fullpage p {
+    font-style: normal;
+    color:#000000;
+    font-weight: 400;
 
-	#bottomlanding {
-		position: absolute;
-		bottom:0;
-		width:100%;
-		background: #F5F5F5;
-		font-variant: small-caps;
-	}
-	#bottomlanding .learnmore {						/* manages the bottom line of the header*/
-		margin: 0 auto;
-		color:#000000;
-		font-size: 1em;
-		margin-top:2%;
-		}
-		.firstbutton *, .scrolldown * {								/* sets all the items vertically aligned*/
-			display:inline-block;
-			margin:0 auto;
-			margin-right: 10px;
-			vertical-align: middle;
-		}
-
-
-	/* little extra styling for texts */
-		#bottomlanding h2 {
-			color:#000000;
-			margin-top:0;									/*overwrites bootstrap margin-top style*/
-			margin-left:0px;
-			font-weight: 500;
-			}
-		#landing p {
-			color:#F5F5F5;
-		}
+}
 
 /****************************
-		form customs
+Header styling #landing
 ****************************/
 
-	#form-cont {										/* extra styling for form container */
-		background-color: #9e1d20;
-		color:#F5F5F5;
-	}
-	#form-cont h1 {
-		color:#F5F5F5;
-		margin-bottom:5%;
-	}
-	#form-cont p {
-		color:#F5F5F5;
-	}
+/* main style for the header */
+#landing {
+    background-image: url(img/header.jpg);
+    background-size: cover;
+    background-position: 50% 0;
+    color:#F5F5F5;
+    box-shadow: 0 0 5px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.7);
+    z-index: 51;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+}
+/* removes jumbotron bg on #landing*/
+#landing .jumbotron {
+    background:transparent;
+}
 
-	#form-cont .center {
-		text-align: center;
-	}
+/* style for header image overlay */
+.overlay {
+    position:absolute;
+    background:rgba(0,0,0,0.5);
+    top:0; bottom:0;
+    width:100%;
+    }
+
+#landing .row {margin:0;}
+#landing .col-xs-12, #bottomlanding .col-xs-12, #bottomlanding .col-xs-6 {
+    margin:0;
+    padding:0;
+}
+
+
+#bottomlanding {
+    position: absolute;
+    bottom:0;
+    width:100%;
+    background: #F5F5F5;
+    font-variant: small-caps;
+}
+/* manages the bottom line of the header */
+#bottomlanding .learnmore {
+    margin: 0 auto;
+    color:#000000;
+    font-size: 1em;
+    margin-top:2%;
+}
+/* sets all the items vertically aligned */
+.firstbutton *, .scrolldown * {
+    display:inline-block;
+    margin:0 auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* little extra styling for texts */
+#bottomlanding h2 {
+    color:#000000;
+
+    /* overwrites bootstrap margin-top style */
+    margin-top:0;
+    margin-left:0px;
+    font-weight: 500;
+}
+#landing p {
+    color:#F5F5F5;
+}
 
 /****************************
-	 side images styling
+    form customs
 ****************************/
 
-	[class*="sideimg-"] {					/* general styling for side images*/
-		position:absolute;
-		top:0; bottom:0;
-		background-size: cover;
-		filter:grayscale(100%);
-		-webkit-filter:grayscale(100%);
-		-o-filter:grayscale(100%);
-		opacity: 0.4;
-	}
-		/* specific classes for each section image - change as needed */
-		.sideimg-1 {
-			background-image: url(img/chzech1.jpg);
-			background-position: 50% 50%;
-		}
-		.sideimg-2 {
-			background-image: url(img/oldcat.jpg);
-			background-position: 50% 50%;
-		}
-		.sideimg-3 {
-			background-image: url(img/bullt.jpg);
-			background-position: 50% 50%;
-		}
-		.sideimg-4 {
-			background-image: url(img/ball.jpg);
-			background-position: 50% 50%;
-		}
-		.sideimg-5 {
-			background-image: url(img/kittykat.jpg);
-			background-position: 50% 50%;
-		}
-		.sideimg-6 {
-			background-image: url(img/roune1.jpg);
-			background-position: 50% 50%;
-		}
+/* extra styling for form container */
+#form-cont {
+    background-color: #9e1d20;
+    color:#F5F5F5;
+}
+#form-cont h1 {
+    color:#F5F5F5;
+    margin-bottom:5%;
+}
+#form-cont p {
+    color:#F5F5F5;
+}
+
+#form-cont .center {
+    text-align: center;
+}
+
+/***************************
+ *side images styling
+ ***************************/
+
+/* general styling for side images*/
+[class*="sideimg-"] {
+    position:absolute;
+    top:0; bottom:0;
+    background-size: cover;
+    filter:grayscale(100%);
+    -webkit-filter:grayscale(100%);
+    -o-filter:grayscale(100%);
+    opacity: 0.4;
+}
+/* specific classes for each section image - change as needed */
+.sideimg-1 {
+    background-image: url(img/chzech1.jpg);
+    background-position: 50% 50%;
+}
+.sideimg-2 {
+    background-image: url(img/oldcat.jpg);
+    background-position: 50% 50%;
+}
+.sideimg-3 {
+    background-image: url(img/bullt.jpg);
+    background-position: 50% 50%;
+}
+.sideimg-4 {
+    background-image: url(img/ball.jpg);
+    background-position: 50% 50%;
+}
+.sideimg-5 {
+    background-image: url(img/kittykat.jpg);
+    background-position: 50% 50%;
+}
+.sideimg-6 {
+    background-image: url(img/roune1.jpg);
+    background-position: 50% 50%;
+}
 
 /****************************
-		MEDIA QUERIES
-****************************/
+ * MEDIA QUERIES
+ ****************************/
 
-	/* custom || retina display */
-	@media only screen and (min-width:320px) {
-		#landing {height:75%;}
+/* custom || retina display */
+@media only screen and (min-width:320px) {
+    #landing {
+        height:75%;
+    }
+    #landing img {
+        width:50%;
+        min-width:90px;
+        height:auto;
+    }
+    #landing h1.title {
+        font-size: 4em;
+        color:#f5f5f5;
+        margin-top: -5px;
+    }
+    #landing h3 {
+        margin-top: -10px;
+        font-size: 1em;
+    }
+    #bottomlanding {
+        height: 25%;
+        z-index: 50;
+    }
+    #bottomlanding h2 {
+        margin-top:5px;
+        font-size: 1em;
+    }
+    /* text styling for main section */
+    #fullpage h1 {
+        font-size: 2em;
+    }
+    #fullpage h4 {
+        font-size: 1.1em;
+    }
+    #fullpage p {
+        font-size: 1em;
+    }
 
-		#landing img {
-			width:50%;
-			min-width:90px;
-			height:auto;
-		}
+    /*subscribe btn extra styling */
+    .form-btn {
+        margin-top:10px;
+    }
+}
 
-		#landing h1.title {
-			font-size: 4em;
-			color:#f5f5f5;
-			margin-top: -5px;		
-		}
-		#landing h3 {
-			margin-top: -10px;
-			font-size: 1em;
-		}
-		#bottomlanding {
-			height: 25%;
-			z-index: 50;
-		}
-		#bottomlanding h2 {
-			margin-top:5px;
-			font-size: 1em;
-		}
-		/* text styling for main section */
-			#fullpage h1 {
-				font-size: 2em;
-			}
-			#fullpage h4 {
-				font-size: 1.1em;
-			}
-			#fullpage p {
-				font-size: 1em;
-			}
-		.form-btn {								/*subscribe btn extra styling */
-		margin-top:10px;
-	}
+/* eXtraSmall devices || mobile phones */
+@media only screen and (min-width:480px) {
+    #landing h1.title {
+        font-size:5em;
+    }
+    #landing h3 {
+        font-size: 1.2em;
+    }
+    #bottomlanding h2 {
+        font-size: 1.3em;
+    }
+}
 
-	}
+/* SMall devices */
+@media only screen and (min-width:768px) {
+    #landing img {
+        min-width:130px;
+    }
+    #landing h1.title {
+        font-size:6em;
+    }
+    #landing h3 {
+        font-size: 1.5em;
+    }
+    #bottomlanding h2 {
+        margin-top:0;
+        font-size: 1.5em;
+    }
 
-	/* eXtraSmall devices || mobile phones */
-	@media only screen and (min-width:480px) {
-		#landing h1.title {
-			font-size:5em;
-		}		
-		#landing h3 {
-			font-size: 1.2em;
-		}
-		#bottomlanding h2 {
-			font-size: 1.3em;
-		}
+    /* text styling for main section */
+    #fullpage h1 {
+        font-size: 2.5em;
+    }
+    #fullpage h4 {
+        font-size: 1.3em;
+    }
+    #fullpage p {
+        font-size: 1.6em;
+    }
 
-	}
+    /*subscribe btn extra styling */
+    .form-btn {
+        margin-top:0;
+    }
+}
 
-	/* SMall devices */
-	@media only screen and (min-width:768px) {
-		
-		#landing img {
-			min-width:130px;
-		}
-		#landing h1.title {
-			font-size:6em;
-		}		
-		#landing h3 {
-			font-size: 1.5em;
-		}	
+/* MeDium devices*/
+@media only screen and (min-width:992px) {
+    #landing {
+        height:80%;
+    }
+    #landing img {
+        min-width: 150px;
+    }
+    #landing h1.title {
+        font-size: 8em;
+    }
+    #landing h3 {
+        font-size: 2em;
+    }
+    #bottomlanding {
+        height:20%;
+    }
 
-		#bottomlanding h2 {
-			margin-top:0;
-			font-size: 1.5em;
-		}
-		/* text styling for main section */
-			#fullpage h1 {
-				font-size: 2.5em;
-			}
-			#fullpage h4 {
-				font-size: 1.3em;
-			}
-			#fullpage p {
-				font-size: 1.6em;
-			}
-		.form-btn {								/*subscribe btn extra styling */
-			margin-top:0;
-		}
+    /* text styling for main section */
+    #fullpage h1 {
+        font-size: 3em;
+    }
+    #fullpage h4 {
+        font-size: 1.3em;
+    }
+    #fullpage p {
+        font-size: 2em;
+    }
+}
 
-	}
-
-	/* MeDium devices*/
-	@media only screen and (min-width:992px) {
-		#landing {
-			height:80%;
-		}
-
-		#landing img {
-			min-width: 150px;
-		}
-		#landing h1.title {
-			font-size: 8em;
-		}
-		#landing h3 {
-			font-size: 2em;
-		}
-		#bottomlanding {
-			height:20%;
-		}
-
-		/* text styling for main section */
-			#fullpage h1 {
-				font-size: 3em;
-			}
-			#fullpage h4 {
-				font-size: 1.3em;
-			}
-			#fullpage p {
-				font-size: 2em;
-			}
-
-	}
-
-	/* LarGe devices*/
-	@media only screen and (min-width:1200px) {
-		#landing img {
-			max-width: 220px;
-		}
-
-		#landing h1.title {
-			font-size: 10em;
-		}
-		#landing h3 {
-			font-size: 2.5em;
-		}
-
-	}
-
-/****************************
-			TESTS
-****************************/
+/* LarGe devices*/
+@media only screen and (min-width:1200px) {
+    #landing img {
+        max-width: 220px;
+    }
+    #landing h1.title {
+        font-size: 10em;
+    }
+    #landing h3 {
+        font-size: 2.5em;
+    }
+}
