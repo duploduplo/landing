@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>safely.pet</title>
-        <meta name="description" content="safely.pet">
-        <meta name="author" content="Lorenzo Berni">
+        <meta name="description" content="Safely.Pet">
+        <meta name="author" content="SafelyPet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -18,36 +18,47 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.1/jquery.fullPage.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.1/vendors/jquery.slimscroll.js"></script>
+
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     </head>
-    <body>
+    <body data-spy="scroll" data-target=".navbar">
         <!-- hidden topbar -->
-        <div id="topbar" class="fluid-container up">
-            <div class="row">
-                <div class="col-xs-6 pull-left">
-                    <a href="">
-                        <img src="css/img/logo.png" alt="Safely.Pet" class ="img-responsive hidden-xs pull-left">
-                        <h1 class="title" title="A new way to live your pet">Safely.<span>Pet</span></h1>
-                    </a>
-                    <h4 class="hidden-xs hidden-sm">A new way to live with your pet</h4>
+        <div id="topbar" class="navbar navbar-default navbar-fixed-top down" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#heading">
+                    <img src="css/img/logo.png" alt="Safely.Pet">
+                    <h1 class="title">Safely.<span>PET</span></h1>
+                    <!--    <h4 class="subtitle hidden-sm hidden-xs">A new way to live with your pet.</h4> -->
+                  </a>
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-links">
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                  </button>
                 </div>
-                <div class="col-xs-6 more text-right pull-right">
-                    <button type="button" class="btn btn-default btn-md dropdown" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" title="connect with us">
-                        <i class="fa fa-share-alt"></i>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dlabel" style="border-radius:1rem">
-                        <div class="row text-center">
-                            <div class="col-xs-12">Follow us on</div>
-                            <div class="col-xs-12">
-                                <a href="https://www.facebook.com/SafelyPetintl" target="_blank" class="icon-button facebook"><i class="fa fa-facebook icon-facebook"></i><span></span></a>
-                                <a href="https://plus.google.com/u/0/107720007417693580101/posts" target="_blank" class="icon-button google-plus"><i class="fa fa-google-plus icon-google-plus"></i><span></span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-default btn-md jump" data-jump="contact_form" title="get in touch"><i class="fa fa-envelope-o"></i></button>
-                    <button type="button" class="btn btn-default btn-md jump" data-jump="heading" title="back to top"><i class="fa fa-angle-up"></i></button>
+                <div class="collapse navbar-collapse navbar-links">
+                    <ul class="nav navbar-nav navbar-right text-right">
+                      <li>
+                        <a class="jump" href="#contact_form" data-jump="contact_form" tooltip=""><span class="hidden-sm">Subscribe </span><span class="fa-fw fa fa-heart visible-sm-inline visible-xs-inline"></span></a>
+                      </li>
+                      <li>
+                        <a href="mailto:safelypet@gmail.com?Subject=Tell%20me%20more" tooltip="Contact us"><span class="visible-xs-inline"> Email </span><span class="fa-fw fa fa-envelope-o"></span></a>
+                      </li>
+                      <li>
+                        <a href="https://www.facebook.com/SafelyPetintl" target="_blank" tooltip="Connect"><span class="visible-xs-inline">Facebook </span><span class="fa-fw fa fa-facebook"></span></a>
+                      </li>
+                      <li>
+                        <a href="https://plus.google.com/u/0/107720007417693580101/posts" target="_blank" tooltip="Connect"><span class="visible-xs-inline">Google+ </span><span class="fa-fw fa fa-google-plus"></span></a>
+                      </li>              
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right text-right hidden-xs hidden-sm">
+                      <li><a href="#safety">Stay Safe</a></li>
+                      <li><a href="#business">Find Businesses</a></li> 
+                      <li><a href="#favorites">Personalize</a></li>
+                      <li><a href="#connect">Connect</a></li>
+                      <li><a href="#business_adv">Advertise</a></li>
+                    </ul>          
                 </div>
             </div>
         </div>
@@ -89,7 +100,7 @@
                              <button type="button" class="btn btn-default btn-lg jump" data-jump="safety"><i class="fa fa-angle-double-down fa-lg"></i>learn more</button>
                        </div>
                         <div class="col-xs-6 text-left firstbutton">
-                            <button type="button" class="btn btn-default btn-lg jump" data-jump="contact_form"><i class="fa fa-envelope-o fa-lg"></i>get in touch</button>
+                            <button type="button" class="btn btn-default btn-lg jump" data-jump="contact_form"><i class="fa fa-heart-o fa-lg"></i>subscribe</button>
                         </div>
                     </div>
                 </div>
@@ -99,17 +110,14 @@
                 <div class="fluid-container">
                     <div class="row">
                         <div class="col-md-2 sideimg-1 hidden-sm hidden-xs"></div>
-                        <div class="col-md-3 hidden-sm hidden-xs"></div>
-                        <div class="col-xs-1 visible-sm-block visible-xs-block"></div>
-                        <div class="col-md-4 text-justify">
-                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
+                        <div class="col-md-offset-3 col-md-4 text-justify">
                             <div class="col-md-12">
                                 <h1>Stay safe and comfortable</h1>
                                 <h4>Discover the locations and premises where you can safely go with your pet.</h4>
                                 <p>Not all places are as pet friendly as one might think, that's why we have created the platform to find out where is safe to be with your pet. Share the information and experiences to help other users.</p>
                             </div>
-                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
                         </div>
+                        <div class="col-sm-1"></div>
                         <div class="col-md-5">
                             <!--here would go the pin divs-->
                             <div class="pin-cont pin1">
@@ -147,17 +155,14 @@
                 <div class="fluid-container">
                     <div class="row">
                         <div class="col-md-2 sideimg-2 hidden-sm hidden-xs"></div>
-                        <div class="col-md-3 hidden-sm hidden-xs"></div>
-                        <div class="col-xs-1 visible-sm-block visible-xs-block"></div>
-                        <div class="col-md-4  text-justify">
-                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
+                        <div class="col-md-offset-3 col-md-4 text-justify">
                             <div class="col-md-12">
                                 <h1>Services and businesses</h1>
                                 <h4>Search and filter by your own needs.</h4>
                                 <p>Tired of searching info on numerous sources? We have gathered it all ready for you. Trainers, shops, clinics, pet sitters, beaches, restaurants, hotels. You name it. Find the pet friendly businesses and share your thoughts with other users.</p>
                             </div>
-                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
                         </div>
+                        <div class="col-sm-1"></div>
                         <div class="col-md-5">
                             <!--here would go the pin divs-->
                             <div class="pin-cont pin1">
@@ -222,7 +227,6 @@
                             </div>
                             <div class="map"></div>
                         </div>
-                        <div class="col-xs-1"></div>
                     </div>
                 </div>
             </div>
@@ -231,17 +235,14 @@
                 <div class="fluid-container">
                     <div class="row">
                         <div class="col-md-2 sideimg-3 hidden-sm hidden-xs"></div>
-                        <div class="col-md-3 hidden-sm hidden-xs"></div>
-                        <div class="col-xs-1 visible-sm-block visible-xs-block"></div>
-                        <div class="col-md-4  text-justify">
-                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
+                        <div class="col-md-offset-3 col-md-4 text-justify">
                             <div class="col-md-12">
                                 <h1>Personalize</h1>
                                 <h4>Set your favorite locations and services.</h4>
                                 <p>Put your home, shops, parks, vet or other places into your favourites and get notified as soon as something new happens in their surroundings.</p>
                             </div>
-                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
                         </div>
+                        <div class="col-sm-1"></div>
                         <div class="col-md-5">
                             <!--here would go the pin divs-->
                             <div class="pin-cont pin1">
@@ -306,7 +307,6 @@
                             </div>
                             <div class="map"></div>
                         </div>
-                        <div class="col-xs-1"></div>
                     </div>
                 </div>
             </div>
@@ -315,17 +315,14 @@
                 <div class="fluid-container">
                     <div class="row">
                         <div class="col-md-2 sideimg-4 hidden-sm hidden-xs"></div>
-                        <div class="col-md-3 hidden-sm hidden-xs"></div>
-                        <div class="col-xs-1 visible-sm-block visible-xs-block"></div>
-                        <div class="col-md-4  text-justify">
-                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
+                        <div class="col-md-offset-3 col-md-4 text-justify">
                             <div class="col-md-12">
                                 <h1>Connect</h1>
                                 <h4>Find new friends for you and your pet!</h4>
                                 <p>Join packs, find people with similar interests and plan adventures and trips together. There's nothing better that enjoy the nature! Share your thoughts and tips about locations and learn from other users'.</p>
                             </div>
-                            <div class="col-xs-1 visible-sm-block visible-sx-block"></div>
                         </div>
+                        <div class="col-sm-1"></div>
                         <div class="col-md-5">
                             <!--here would go the pin divs-->
                             <div class="pin-cont pin1">
@@ -422,7 +419,6 @@
                             </div>
                             <div class="map"></div>
                         </div>
-                        <div class="col-xs-1"></div>
                     </div>
                 </div>
             </div>
@@ -430,11 +426,10 @@
             <div class="section" data-section-name="business_adv">
                 <div class="fluid-container">
                     <div class="row jumbotron">
+
                         <div class="col-md-2 sideimg-5 hidden-sm hidden-xs"></div>
-                        <div class="col-md-3 hidden-sm hidden-xs"></div>
-                        <div class="col-xs-1 visible-sm-block visible-xs-block"></div>
-                        <div class="col-md-8 text-center">
-                            <div class="col-xs-11 work-with-pets">
+                        <div class="col-md-offset-3 col-md-8 text-justify">
+                            <div class="col-md-12">
                                 <h1>You work with pets</h1>
                                 <h4>And you love it? Let people know!</h4>
                                 <p class="text-justify">Advertise your business with us and let people living around you or just passing what do you do.
@@ -451,14 +446,14 @@
                     <div class ="col-xs-12 text-center">
                         <h1>Interested?</h1>
                     </div>
-                    <div class="col-md-12 text-justify">
+                    <div class="col-xs-12 text-justify">
                         <div class="col-xs-2"></div>
                         <div class="col-xs-8">
                             <p>We're almost ready with some of the things we thought for you and your pet and we are going to release soon! If you'd like to know more when the time comes and be one of our first users to join and collaborate with others in this new great adventure, leave us your email and we'll let you know as soon as we are ready!</p>
                         </div>
                         <div class="col-xs-2"></div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-xs-12">
                         <div class="col-xs-offset-2 col-xs-8">
                             <!-- Begin MailChimp Signup Form -->
                             <div id="mc_embed_signup" class="center">
@@ -487,6 +482,10 @@
                 </div>
             </div>
         </div>
-        <script src="js/safely-pet.js"></script>
+        <script src="js/safely-pet.js"></script>       
     </body>
 </html>
+
+
+data-jump="contact_form"
+data-jump="heading"

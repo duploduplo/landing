@@ -15,8 +15,6 @@
 		-webkit-transition: top 0.5s ease-in-out;
 		transition: opacity 0.5s ease-in-out;
 		-webkit-transition: opacity 0.5s ease-in-out;
-		transition: top 0.5s ease-in-out;
-		-webkit-transition: top 0.5s ease-in-out;
 	}
 	html, body {
 		min-height:100%;
@@ -25,6 +23,7 @@
 	body {
 		background-color: #F5F5F5;
 		font-family: 'Josefin Sans', sans-serif;
+		position:relative;
 	}
 
 	/*Styling for text in main wrapper*/
@@ -57,54 +56,95 @@
 /****************************
 		#topbar styling
 ****************************/
-
-	#topbar {										/*topbar basic class */
-		z-index:99;
-		position: fixed;
+	#topbar.navbar-default .navbar-brand {
+	    color: rgba(119, 119, 119, 1);
+	    padding: 0;
+		
+	}
+	#topbar.navbar-default .navbar-brand img{
+		height:50px; width:auto;
+		margin-top: -8px;
 		display:inline-block;
-		width:100%;
-		height:60px;
-		padding: 0 2% 0;
-		background-color:rgba(255,255,255,1);
-		transition: all 0.2s ease-in-out;
-		-webkit-transition: all 0.2s ease-in-out;
-		box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-		-webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.4);
 	}
 
-
-	/*styles and keyframe for sliding topbar*/
-		.down {
-			opacity: 1;
-			top:0px;
-			animation: slidedown 0.2s linear forwards;
-		}
-		.up {
-			opacity: 0;
-			top: 71px;
-			animation: slideup 0.2s linear forwards;
-		}
-		@keyframes slidedown {from {top:-71px; opacity:0;} to {top: 0px; opacity:1;} }
-		@keyframes slideup {from {top:0; opacity:1;} to{ top:-71px; opacity:0;}}
-
-	#topbar .row {
-		padding: 0;
+	#topbar.navbar-default {
+	    font-size: 16px;
+	    background-color: rgba(255, 255, 255, 1);
 	}
-	#topbar img {
-		width:auto;	height: 60px;
-		}
-	#topbar h1, #topbar h4 {
-		display:inline-block;
-		padding: 0 5px;
-		vertical-align: middle;
-		}
-		#topbar h1 {color:#000000;}
-	#topbar .more {								/* sets the position for the btn*/
-		top:12px;
+	#topbar.navbar-default .navbar-nav>li>a{
+	    color: rgba(119, 119, 119, 1);
+	    background-color: rgba(255, 255, 255, 1);
 	}
+	#topbar.navbar-default .navbar-nav>li>a:hover,
+	#topbar.navbar-default .navbar-nav>li>a:focus {
+	    color: rgba(245, 245, 245, 1);
+	    background-color: rgba(158, 29, 32, 1);
+	}
+	#topbar.navbar-default .navbar-nav>.active>a,
+	#topbar.navbar-default .navbar-nav>.active>a:hover,
+	#topbar.navbar-default .navbar-nav>.active>a:focus {
+	    color: rgba(245, 245, 245, 1);
+	    background-color: rgba(158, 29, 32, 1);
+	}
+	/* styling for menu expand button */
+	#topbar.navbar-default .navbar-toggle {
+	    border-color: transparent;
+	}
+	#topbar.navbar-default .navbar-toggle:hover,
+	#topbar.navbar-default .navbar-toggle:focus {
+	    background-color: #ffffff;
+	}
+	#topbar.navbar-default .navbar-toggle .icon-bar {
+	    background-color: #000000;
+	}
+	#topbar.navbar-default .navbar-toggle:hover .icon-bar,
+	#topbar.navbar-default .navbar-toggle:focus .icon-bar {
+	    background-color: #9e1d20;
+	}
+	/* hover text for links - use attribute "tooltip" on the links */
+	
+	#topbar.navbar-default .navbar-nav>li>a[tooltip]:hover:before,
+	#topbar.navbar-default .navbar-nav>li>a[tooltip]:focus:before {
+	  content: attr(tooltip);
+	  padding: 4px 8px;
+	  color: #f5f5f5;
+	  position: relative;
+	  margin-top:-50%;
+	  top: 50%;
+	  margin-left:-40%;
+	  z-index: 20;
+	  white-space: nowrap;
+	}
+	
+		#topbar {										/*topbar basic class */
+			z-index:99;
+			transition: all 0.2s ease-in-out;
+			-webkit-transition: all 0.2s ease-in-out;
+			box-shadow: 0 0px 3px rgba(0,0,0,0.4);
+			-webkit-box-shadow: 0 0px 3px rgba(0,0,0,0.4);
+		}
 
-		#topbar a:link, #topbar a:visited {color:#000000;}
-		#topbar a:hover, #topbar a:active {color:#000000;}
+
+		/*styles and keyframe for sliding topbar*/
+			.down {
+				opacity: 1;
+				top:0px;
+				animation: slidedown 0.2s linear forwards;
+			}
+			.up {
+				opacity: 0;
+				top: 71px;
+				animation: slideup 0.2s linear forwards;
+			}
+			@keyframes slidedown {from {top:-71px; opacity:0;} to {top: 0px; opacity:1;} }
+			@keyframes slideup {from {top:0; opacity:1;} to{ top:-71px; opacity:0;}}
+
+		#topbar .title, #topbar .subtitle {
+			display:inline-block;
+			padding: 0 5px;
+			vertical-align: middle;
+			}
+			#topbar h1 {color:#000000;}
 
 /****************************
 	Main wrapper #fullpage
@@ -334,7 +374,7 @@
 		}
 		/* text styling for main section */
 			#fullpage h1 {
-				font-size: 4em;
+				font-size: 2.5em;
 			}
 			#fullpage h4 {
 				font-size: 1.3em;
@@ -367,6 +407,17 @@
 			height:20%;
 		}
 
+		/* text styling for main section */
+			#fullpage h1 {
+				font-size: 3em;
+			}
+			#fullpage h4 {
+				font-size: 1.3em;
+			}
+			#fullpage p {
+				font-size: 2em;
+			}
+
 	}
 
 	/* LarGe devices*/
@@ -381,16 +432,6 @@
 		#landing h3 {
 			font-size: 2.5em;
 		}
-		/* text styling for main section */
-			#fullpage h1 {
-				font-size: 2.5em;
-			}
-			#fullpage h4 {
-				font-size: 1.5em;
-			}
-			#fullpage p {
-				font-size: 2em;
-			}
 
 	}
 
