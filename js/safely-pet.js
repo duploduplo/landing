@@ -13,7 +13,8 @@ $(document).ready(function () {
     anchors: sections,
     navigation: true,
     navigationPosition: 'right',
-    navigationTooltips: sectionTitles,
+    // TODO: style and enable this text
+    // navigationTooltips: sectionTitles,
     afterRender: function () {
       var $navigation = $('#fp-nav');
       $navigation.addClass('hidden-md');
