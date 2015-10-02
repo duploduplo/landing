@@ -12,12 +12,11 @@ $(document).ready(function () {
   $('#fullpage').fullpage({
     anchors: sections,
     navigation: true,
-    navigationPosition: 'right',
+    navigationPosition: 'left',
     // TODO: style and enable this text
     // navigationTooltips: sectionTitles,
     afterRender: function () {
       var $navigation = $('#fp-nav');
-      $navigation.addClass('hidden-md');
       $navigation.addClass('hidden-sm');
       $navigation.addClass('hidden-xs');
     },

@@ -1,11 +1,13 @@
 @charset "utf-8";
 
 /*
-Tthis css styles the marker for the map. 
-* First section contains the GENERAL STYLING and the fallback styles for the PIN. 
-* Second section contains the PULSE CLASS for the bottom pulsing div
-* Third section contains the ANIMATION for both the PIN and the PULSE
-* Fourth section contains CUSTOMIZATION for the PIN content and color
+This css styles the marker for the map. 
+* First section   | the GENERAL STYLING and the fallback styles for the PIN. 
+* Second section  | the PULSE CLASS for the bottom pulsing div
+* Third section   | the ANIMATION for both the PIN and the PULSE
+* Fourth section  | CUSTOMIZATION for the PIN content and color
+* Fifth section   | EXTRA ANIMATION for landing page contents
+* Sixth section   | Media queries for extra sizing on various devices
 
 the reference which has been used to build this can be found here
       http://codepen.io/andreasstorm/pen/ClguF
@@ -16,11 +18,17 @@ the reference which has been used to build this can be found here
 /*********************************/ 
 
   .pin-cont {                         /*this is meant to create an extra external container for positioning the pin and extra effects (like rotation) */
-    position:relative;
+    position:absolute;
+    z-index:3;
+    -webkit-webkit-: transition: all 0.5s ease-in-out;
+    -moz-webkit-: transition: all 0.5s ease-in-out;
+    -ms-webkit-: transition: all 0.5s ease-in-out;
+    -o-webkit-: transition: all 0.5s ease-in-out;
+    webkit-: transition: all 0.5s ease-in-out;
     }
     
   .pin {                                      /* main pin shape*/
-    width: 24px;  height: 24px;             /* pin sizes*/
+    width: 20px;  height: 20px;             /* pin sizes*/
     -webkit-border-radius: 50% 50% 50% 0;
     border-radius: 50% 50% 50% 0;
     background: #9e1d20;                    /* fallback background-color */
@@ -40,8 +48,8 @@ the reference which has been used to build this can be found here
     font-family:fontAwesome;                /*this call for the use of fontAwesome*/
     color:#9d1e20;
     font-size: 0.7em;
-    width: 16px;  height: 16px;
-    margin: 4px 0 0 4px;
+    width: 14px;  height: 14px;
+    margin: 3px 0 0 3px;
     background: #f5f5f5;
     position: absolute;
     -webkit-border-radius: 50%;
@@ -52,12 +60,12 @@ the reference which has been used to build this can be found here
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
     text-align: center;
-    line-height: 17px;                  /*fallback line-height in case it's needed*/
+    line-height: 16px;                  /*fallback line-height in case it's needed*/
     z-index:6;
     }
 
 /*************************************************/
-/*        PULSE ITEM AS STATIC OBJECT        */
+/*          PULSE ITEM AS STATIC OBJECT          */
 /*************************************************/
 
   .pulse {                        /*this manage the SHADOW of the pin */
@@ -68,7 +76,7 @@ the reference which has been used to build this can be found here
     position: absolute;
     left: 50%;
     top: 50%;
-    margin: 0px 0px 0px -16px;             /*precision positioning for shadow*/
+    margin: -2px 0px 0px -18px;             /*precision positioning for shadow*/
     -webkit-transform: rotateX(55deg);
     -moz-transform: rotateX(55deg);
     -o-transform: rotateX(55deg);
@@ -80,10 +88,10 @@ the reference which has been used to build this can be found here
     content: "";
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
     position: absolute;
-    margin: 0px 0 0 -16px;
+    margin: -8px 0 0 -8px;
     z-index:5;
     opacity: 0;
     -webkit-box-shadow: 0 0 1px 2px #A26E71;      /*pulsating shadow color*/
@@ -93,7 +101,7 @@ the reference which has been used to build this can be found here
     }
 
 /*************************************************/
-/***      ANIMATIONS FOR PIN AND PULSE       ***/
+/***   ANIMATIONS CALLS FOR PIN AND PULSE      ***/
 /*************************************************/
 
   .pin {
@@ -261,135 +269,421 @@ the reference which has been used to build this can be found here
   }
 
 /*************************************************/
-/*        CUSTOMIZATIONS FOR PIN POSITION:       */
+/*        CUSTOMIZATIONS FOR PIN POSITION        */
 /*************************************************/
-/*
-this is meant for the landing page 
-sets the position for the PIN CONTainers on the map so that they can be placed around a fake map
-add the NUMBER class at the .pin-cont element to set its position
-in case it's needed add a Z-INDEX property to manage pins' visibility
-*/
+  /*
+  this is meant for the landing page 
+  sets the position for the PIN CONTainers on the map so that they can be placed around a fake map
+  add the NUMBER class at the .pin-cont element to set its position
+  in case it's needed add a Z-INDEX property to manage pins' visibility
+  */
 
-/*list of custom position */
+  /*list of custom position */
 
   .pin-cont.pin1 {          /*home pin*/
-    top:150px;
-    right:-25px;
+    top:43.25%;
+    right:35.55%;
   }
   .pin-cont.pin2 {          /*alert 1 pin*/
-    top:115px;
-    right:43px;
+    top:32.845%;
+    right:36.875%;
   }
   .pin-cont.pin3 {          /*alert 2 pin*/
-    top:160px;
-    right:10px;
+    top:43.365%;
+    right:41.754%;
   }
   .pin-cont.pin4 {          /*info 1 pin */
-    top:175px;
-    right:50px;
+    top:23.548%;
+    right:31.541%;
   }
   .pin-cont.pin5 {          /*info 2 pin*/
-    top:100px;
-    right:15px;
+    top:50.571%;
+    right:32.875%;
   }
   .pin-cont.pin6 {          /*info point*/
-    top:110px;
-    right:-175px;
+    top:58.545%;
+    right:48.975%;
   }
   .pin-cont.pin7 {          /*info point*/
-    top:165px;
-    right:-45px;
+    top:29.457%;
+    right:33.545%;
+    z-index:4;
   }
   .pin-cont.pin8 {          /*info 1 pin */
-    top:115px;
-    right:-75px;
+    top:51.545%;
+    right:23.548%;
   }
   .pin-cont.pin9 {          /*info 2 pin*/
-    top:120px;
-    right:130px;
+    top:52.54%;
+    right:37.25%;
   }
   .pin-cont.pin10 {         /*info point*/
-    top:188px;
-    right:-125px;
+    top:66.521%;
+    right:43.215%;
   }
   .pin-cont.pin11 {         /*info point*/
-    top:140px;
-    right:15px;
+    top:57.655%;
+    right:40.567%;
   }
   .pin-cont.pin12 {         /*info point*/
-    top:75px;
-    right:100px;
+    top:36.25%;
+    right:29.54%;
   }
   .pin-cont.pin13 {         /*info point*/
-    top:135px;
-    right:-90px;
+    top:62.5%;
+    right:28.35%;
   }
   .pin-cont.pin14 {         /*info point*/
-    top:120px;
-    right:-60px;
+    top:27.5%;
+    right:41.3%;
   }
   .pin-cont.pin15 {         /*info point*/
-    top:185px;
-    right:80px;
+    top:67.5%;
+    right:23.5%;
   }
   .pin-cont.pin16 {         /*info point*/
-    top:190px;
-    right:100px;
+    top:23.5%;
+    right:22.4%;
   }
   .pin-cont.pin17 {         /*info point*/
-    top:142px;
-    right:-127px;
+    top:74.5%;
+    right:47.5%;
   }
   .pin-cont.pin18 {         /*info point*/
-    top:75px;
-    right:100px;
+    top:73.25%;
+    right:32.4%;
   }
   .pin-cont.pin19 {         /*info point*/
-    top:148px;
-    right:-167px;
+    top:76.4%;
+    right:37.5%;
   }
   .pin-cont.pin20 {         /*info point*/
-    top:89px;
-    right:-33px;
+    top:35.4%;
+    right:21.3%;
   }
   .pin-cont.pin21 {         /*info point*/
-    top:180px;
-    right:-51px;
+    top:54.4%;
+    right:45.3%;
   }
   .pin-cont.pin22 {         /*info point*/
-    top:164px;
-    right:155px;
+    top:39.5%;
+    right:33%;
   }
   .pin-cont.pin23 {         /*info point*/
-    top:175px;
-    right:-104px;
+    top:66%;
+    right:38%;
   }
 
 /*************************************************/
 /*        EXTRA ANIMATIONS FOR LANDING PAGE      */
-/***** *******************************************/
+/*************************************************/
 
 
-@keyframes shadow {from {opacity:0} to {opacity:0.7}}
-.pin {                                  /*this manages the general timing for the pins to come down*/  
-  -webkit-animation-delay: 1.5s;
-  -moz-animation-delay: 1.5s;
-  -o-animation-delay: 1.5s;
-  -ms-animation-delay: 1.5s;
-  animation-delay: 1.5s;
- }
-.pulse {                                /*this load the animation for the bottom shadow (pulse)*/
-  opacity:0;                        /*this is for the animation to function*/  
-  -webkit-animation: shadow 0.2s 1.6s linear forwards;
-  -moz-animation: shadow 0.2s 1.6s linear forwards;
-  -o-animation: shadow 0.2s 1.6s linear forwards;
-  -ms-animation: shadow 0.2s 1.6s linear forwards;
-  animation: shadow 0.2s 1.6s linear forwards;
+  @keyframes shadow {from {opacity:0} to {opacity:0.7}}
+  .pin {                                  /*this manages the general timing for the pins to come down*/  
+    -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
+    -ms-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+   }
+  .pulse {                                /*this load the animation for the bottom shadow (pulse)*/
+    opacity:0;                        /*this is for the animation to function*/  
+    -webkit-animation: shadow 0.2s 1.6s linear forwards;
+    -moz-animation: shadow 0.2s 1.6s linear forwards;
+    -o-animation: shadow 0.2s 1.6s linear forwards;
+    -ms-animation: shadow 0.2s 1.6s linear forwards;
+    animation: shadow 0.2s 1.6s linear forwards;
+    }
+  .pulse:after {                          /*this sets the delay for the pulse to be seen*/
+    -webkit-animation-delay: 2.6s;
+    -moz-animation-delay: 2.6s;
+    -o-animation-delay: 2.6s;
+    -ms-animation-delay: 2.6s;
+    animation-delay: 2.6s;
+   }
+
+/*************************************************/
+/*         MEDIA QUERIES FOR SMALL DEVICE        */
+/*************************************************/
+
+  @media screen and (max-width:600px) {
+
+    .pin {                                      /* main pin shape*/
+      width: 12px;  height: 12px;             /* pin sizes*/
+      left: 50%;  top: 50%;                   /*centering in div*/
+      margin: -10px 0 0 -15px;
+      }
+
+    .pin:after {                        /* pin content*/
+      font-size: 0.4em;
+      width: 10px;  height: 10px;
+      margin: 1px 0 0 1px;
+      line-height: 10px;                  /*fallback line-height in case it's needed*/
+      }
+
+    .pulse {                        /*this manage the SHADOW of the pin */
+      height: 7px; width: 7px;            /*sizes for the shadow*/
+      margin: 2px 0px 0px -13px;             /*precision positioning for shadow*/
+     }
+    .pulse:after {                      /*this manage the PULSE of the pin as static*/
+      height: 12px;
+      width: 12px;
+      margin: -2px 0 0 -2px;
+      }
+
+/*************************************************/
+/*          ANIMATIONS FOR PINS AND PULSE        */
+/*************************************************/
+  @-moz-keyframes pulsate {
+    0% {
+      -webkit-transform: scale(0.1, 0.1);
+      -moz-transform: scale(0.1, 0.1);
+      -o-transform: scale(0.1, 0.1);
+      -ms-transform: scale(0.1, 0.1);
+      transform: scale(0.1, 0.1);
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+    }
+    50% {
+      opacity: 1;
+      -ms-filter: none;
+      filter: none;
+    }
+    100% {
+      -webkit-transform: scale(1.2, 1.2);
+      -moz-transform: scale(1.2, 1.2);
+      -o-transform: scale(1.2, 1.2);
+      -ms-transform: scale(1.2, 1.2);
+      transform: scale(1.2, 1.2);
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+    }
   }
-.pulse:after {                          /*this sets the delay for the pulse to be seen*/
-  -webkit-animation-delay: 2.6s;
-  -moz-animation-delay: 2.6s;
-  -o-animation-delay: 2.6s;
-  -ms-animation-delay: 2.6s;
-  animation-delay: 2.6s;
- }
+  @-webkit-keyframes pulsate {
+    0% {
+      -webkit-transform: scale(0.1, 0.1);
+      -moz-transform: scale(0.1, 0.1);
+      -o-transform: scale(0.1, 0.1);
+      -ms-transform: scale(0.1, 0.1);
+      transform: scale(0.1, 0.1);
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+    }
+    50% {
+      opacity: 1;
+      -ms-filter: none;
+      filter: none;
+    }
+    100% {
+      -webkit-transform: scale(1.2, 1.2);
+      -moz-transform: scale(1.2, 1.2);
+      -o-transform: scale(1.2, 1.2);
+      -ms-transform: scale(1.2, 1.2);
+      transform: scale(1.2, 1.2);
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+    }
+  }
+  @-o-keyframes pulsate {
+    0% {
+      -webkit-transform: scale(0.1, 0.1);
+      -moz-transform: scale(0.1, 0.1);
+      -o-transform: scale(0.1, 0.1);
+      -ms-transform: scale(0.1, 0.1);
+      transform: scale(0.1, 0.1);
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+    }
+    50% {
+      opacity: 1;
+      -ms-filter: none;
+      filter: none;
+    }
+    100% {
+      -webkit-transform: scale(1.2, 1.2);
+      -moz-transform: scale(1.2, 1.2);
+      -o-transform: scale(1.2, 1.2);
+      -ms-transform: scale(1.2, 1.2);
+      transform: scale(1.2, 1.2);
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+    }
+  }
+  @keyframes pulsate {
+    0% {
+      -webkit-transform: scale(0.1, 0.1);
+      -moz-transform: scale(0.1, 0.1);
+      -o-transform: scale(0.1, 0.1);
+      -ms-transform: scale(0.1, 0.1);
+      transform: scale(0.1, 0.1);
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+    }
+    50% {
+      opacity: 1;
+      -ms-filter: none;
+      filter: none;
+    }
+    100% {
+      -webkit-transform: scale(1.2, 1.2);
+      -moz-transform: scale(1.2, 1.2);
+      -o-transform: scale(1.2, 1.2);
+      -ms-transform: scale(1.2, 1.2);
+      transform: scale(1.2, 1.2);
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+    }
+  }
+  @-moz-keyframes bounce {
+    0% {
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      -webkit-transform: translateY(-2000px) rotate(-45deg);
+      -moz-transform: translateY(-2000px) rotate(-45deg);
+      -o-transform: translateY(-2000px) rotate(-45deg);
+      -ms-transform: translateY(-2000px) rotate(-45deg);
+      transform: translateY(-2000px) rotate(-45deg);
+    }
+    60% {
+      opacity: 1;
+      -ms-filter: none;
+      filter: none;
+      -webkit-transform: translateY(30px) rotate(-45deg);
+      -moz-transform: translateY(30px) rotate(-45deg);
+      -o-transform: translateY(30px) rotate(-45deg);
+      -ms-transform: translateY(30px) rotate(-45deg);
+      transform: translateY(30px) rotate(-45deg);
+    }
+    80% {
+      -webkit-transform: translateY(-10px) rotate(-45deg);
+      -moz-transform: translateY(-10px) rotate(-45deg);
+      -o-transform: translateY(-10px) rotate(-45deg);
+      -ms-transform: translateY(-10px) rotate(-45deg);
+      transform: translateY(-10px) rotate(-45deg);
+    }
+    100% {
+      -webkit-transform: translateY(0) rotate(-45deg);
+      -moz-transform: translateY(0) rotate(-45deg);
+      -o-transform: translateY(0) rotate(-45deg);
+      -ms-transform: translateY(0) rotate(-45deg);
+      transform: translateY(0) rotate(-45deg);
+    }
+  }
+  @-webkit-keyframes bounce {
+    0% {
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      -webkit-transform: translateY(-2000px) rotate(-45deg);
+      -moz-transform: translateY(-2000px) rotate(-45deg);
+      -o-transform: translateY(-2000px) rotate(-45deg);
+      -ms-transform: translateY(-2000px) rotate(-45deg);
+      transform: translateY(-2000px) rotate(-45deg);
+    }
+    60% {
+      opacity: 1;
+      -ms-filter: none;
+      filter: none;
+      -webkit-transform: translateY(30px) rotate(-45deg);
+      -moz-transform: translateY(30px) rotate(-45deg);
+      -o-transform: translateY(30px) rotate(-45deg);
+      -ms-transform: translateY(30px) rotate(-45deg);
+      transform: translateY(30px) rotate(-45deg);
+    }
+    80% {
+      -webkit-transform: translateY(-10px) rotate(-45deg);
+      -moz-transform: translateY(-10px) rotate(-45deg);
+      -o-transform: translateY(-10px) rotate(-45deg);
+      -ms-transform: translateY(-10px) rotate(-45deg);
+      transform: translateY(-10px) rotate(-45deg);
+    }
+    100% {
+      -webkit-transform: translateY(0) rotate(-45deg);
+      -moz-transform: translateY(0) rotate(-45deg);
+      -o-transform: translateY(0) rotate(-45deg);
+      -ms-transform: translateY(0) rotate(-45deg);
+      transform: translateY(0) rotate(-45deg);
+    }
+  }
+  @-o-keyframes bounce {
+    0% {
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      -webkit-transform: translateY(-2000px) rotate(-45deg);
+      -moz-transform: translateY(-2000px) rotate(-45deg);
+      -o-transform: translateY(-2000px) rotate(-45deg);
+      -ms-transform: translateY(-2000px) rotate(-45deg);
+      transform: translateY(-2000px) rotate(-45deg);
+    }
+    60% {
+      opacity: 1;
+      -ms-filter: none;
+      filter: none;
+      -webkit-transform: translateY(30px) rotate(-45deg);
+      -moz-transform: translateY(30px) rotate(-45deg);
+      -o-transform: translateY(30px) rotate(-45deg);
+      -ms-transform: translateY(30px) rotate(-45deg);
+      transform: translateY(30px) rotate(-45deg);
+    }
+    80% {
+      -webkit-transform: translateY(-10px) rotate(-45deg);
+      -moz-transform: translateY(-10px) rotate(-45deg);
+      -o-transform: translateY(-10px) rotate(-45deg);
+      -ms-transform: translateY(-10px) rotate(-45deg);
+      transform: translateY(-10px) rotate(-45deg);
+    }
+    100% {
+      -webkit-transform: translateY(0) rotate(-45deg);
+      -moz-transform: translateY(0) rotate(-45deg);
+      -o-transform: translateY(0) rotate(-45deg);
+      -ms-transform: translateY(0) rotate(-45deg);
+      transform: translateY(0) rotate(-45deg);
+    }
+  }
+  @keyframes bounce {
+    0% {
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      filter: alpha(opacity=0);
+      -webkit-transform: translateY(-2000px) rotate(-45deg);
+      -moz-transform: translateY(-2000px) rotate(-45deg);
+      -o-transform: translateY(-2000px) rotate(-45deg);
+      -ms-transform: translateY(-2000px) rotate(-45deg);
+      transform: translateY(-2000px) rotate(-45deg);
+    }
+    60% {
+      opacity: 1;
+      -ms-filter: none;
+      filter: none;
+      -webkit-transform: translateY(30px) rotate(-45deg);
+      -moz-transform: translateY(30px) rotate(-45deg);
+      -o-transform: translateY(30px) rotate(-45deg);
+      -ms-transform: translateY(30px) rotate(-45deg);
+      transform: translateY(30px) rotate(-45deg);
+    }
+    80% {
+      -webkit-transform: translateY(-10px) rotate(-45deg);
+      -moz-transform: translateY(-10px) rotate(-45deg);
+      -o-transform: translateY(-10px) rotate(-45deg);
+      -ms-transform: translateY(-10px) rotate(-45deg);
+      transform: translateY(-10px) rotate(-45deg);
+    }
+    100% {
+      -webkit-transform: translateY(0) rotate(-45deg);
+      -moz-transform: translateY(0) rotate(-45deg);
+      -o-transform: translateY(0) rotate(-45deg);
+      -ms-transform: translateY(0) rotate(-45deg);
+      transform: translateY(0) rotate(-45deg);
+    }
+  }

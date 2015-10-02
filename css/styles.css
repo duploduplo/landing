@@ -122,18 +122,19 @@ h1.title span {
     -webkit-transition: all 0.2s ease-in-out;
     box-shadow: 0 0px 3px rgba(0,0,0,0.4);
     -webkit-box-shadow: 0 0px 3px rgba(0,0,0,0.4);
+    ;
 }
 
 /*styles and keyframe for sliding topbar*/
-.down {
+#topbar.down {
     opacity: 1;
     top:0px;
     animation: slidedown 0.2s linear forwards;
 }
 
-.up {
+#topbar.up {
     opacity: 0;
-    top: 71px;
+    top: -71px;
     animation: slideup 0.2s linear forwards;
 }
 
@@ -179,13 +180,30 @@ h1.title span {
  ***************************************/
 
 #fp-nav {
-    transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    opacity: 0;    
 }
 
 #fp-nav.visible {
     opacity: 1;
+    -webkit-animation: navbarin 1s ease-in-out forwards;
+    -moz-animation: navbarin 1s ease-in-out forwards;
+    -ms-animation: navbarin 1s ease-in-out forwards;
+    -o-animation: navbarin 1s ease-in-out forwards;
+    animation: navbarin 1s ease-in-out forwards;
+}
+@keyframes navbarin {
+    from {
+        opacity:0; 
+        -webkit-transform:translateX(-150px);
+        transform: translateX(-150px);
+    }
+    to {
+        opacity:1; 
+        -webkit-transform:translateX(0px);
+        transform:translateX(0px);
+    }
 }
 
 /****************************
@@ -292,9 +310,11 @@ Header styling #landing
     position:absolute;
     top:0; bottom:0;
     background-size: cover;
-    filter:grayscale(100%);
-    -webkit-filter:grayscale(100%);
-    -o-filter:grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
     opacity: 0.4;
 }
 /* specific classes for each section image - change as needed */
