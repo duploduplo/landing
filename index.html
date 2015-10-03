@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>safely.pet</title>
         <meta name="description" content="Safely.Pet">
-        <meta name="author" content="SafelyPet">
+        <meta name="author" content="Lorenzo Berni, Daniele Calcinai">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/styles.css?v=1.0" type="text/css">
         <link rel="stylesheet" href="css/map-pin.css" type="text/css">
         <link rel="stylesheet" href="css/map.css" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/socialsbutton.css">
+        <link rel="stylesheet" type="text/css" href="css/socialbuttons.css">
         <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.1/jquery.fullPage.js"></script>
@@ -46,12 +46,19 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-links">
                     <ul class="nav navbar-nav navbar-right text-right">
-                        <li>
+                   </ul>
+                    <ul id="topmenu"class="nav navbar-nav navbar-right text-right">
+                        <li data-menuanchor="safety" class="hidden-sm"><a href="#safety">Stay Safe</a></li>
+                        <li data-menuanchor="business" class="hidden-sm"><a href="#business">Find Businesses</a></li>
+                        <li data-menuanchor="favorites" class="hidden-sm"><a href="#favorites">Personalize</a></li>
+                        <li data-menuanchor="connect" class="hidden-sm"><a href="#connect">Connect</a></li>
+                        <li data-menuanchor="business_adv" class="hidden-sm"><a href="#business_adv">Advertise</a></li>
+                        <li data-menuanchor="contact_form">
                             <a class="jump" href="#contact_form" data-jump="contact_form">
                                 <span class="visible-xs-inline">Subscribe </span><span class="fa-fw fa fa-heart"></span>
                             </a>
                         </li>
-                        <li>
+                        <li data-menuanchor="footer">
                             <a href="mailto:safelypet@gmail.com?Subject=Tell%20me%20more">
                                 <span class="visible-xs-inline">Contact us </span><span class="fa-fw fa fa-envelope-o"></span>
                             </a>
@@ -66,17 +73,113 @@
                                 <span class="visible-xs-inline">Connect on Google+ </span><span class="fa-fw fa fa-google-plus"></span>
                             </a>
                         </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right text-right hidden-xs hidden-sm">
-                        <li><a href="#safety">Stay Safe</a></li>
-                        <li><a href="#business">Find Businesses</a></li>
-                        <li><a href="#favorites">Personalize</a></li>
-                        <li><a href="#connect">Connect</a></li>
-                        <li><a href="#business_adv">Advertise</a></li>
+ 
                     </ul>
                 </div>
             </div>
         </div>
+        <!--Laptop image with map and pins -->
+        <div class="laptop-cont col-sm-5">
+
+         <!--here would go the pin divs-->
+            <!--pin section 1 -->
+                <div class="pin-cont pin1">
+                    <div class="pin home pin-load"></div>
+                    <div class="pulse home pulse-load"></div>
+                </div>
+                <div class="pin-cont pin2">
+                    <div class="pin dangers pin-load"></div>
+                    <div class="pulse dangers pulse-load"></div>
+                </div>
+                <div class="pin-cont pin3">
+                    <div class="pin dangers"></div>
+                    <div class="pulse dangers"></div>
+                </div>
+                <div class="pin-cont pin4">
+                    <div class="pin dog"></div>
+                    <div class="pulse dog"></div>
+                </div>
+                <div class="pin-cont pin5">
+                    <div class="pin dog"></div>
+                    <div class="pulse dog"></div>
+                </div>
+                <div class="pin-cont pin6">
+                    <div class="pin dog"></div>
+                    <div class="pulse dog"></div>
+                </div>
+            <!--pin section 2 -->
+                <div class="pin-cont pin23">
+                    <div class="pin dog"></div>
+                    <div class="pulse dog"></div>
+                </div>                                
+                <div class="pin-cont pin7">
+                    <div class="pin shop"></div>
+                    <div class="pulse shop"></div>
+                </div>
+                <div class="pin-cont pin8">
+                    <div class="pin hotel"></div>
+                    <div class="pulse hotel"></div>
+                </div>
+                <div class="pin-cont pin9">
+                    <div class="pin trainer"></div>
+                    <div class="pulse trainer"></div>
+                </div>
+                <div class="pin-cont pin10">
+                    <div class="pin trainer"></div>
+                    <div class="pulse trainer"></div>
+                </div>
+                <div class="pin-cont pin11">
+                    <div class="pin vet"></div>
+                    <div class="pulse vet"></div>
+                </div>
+                <div class="pin-cont pin12">
+                    <div class="pin vet"></div>
+                    <div class="pulse vet"></div>
+                </div>
+                <div class="pin-cont pin13">
+                    <div class="pin food"></div>
+                    <div class="pulse food"></div>
+                </div>
+                <div class="pin-cont pin14">
+                    <div class="pin food"></div>
+                    <div class="pulse food"></div>
+                </div>
+                <div class="pin-cont pin15">
+                    <div class="pin food"></div>
+                    <div class="pulse food"></div>
+                </div>
+            <!--pin section 4 -->
+                <div class="pin-cont pin16">
+                    <div class="pin friend"></div>
+                    <div class="pulse friend"></div>
+                </div>
+                <div class="pin-cont pin17">
+                    <div class="pin friend"></div>
+                    <div class="pulse friend"></div>
+                </div>
+                <div class="pin-cont pin18">
+                    <div class="pin friend"></div>
+                    <div class="pulse friend"></div>
+                </div>
+                <div class="pin-cont pin19">
+                    <div class="pin friend"></div>
+                    <div class="pulse friend"></div>
+                </div>
+                <div class="pin-cont pin20">
+                    <div class="pin friend"></div>
+                    <div class="pulse friend"></div>
+                </div>
+                <div class="pin-cont pin21">
+                    <div class="pin friend"></div>
+                    <div class="pulse friend"></div>
+                </div>
+                <div class="pin-cont pin22">
+                    <div class="pin friend"></div>
+                    <div class="pulse friend"></div>
+                </div>
+            <img src="css/img/laptop-side.png" alt="" class="laptop">
+        </div>
+
         <div id="fullpage">
             <!-- heading section -->
             <div class="section" data-section-name="heading" data-section-title="Start">
@@ -125,49 +228,15 @@
                 <div class="fluid-container">
                     <div class="row">
                         <div class="col-md-2 sideimg-1 hidden-sm hidden-xs"></div>
-                        <div class="col-md-offset-3 col-md-4 text-justify">
-                            <div class="col-md-12">
+                        <div class="col-md-offset-2 col-md-4 col-sm-6 text-justify">
+                            <div id="text1" class="col-md-12  col-xs-offset-1 col-xs-10 txt-content">
                                 <h1>Stay safe and comfortable</h1>
                                 <h4>Discover the locations and premises where you can safely go with your pet.</h4>
                                 <p>Not all places are as pet friendly as one might think, that's why we have created the platform to find out where is safe to be with your pet. Share the information and experiences to help other users.</p>
                             </div>
                         </div>
-                        <div class="col-sm-1"></div>
-                        <div class="col-md-5">
-                            <div class="laptop-cont init">
-
-                                <!--here would go the pin divs-->
-                                <div class="pin-cont pin1">
-                                    <div class="pin home"></div>
-                                    <div class="pulse home"></div>
-                                </div>
-                                <div class="pin-cont pin2">
-                                    <div class="pin dangers"></div>
-                                    <div class="pulse dangers"></div>
-                                </div>
-                                <div class="pin-cont pin3">
-                                    <div class="pin dangers"></div>
-                                    <div class="pulse dangers"></div>
-                                </div>
-                                <div class="pin-cont pin4">
-                                    <div class="pin dog"></div>
-                                    <div class="pulse dog"></div>
-                                </div>
-                                <div class="pin-cont pin5">
-                                    <div class="pin dog"></div>
-                                    <div class="pulse dog"></div>
-                                </div>
-                                <div class="pin-cont pin6">
-                                    <div class="pin dog"></div>
-                                    <div class="pulse dog"></div>
-                                </div>
-                                <div class="pin-cont pin23">
-                                    <div class="pin dog"></div>
-                                    <div class="pulse dog"></div>
-                                </div>                              
-
-                                <img src="css/img/laptop-side.png" alt="" class="laptop">
-                            </div>
+                        <div class="col-md-1 hidden-sm hidden-xs"></div>
+                        <div class="col-md-5 col-sm-6">
                         </div>
                     </div>
                 </div>
@@ -177,82 +246,15 @@
                 <div class="fluid-container">
                     <div class="row">
                         <div class="col-md-2 sideimg-2 hidden-sm hidden-xs"></div>
-                        <div class="col-md-offset-3 col-md-4 text-justify">
-                            <div class="col-md-12">
+                        <div class="col-md-offset-2 col-md-4 col-sm-6 text-justify">
+                            <div id="text2" class="col-md-12 col-xs-offset-1 col-xs-10 txt-content">
                                 <h1>Services and businesses</h1>
                                 <h4>Search and filter by your own needs.</h4>
                                 <p>Tired of searching info on numerous sources? We have gathered it all ready for you. Trainers, shops, clinics, pet sitters, beaches, restaurants, hotels. You name it. Find the pet friendly businesses and share your thoughts with other users.</p>
                             </div>
                         </div>
-                        <div class="col-sm-1"></div>
-                        <div class="col-md-5">
-                            <!--here would go the pin divs-->
-                            <div class="pin-cont pin1">
-                                <div class="pin home"></div>
-                                <div class="pulse home"></div>
-                            </div>
-                            <div class="pin-cont pin2">
-                                <div class="pin dangers"></div>
-                                <div class="pulse dangers"></div>
-                            </div>
-                            <div class="pin-cont pin3">
-                                <div class="pin dangers"></div>
-                                <div class="pulse dangers"></div>
-                            </div>
-                            <div class="pin-cont pin4">
-                                <div class="pin dog"></div>
-                                <div class="pulse dog"></div>
-                            </div>
-                            <div class="pin-cont pin5">
-                                <div class="pin dog"></div>
-                                <div class="pulse dog"></div>
-                            </div>
-                            <div class="pin-cont pin6">
-                                <div class="pin dog"></div>
-                                <div class="pulse dog"></div>
-                            </div>
-                            <div class="pin-cont pin7">
-                                <div class="pin shop"></div>
-                                <div class="pulse shop"></div>
-                            </div>
-                            <div class="pin-cont pin8">
-                                <div class="pin hotel"></div>
-                                <div class="pulse hotel"></div>
-                            </div>
-                            <div class="pin-cont pin9">
-                                <div class="pin trainer"></div>
-                                <div class="pulse trainer"></div>
-                            </div>
-                            <div class="pin-cont pin10">
-                                <div class="pin trainer"></div>
-                                <div class="pulse trainer"></div>
-                            </div>
-                            <div class="pin-cont pin11">
-                                <div class="pin vet"></div>
-                                <div class="pulse vet"></div>
-                            </div>
-                            <div class="pin-cont pin12">
-                                <div class="pin vet"></div>
-                                <div class="pulse vet"></div>
-                            </div>
-                            <div class="pin-cont pin13">
-                                <div class="pin food"></div>
-                                <div class="pulse food"></div>
-                            </div>
-                            <div class="pin-cont pin14">
-                                <div class="pin food"></div>
-                                <div class="pulse food"></div>
-                            </div>
-                            <div class="pin-cont pin15">
-                                <div class="pin food"></div>
-                                <div class="pulse food"></div>
-                            </div>
-                            <div class="pin-cont pin23">
-                                <div class="pin dog"></div>
-                                <div class="pulse dog"></div>
-                            </div>
-
-                            <div class="map"></div>
+                        <div class="col-sm-1 hidden-sm hidden-xs"></div>
+                        <div class="col-md-5 col-sm-6">
                         </div>
                     </div>
                 </div>
@@ -262,82 +264,15 @@
                 <div class="fluid-container">
                     <div class="row">
                         <div class="col-md-2 sideimg-3 hidden-sm hidden-xs"></div>
-                        <div class="col-md-offset-3 col-md-4 text-justify">
-                            <div class="col-md-12">
+                        <div class="col-md-offset-2 col-md-4 col-sm-6 text-justify">
+                            <div id="text3" class="col-md-12 col-xs-offset-1 col-xs-10 txt-content">
                                 <h1>Personalize</h1>
                                 <h4>Set your favorite locations and services.</h4>
                                 <p>Put your home, shops, parks, vet or other places into your favourites and get notified as soon as something new happens in their surroundings.</p>
                             </div>
                         </div>
-                        <div class="col-sm-1"></div>
-                        <div class="col-md-5">
-                            <!--here would go the pin divs-->
-                            <div class="pin-cont pin1">
-                                <div class="pin home"></div>
-                                <div class="pulse home"></div>
-                            </div>
-                            <div class="pin-cont pin2">
-                                <div class="pin dangers"></div>
-                                <div class="pulse dangers"></div>
-                            </div>
-                            <div class="pin-cont pin3">
-                                <div class="pin dangers"></div>
-                                <div class="pulse dangers"></div>
-                            </div>
-                            <div class="pin-cont pin4">
-                                <div class="pin dog"></div>
-                                <div class="pulse dog"></div>
-                            </div>
-                            <div class="pin-cont pin5">
-                                <div class="pin dog"></div>
-                                <div class="pulse dog"></div>
-                            </div>
-                            <div class="pin-cont pin6">
-                                <div class="pin dog"></div>
-                                <div class="pulse dog"></div>
-                            </div>
-                            <div class="pin-cont pin7">
-                                <div class="pin shop"></div>
-                                <div class="pulse shop"></div>
-                            </div>
-                            <div class="pin-cont pin8">
-                                <div class="pin hotel"></div>
-                                <div class="pulse hotel"></div>
-                            </div>
-                            <div class="pin-cont pin9">
-                                <div class="pin trainer"></div>
-                                <div class="pulse trainer"></div>
-                            </div>
-                            <div class="pin-cont pin10">
-                                <div class="pin trainer"></div>
-                                <div class="pulse trainer"></div>
-                            </div>
-                            <div class="pin-cont pin11">
-                                <div class="pin vet"></div>
-                                <div class="pulse vet"></div>
-                            </div>
-                            <div class="pin-cont pin12">
-                                <div class="pin vet"></div>
-                                <div class="pulse vet"></div>
-                            </div>
-                            <div class="pin-cont pin13">
-                                <div class="pin food"></div>
-                                <div class="pulse food"></div>
-                            </div>
-                            <div class="pin-cont pin14">
-                                <div class="pin food"></div>
-                                <div class="pulse food"></div>
-                            </div>
-                            <div class="pin-cont pin15">
-                                <div class="pin food"></div>
-                                <div class="pulse food"></div>
-                            </div>
-                            <div class="pin-cont pin23">
-                                <div class="pin dog"></div>
-                                <div class="pulse dog"></div>
-                            </div>
-
-                            <div class="map"></div>
+                        <div class="col-sm-1 hidden-sm hidden-xs"></div>
+                        <div class="col-md-5 col-sm-6">
                         </div>
                     </div>
                 </div>
@@ -347,111 +282,15 @@
                 <div class="fluid-container">
                     <div class="row">
                         <div class="col-md-2 sideimg-4 hidden-sm hidden-xs"></div>
-                        <div class="col-md-offset-3 col-md-4 text-justify">
-                            <div class="col-md-12">
+                        <div class="col-md-offset-2 col-md-4 col-sm-6 text-justify">
+                            <div id="text4" class="col-md-12 col-xs-offset-1 col-xs-10 txt-content">
                                 <h1>Connect</h1>
                                 <h4>Find new friends for you and your pet!</h4>
                                 <p>Join packs, find people with similar interests and plan adventures and trips together. There's nothing better that enjoy the nature! Share your thoughts and tips about locations and learn from other users'.</p>
                             </div>
                         </div>
-                        <div class="col-sm-1"></div>
-                        <div class="col-md-5">
-                            <!--here would go the pin divs-->
-                            <div class="laptop-cont">
-                                <div class="pin-cont pin1">
-                                    <div class="pin home"></div>
-                                    <div class="pin home"></div>
-                                </div>
-                                <div class="pin-cont pin2">
-                                    <div class="pin dangers"></div>
-                                    <div class="pulse dangers"></div>
-                                </div>
-                                <div class="pin-cont pin3">
-                                    <div class="pin dangers"></div>
-                                    <div class="pulse dangers"></div>
-                                </div>
-                                <div class="pin-cont pin4">
-                                    <div class="pin dog"></div>
-                                    <div class="pulse dog"></div>
-                                </div>
-                                <div class="pin-cont pin5">
-                                    <div class="pin dog"></div>
-                                    <div class="pulse dog"></div>
-                                </div>
-                                <div class="pin-cont pin6">
-                                    <div class="pin dog"></div>
-                                    <div class="pulse dog"></div>
-                                </div>
-                                <div class="pin-cont pin7">
-                                    <div class="pin shop"></div>
-                                    <div class="pulse shop"></div>
-                                </div>
-                                <div class="pin-cont pin8">
-                                    <div class="pin hotel"></div>
-                                    <div class="pulse hotel"></div>
-                                </div>
-                                <div class="pin-cont pin9">
-                                    <div class="pin trainer"></div>
-                                    <div class="pulse trainer"></div>
-                                </div>
-                                <div class="pin-cont pin10">
-                                    <div class="pin trainer"></div>
-                                    <div class="pulse trainer"></div>
-                                </div>
-                                <div class="pin-cont pin11">
-                                    <div class="pin vet"></div>
-                                    <div class="pulse vet"></div>
-                                </div>
-                                <div class="pin-cont pin12">
-                                    <div class="pin vet"></div>
-                                    <div class="pulse vet"></div>
-                                </div>
-                                <div class="pin-cont pin13">
-                                    <div class="pin food"></div>
-                                    <div class="pulse food"></div>
-                                </div>
-                                <div class="pin-cont pin14">
-                                    <div class="pin food"></div>
-                                    <div class="pulse food"></div>
-                                </div>
-                                <div class="pin-cont pin15">
-                                    <div class="pin food"></div>
-                                    <div class="pulse food"></div>
-                                </div>
-                                <div class="pin-cont pin16">
-                                    <div class="pin friend"></div>
-                                    <div class="pulse friend"></div>
-                                </div>
-                                <div class="pin-cont pin17">
-                                    <div class="pin friend"></div>
-                                    <div class="pulse friend"></div>
-                                </div>
-                                <div class="pin-cont pin18">
-                                    <div class="pin friend"></div>
-                                    <div class="pulse friend"></div>
-                                </div>
-                                <div class="pin-cont pin19">
-                                    <div class="pin friend"></div>
-                                    <div class="pulse friend"></div>
-                                </div>
-                                <div class="pin-cont pin20">
-                                    <div class="pin friend"></div>
-                                    <div class="pulse friend"></div>
-                                </div>
-                                <div class="pin-cont pin21">
-                                    <div class="pin friend"></div>
-                                    <div class="pulse friend"></div>
-                                </div>
-                                <div class="pin-cont pin22">
-                                    <div class="pin friend"></div>
-                                    <div class="pulse friend"></div>
-                                </div>
-                                <div class="pin-cont pin23">
-                                    <div class="pin dog"></div>
-                                    <div class="pulse dog"></div>
-                                </div>
-                                    <img src="css/img/laptop-side.png" alt="" class="laptop">
-                            </div>  
+                        <div class="col-sm-1 hidden-sm hidden-xs"></div>
+                        <div class="col-md-5 col-sm-6">
                         </div>
                     </div>
                 </div>
@@ -462,7 +301,7 @@
                     <div class="row jumbotron">
                         <div class="col-md-2 sideimg-5 hidden-sm hidden-xs"></div>
                         <div class="col-md-offset-3 col-md-8 text-justify">
-                            <div class="col-md-12">
+                            <div class="col-xs-offset-1 col-xs-10">
                                 <h1>You work with pets</h1>
                                 <h4>And you love it? Let people know!</h4>
                                 <p class="text-justify">
@@ -511,14 +350,27 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <a href="https://www.facebook.com/SafelyPetintl" target="_blank" class="icon-button facebook"><i class="fa fa-facebook icon-facebook"></i><span></span></a>
-                        <a href="https://plus.google.com/u/0/107720007417693580101/posts" target="_blank" class="icon-button google-plus"><i class="fa fa-google-plus icon-google-plus"></i><span></span></a>
+            </div>
+            <div class="section footer fp-auto-height" data-section-name="footer" data-section-title="More about us">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-3 text-center">
+                            <h4>Connect with us</h4>
+                            <a href="https://www.facebook.com/SafelyPetintl" target="_blank" class="icon-button facebook"><i class="icon-facebook fa-fw fa fa-facebook"></i><span></span></a>
+                            <a href="https://plus.google.com/u/0/107720007417693580101/posts" target="_blank" class="icon-button google-plus"><i class="icon-google-plus fa-fw fa fa-google-plus"></i><span></span></a>
+                        </div>
+                        <div class="col-sm-6 text-center"> 
+                            Put mail form for contacts here
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <img src="css/img/logo.png" alt="Safely.Pet" class="logo">
+                            <h1 class="title" style="color:#f5f5f5">Safely.<span>Pet</span></h1>
+                            <span class="credits">©2015 Safely.Pet. All rights reserved</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="js/safely-pet.js"></script>
+        <script src="js/safely-pet.js"></script>        
     </body>
 </html>

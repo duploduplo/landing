@@ -42,86 +42,109 @@
 		left:5%;
 		z-index:3;
 	}
-
 	.laptop-cont {										/*container for laptop*/
-		position:relative;
+		position:fixed;
 		max-width:800px;
 		max-height: 386px;
 		margin: 0 auto;
-
+		right:50px;
+		opacity: 0;
+	  	bottom:50%;
+	  	margin-bottom:-10%; 		
 	}
-	.init {
-	    opacity:0;
-	    -webkit-animation: appear 1s 0.5s ease-in-out forwards;
-	    -moz-animation: appear 1s 0.5s ease-in-out forwards;
-	    -o-animation: appear 1s 0.5s ease-in-out forwards;
-	    -ms-animation: appear 1s 0.5s ease-in-out forwards;
-	    animation: appear 1s 0.5s ease-in-out forwards;	
+	.lap-on {
+	    -webkit-animation: laptopload 0.5s 0.1s ease-in-out forwards;
+	    -moz-animation: laptopload 0.5s 0.1s ease-in-out forwards;
+	    -o-animation: laptopload 0.5s 0.1s ease-in-out forwards;
+	    -ms-animation: laptopload 0.5s 0.1s ease-in-out forwards;
+	    animation: laptopload 0.5s 0.1s ease-in-out forwards;	
 		}
+	.lap-off {
+		position:absolute;
+	  	bottom:50%;
+	  	margin-bottom:-10%;
+	  	opacity: 1; 
+	    -webkit-animation: laptopfade 0.1s ease-out forwards;
+	    -moz-animation: laptopfade 0.1s ease-out forwards;
+	    -o-animation: laptopfade 0.1s ease-out forwards;
+	    -ms-animation: laptopfade 0.1s ease-out forwards;
+	    animation: laptopfade 0.1s ease-out forwards;	
+	}
 
 /****************************
 		MAP animations
 ****************************/
 
 
-	@keyframes appear {						/*anim for map appearance*/
+	@keyframes laptopload {						/* anim for map appear */
 	  from {
-	  	left:200px; 
+	  	bottom: 30%; 
 	  	opacity: 0;
 	  } 
 	  to {
-	  	left:0; 
+	  	bottom:50%;
+	  	margin-bottom:-10%; 
+	  	opacity: 1;
+	  }
+	}
+
+	@keyframes laptopfade {						/* anim for map disappear */
+	  0% {
+	  	bottom:50%;
+	  	margin-bottom: -10%;
+	  	opacity: 1; 
+	  } 
+	  100% {
+	  	opacity:0;
+	  	bottom:50%;
+	  	margin-bottom: 0%;
+	  	display:none;
+	  }
+	}	 
+		
+@media only screen  and (max-width:768px) {		/* XS and SM devices */
+	.laptop-cont {
+		max-width:600px; 
+		max-height:290.22px;
+	  	bottom:10%;
+	  	margin-bottom:-5%; 		
+	  	right:50%;
+	  	margin-right:-45%;
+	}
+
+	@keyframes laptopload {
+	  from {
+	  	bottom:-200px; 
+	  	opacity: 0;
+	  	right:50%;
+	  	margin-right:-45%;
+	  } 
+	  to {
+	  	bottom:10%;
+	  	margin-bottom:-5%; 
 	  	opacity:1;
 	  }
-	 }
-		
+	}
+	@keyframes laptopfade {						/* anim for map disappear */
+	  0% {
+	  	bottom:10%;
+	  	margin-bottom: -5%;
+	  	opacity: 1; 
+	  } 
+	  100% {
+	  	opacity:0;
+	  	bottom:10%;
+	  	margin-bottom: 0%;
+	  	display:none;
+	  }
+	}	 
 
+}
+@media only screen and (min-width: 769px) {		/* MD and LG devices */
+	.laptop-cont {
+		bottom: 50%;
+		margin-bottom: -10%;		
+	}
+}
 
-
-/****************************
-		OLD
-****************************/
-
-		.map {											/*this is the main styling for the map content (position and rotation) */
-		position: relative;
-		margin: 0 auto;
-		width:350px;
-		height:300px;
-		background-image:url(img/landing-basic-map.jpg);
-		background-size:cover;
-		background-position:50% 50%;
-		-webkit-transform: rotateX(-60deg) rotateZ(15deg);
-		transform: rotateX(-60deg) rotateZ(15deg);
-		z-index: 1;
-		-webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.30);
-		box-shadow: 1px 1px 5px rgba(0,0,0,0.30);
-		border: 1px solid #AFAFAF;
-		border-radius:10%;
-		opacity:1;
-		}
-
-		.initial {									/*the map is not visible*/
-			visibility:hidden;
-			position:relative;
-			/*add positioning relative to the ext div*/
-		}
-
-
-		.load {										/*should be called when the map appear*/
-			visibility: visible;
-			position:absolute;					
-			right:-10%;
-		    opacity:0;                      /*this is for the animation to function*/  
-		    -webkit-animation: appear 1s 0.5s ease-in-out forwards;
-		    -moz-animation: appear 1s 0.5s ease-in-out forwards;
-		    -o-animation: appear 1s 0.5s ease-in-out forwards;
-		    -ms-animation: appear 1s 0.5s ease-in-out forwards;
-		    animation: appear 1s 0.5s ease-in-out forwards;	
-		}
-		.idle {									/*last class for the map*/
-			visibility: visible;
-			position:relative;
-		    opacity:1;                      /*this is for the animation to function*/
-		    /*add positioning :: same as final on .load */  
-		}
 

@@ -11,26 +11,67 @@ $(document).ready(function () {
   // Initialize fullpage
   $('#fullpage').fullpage({
     anchors: sections,
+    menu:'#topmenu',
+    scrollOverflow: true,
     navigation: true,
-    navigationPosition: 'left',
+    navigationPosition: 'right',
     // TODO: style and enable this text
     // navigationTooltips: sectionTitles,
     afterRender: function () {
       var $navigation = $('#fp-nav');
-      $navigation.addClass('hidden-sm');
-      $navigation.addClass('hidden-xs');
+      $navigation.addClass('visible-sm');
+      $navigation.addClass('visible-xs');
     },
     onLeave: function (index, nextIndex) {
       var $item = $('#topbar');
       var $navigation = $('#fp-nav');
+      var $laptop = $('.laptop-cont');
+      var $text1 = $('#text1')
+      var $text2 = $('#text2')
+      var $text3 = $('#text3')
+      var $text4 = $('#text4')                  
       if (index === 1) {
         $item.removeClass("up");
         $item.addClass("down");
-        $navigation.addClass('visible');
-      } else if (nextIndex === 1) {
+        $navigation.addClass('on');
+        $navigation.removeClass('off');
+        $laptop.addClass('lap-on');
+        $laptop.removeClass('lap-off');
+        $text1.addClass('txt-load');
+      } 
+       else if (nextIndex === 1) {
         $item.removeClass("down");
         $item.addClass("up");
-        $navigation.removeClass('visible');
+        $navigation.removeClass('on');
+        $navigation.addClass('off')
+        $laptop.removeClass('lap-on');
+        $laptop.addClass('lap-off');        
+        $text1.removeClass('txt-load');
+      }
+       else if (index === 2) {
+        $text2.addClass('txt-load');
+        $text1.removeClass('txt-load');
+      }      
+       else if (index === 3) {
+        $text3.addClass('txt-load');
+        $text2.removeClass('txt-load');        
+      }      
+       else if (index === 4) {
+        $text4.addClass('txt-load');       
+        $text3.removeClass('txt-load');        
+      }
+       else if (index === 5) {
+        $text4.removeClass('txt-load');        
+        $laptop.removeClass('lap-on');
+        $laptop.addClass('lap-off');
+      }                 
+       else if (nextIndex === 8) {
+        $navigation.removeClass('on');
+        $navigation.addClass('off')
+      }
+       else if (nextIndex === 7) {
+        $navigation.removeClass('off');
+        $navigation.addClass('on')
       }
     }
   });

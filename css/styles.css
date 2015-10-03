@@ -174,6 +174,31 @@ h1.title span {
 
 }
 
+.txt-content {
+    opacity: 0; 
+}
+.txt-load {
+    -webkit-animation: textappear 0.2s 0.4s ease-out forwards;
+    -moz-animation: textappear 0.2s 0.4s ease-out forwards;
+    -o-animation: textappear 0.2s 0.4s ease-out forwards;
+    -ms-animation: textappear 0.2s 0.4s ease-out forwards;
+    animation: textappear 0.2s 0.4s ease-out forwards; 
+}
+.txt-fade {
+    -webkit-animation: textfade 0.2s 0.5s ease-out forwards;
+    -moz-animation: textfade 0.2s 0.5s ease-out forwards;
+    -ms-animation: textfade 0.2s 0.5s ease-out forwards;
+    -o-animation: textfade 0.2s 0.5s ease-out forwards;
+    animation: textfade 0.2s 0.5s ease-out forwards;
+}
+@keyframes textappear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes textfade {
+    from {opacity:1;}
+    to {opacity:0;}
+}
 
 /***************************************
  * Fullpage vertical navigation points *
@@ -182,27 +207,47 @@ h1.title span {
 #fp-nav {
     transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
-    opacity: 0;    
+    right:-50px;
+    opacity:0;
 }
 
-#fp-nav.visible {
+#fp-nav.on {
     opacity: 1;
-    -webkit-animation: navbarin 1s ease-in-out forwards;
-    -moz-animation: navbarin 1s ease-in-out forwards;
-    -ms-animation: navbarin 1s ease-in-out forwards;
-    -o-animation: navbarin 1s ease-in-out forwards;
-    animation: navbarin 1s ease-in-out forwards;
+    -webkit-animation: navbarin 0.5s ease-in-out forwards;
+    -moz-animation: navbarin 0.5s ease-in-out forwards;
+    -ms-animation: navbarin 0.5s ease-in-out forwards;
+    -o-animation: navbarin 0.5s ease-in-out forwards;
+    animation: navbarin 0.5s ease-in-out forwards;
+}
+
+#fp-nav.off {
+    opacity:0;
+    -webkit-animation: navbarout 0.5s ease-in-out forwards;
+    -moz-animation: navbarout 0.5s ease-in-out forwards;
+    -ms-animation: navbarout 0.5s ease-in-out forwards;
+    -o-animation: navbarout 0.5s ease-in-out forwards;
+    animation: navbarout 0.5s ease-in-out forwards;    
 }
 @keyframes navbarin {
     from {
         opacity:0; 
-        -webkit-transform:translateX(-150px);
-        transform: translateX(-150px);
+        right:-50px;
     }
     to {
         opacity:1; 
-        -webkit-transform:translateX(0px);
-        transform:translateX(0px);
+        right:10px;
+    }
+}
+
+@keyframes navbarout {
+    from {
+        opacity:1; 
+        right:10px;
+    }
+    to {
+        opacity:0; 
+        right:10px;
+        margin-top:-500px;
     }
 }
 
@@ -300,7 +345,33 @@ Header styling #landing
 #form-cont .center {
     text-align: center;
 }
-
+/****************************
+    footer customs
+****************************/
+.footer {
+    background:#2b2b2b;
+    color:#f5f5f5;
+}
+.footer:after {
+    content:'';
+    position:absolute;
+    top:-30px;
+    left:50%;
+    margin-left:-15px;
+    border-bottom: 30px solid #2b2b2b;
+    border-right: 30px solid transparent;
+    border-left: 30px solid transparent;
+}
+.footer .title {
+    display: inline-block;
+}
+.footer .credits {
+    display:inline-block;
+}
+.footer h4 {color:#f5f5f5;}
+.footer .fa {color:#f5f5f5; size:5em;}
+.footer .fa:hover {color:#9e1d20;}
+.footer img.logo {width:50px; height:auto; display:inline-block;}
 /***************************
  *side images styling
  ***************************/
