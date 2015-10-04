@@ -35,12 +35,22 @@
 		z-index:2;
 	}
 	img.phone {
-		max-width: 20%;
+		max-width: 25%;
 		height:auto;
 		position:relative;
-		top: 0;
-		left:5%;
+		top: 50%;
+		right:5%;
 		z-index:3;
+	}
+
+	.phone-cont {
+		position:fixed;
+		max-height: 200px;
+		max-width: auto;
+		margin: 0 auto;
+		right: 240px;
+		top:0%;
+		margin-bottom: 10%;
 	}
 	.laptop-cont {										/*container for laptop*/
 		position:fixed;
@@ -53,24 +63,36 @@
 	  	margin-bottom:-10%; 		
 	}
 	.lap-on {
-	    -webkit-animation: laptopload 0.5s 0.1s ease-in-out forwards;
-	    -moz-animation: laptopload 0.5s 0.1s ease-in-out forwards;
-	    -o-animation: laptopload 0.5s 0.1s ease-in-out forwards;
-	    -ms-animation: laptopload 0.5s 0.1s ease-in-out forwards;
-	    animation: laptopload 0.5s 0.1s ease-in-out forwards;	
+	    -webkit-animation: laptopload 0.1s ease-in-out forwards;
+	    -moz-animation: laptopload 0.1s ease-in-out forwards;
+	    -o-animation: laptopload 0.1s ease-in-out forwards;
+	    -ms-animation: laptopload 0.1s ease-in-out forwards;
+	    animation: laptopload 0.1s ease-in-out forwards;	
 		}
+	.lap-visible {opacity:1;}
 	.lap-off {
 		position:absolute;
 	  	bottom:50%;
 	  	margin-bottom:-10%;
 	  	opacity: 1; 
-	    -webkit-animation: laptopfade 0.1s ease-out forwards;
-	    -moz-animation: laptopfade 0.1s ease-out forwards;
-	    -o-animation: laptopfade 0.1s ease-out forwards;
-	    -ms-animation: laptopfade 0.1s ease-out forwards;
-	    animation: laptopfade 0.1s ease-out forwards;	
+	    -webkit-animation: laptopfade 0.35s ease-out forwards;
+	    -moz-animation: laptopfade 0.35s ease-out forwards;
+	    -o-animation: laptopfade 0.35s ease-out forwards;
+	    -ms-animation: laptopfade 0.35s ease-out forwards;
+	    animation: laptopfade 0.35s ease-out forwards;	
 	}
+	.lap-off2 {
+		position:absolute;
+	  	bottom:50%;
+	  	margin-bottom:-10%;
+	  	opacity: 1; 
+	    -webkit-animation: laptopfadedown 0.35s ease-out forwards;
+	    -moz-animation: laptopfadedown 0.35s ease-out forwards;
+	    -o-animation: laptopfadedown 0.35s ease-out forwards;
+	    -ms-animation: laptopfadedown 0.35s ease-out forwards;
+	    animation: laptopfadedown 0.35s ease-out forwards;	
 
+	}
 /****************************
 		MAP animations
 ****************************/
@@ -78,7 +100,7 @@
 
 	@keyframes laptopload {						/* anim for map appear */
 	  from {
-	  	bottom: 30%; 
+	  	bottom: 45%; 
 	  	opacity: 0;
 	  } 
 	  to {
@@ -96,13 +118,27 @@
 	  } 
 	  100% {
 	  	opacity:0;
+	  	bottom:75%;
+	  	margin-bottom: 0;
+	  	display:none;
+	  }
+	}
+	@keyframes laptopfadedown {						/* anim for map disappear */
+	  0% {
 	  	bottom:50%;
-	  	margin-bottom: 0%;
+	  	margin-bottom: -10%;
+	  	opacity: 1; 
+	  } 
+	  100% {
+	  	opacity:0;
+	  	bottom:-20%;
+	  	margin-bottom: 0;
 	  	display:none;
 	  }
 	}	 
+
 		
-@media only screen  and (max-width:768px) {		/* XS and SM devices */
+@media only screen  and (max-width:767px) {		/* XS and SM devices */
 	.laptop-cont {
 		max-width:600px; 
 		max-height:290.22px;

@@ -61,6 +61,9 @@ h1.title span {
 /****************************
     #topbar styling
 ****************************/
+#topbar.navbar-default .navbar-collapse {
+    max-height: 90%;
+}
 #topbar.navbar-default .navbar-brand {
     color: rgba(119, 119, 119, 1);
     padding: 0;
@@ -68,7 +71,7 @@ h1.title span {
 }
 
 #topbar.navbar-default .navbar-brand img{
-    height:50px; width:auto;
+    height:51px; width:auto;
     margin-top: -8px;
     display:inline-block;
 }
@@ -117,7 +120,7 @@ h1.title span {
 
 /* topbar basic class */
 #topbar {
-    z-index:99;
+    z-index:999;
     transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     box-shadow: 0 0px 3px rgba(0,0,0,0.4);
@@ -174,31 +177,6 @@ h1.title span {
 
 }
 
-.txt-content {
-    opacity: 0; 
-}
-.txt-load {
-    -webkit-animation: textappear 0.2s 0.4s ease-out forwards;
-    -moz-animation: textappear 0.2s 0.4s ease-out forwards;
-    -o-animation: textappear 0.2s 0.4s ease-out forwards;
-    -ms-animation: textappear 0.2s 0.4s ease-out forwards;
-    animation: textappear 0.2s 0.4s ease-out forwards; 
-}
-.txt-fade {
-    -webkit-animation: textfade 0.2s 0.5s ease-out forwards;
-    -moz-animation: textfade 0.2s 0.5s ease-out forwards;
-    -ms-animation: textfade 0.2s 0.5s ease-out forwards;
-    -o-animation: textfade 0.2s 0.5s ease-out forwards;
-    animation: textfade 0.2s 0.5s ease-out forwards;
-}
-@keyframes textappear {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-@keyframes textfade {
-    from {opacity:1;}
-    to {opacity:0;}
-}
 
 /***************************************
  * Fullpage vertical navigation points *
@@ -351,27 +329,55 @@ Header styling #landing
 .footer {
     background:#2b2b2b;
     color:#f5f5f5;
+    border-top: 6px solid #9e1d20;
+    top:-6px;
+    bottom: -10px;
 }
 .footer:after {
     content:'';
     position:absolute;
     top:-30px;
     left:50%;
-    margin-left:-15px;
-    border-bottom: 30px solid #2b2b2b;
+    margin-left: -30px;
+    border-bottom: 30px solid #9e1d20;
     border-right: 30px solid transparent;
     border-left: 30px solid transparent;
+    z-index:2;
 }
-.footer .title {
-    display: inline-block;
+.footer:before {
+    content:'';
+    position:absolute;
+    top:-20px;
+    left:50%;
+    margin-left: -26px;
+    border-bottom: 26px solid #2b2b2b;
+    border-right: 26px solid transparent;
+    border-left: 26px solid transparent;
+    z-index:3;
 }
-.footer .credits {
-    display:inline-block;
+.footer [class*="col-"]{
+    padding: 5px ;
 }
+.footer a:link,
+.footer a:visited,
+.footer p {color: #f5f5f5;}
+.footer a:hover {color: #9e1d20;}
+.footer .container-fluid  {padding:50px 0;}
+.footer .title {display: inline-block; vertical-align: middle;}
+.footer .credits {display:inline-block;vertical-align: middle;}
 .footer h4 {color:#f5f5f5;}
 .footer .fa {color:#f5f5f5; size:5em;}
 .footer .fa:hover {color:#9e1d20;}
-.footer img.logo {width:50px; height:auto; display:inline-block;}
+.footer img.logo {
+    width:50px; 
+    height:auto; 
+    display:inline-block;
+}
+.footer .btt {
+    font-variant: small-caps;
+    font-size: 1em;
+}
+
 /***************************
  *side images styling
  ***************************/
@@ -447,19 +453,39 @@ Header styling #landing
     }
     /* text styling for main section */
     #fullpage h1 {
-        font-size: 2em;
+        font-size: 7vw;
     }
     #fullpage h4 {
-        font-size: 1.1em;
+        font-size: 3.8vw;
     }
     #fullpage p {
-        font-size: 1em;
+        font-size: 4vw;
     }
 
     /*subscribe btn extra styling */
     .form-btn {
         margin-top:10px;
     }
+    .footer .title {
+        font-size: 7vw;
+    }
+    .footer .title span {
+        font-size: 7vw;
+    }
+    .footer h4 {
+        font-size: 6vw;        
+    }
+    .footer span {
+        font-size: 4vw;        
+    }
+    .footer p {
+        font-size: 4vw;        
+    }
+    .footer .btt {
+        padding-bottom: 20px;
+    }
+
+
 }
 
 /* eXtraSmall devices || mobile phones */
@@ -473,6 +499,16 @@ Header styling #landing
     #bottomlanding h2 {
         font-size: 1.3em;
     }
+    .footer h4 {
+        font-size:46vw;        
+    }
+    .footer span {
+        font-size: 2.5vw;        
+    }
+    .footer p {
+        font-size: 2.5vw;        
+    }
+
 }
 
 /* SMall devices */
@@ -492,20 +528,97 @@ Header styling #landing
     }
 
     /* text styling for main section */
-    #fullpage h1 {
-        font-size: 2.5em;
-    }
-    #fullpage h4 {
-        font-size: 1.3em;
-    }
-    #fullpage p {
-        font-size: 1.6em;
-    }
+        #fullpage h1 {
+            font-size: 2.5em;
+        }
+        #fullpage h4 {
+            font-size: 1.3em;
+        }
+        #fullpage p {
+            font-size: 1.6em;
+        }
 
     /*subscribe btn extra styling */
     .form-btn {
         margin-top:0;
     }
+    /* footer text styling */
+    .footer .title {
+        font-size: 2.5em;
+    }
+    .footer .title span {
+        font-size: 1em;
+    }
+
+    .footer h4 {
+        font-size: 2em;        
+    }
+    .footer span {
+        font-size: 1em;        
+    }
+    .footer p {
+        font-size: 1em;        
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .txt-content {
+        opacity: 0; 
+    }
+    .txt-load {
+        -webkit-animation: textappear 0.1s ease-out forwards;
+        -moz-animation: textappear 0.1s ease-out forwards;
+        -o-animation: textappear 0.1s ease-out forwards;
+        -ms-animation: textappear 0.1s ease-out forwards;
+        animation: textappear 0.1s ease-out forwards; 
+    }
+    .txt-fade {
+        -webkit-animation: textfade 0.1s ease-out forwards;
+        -moz-animation: textfade 0.1s ease-out forwards;
+        -ms-animation: textfade 0.1s ease-out forwards;
+        -o-animation: textfade 0.1s ease-out forwards;
+        animation: textfade 0.1s ease-out forwards;
+    }
+    @keyframes textappear {
+        from {opacity: 0; margin-bottom:-10%;}
+        to {opacity: 1; margin-bottom: 25%;}
+    }
+    @keyframes textfade {
+        from {opacity:1;}
+        to {opacity:0; margin-bottom: 10%}
+    }
+    .footer {
+        background:#2b2b2b;
+        color:#f5f5f5;
+        border-top: 3px solid #9e1d20;
+        top:-3px;
+        bottom: -10px;
+    }
+    .footer:after {
+        content:'';
+        position:absolute;
+        top:-20px;
+        left:50%;
+        margin-left: -20px;
+        border-bottom: 20px solid #9e1d20;
+        border-right: 20px solid transparent;
+        border-left: 20px solid transparent;
+        z-index:2;
+    }
+    .footer:before {
+        content:'';
+        position:absolute;
+        top:-15px;
+        left:50%;
+        margin-left: -15px;
+        border-bottom: 15px solid #2b2b2b;
+        border-right: 15px solid transparent;
+        border-left: 15px solid transparent;
+        z-index:3;
+    }
+
+
 }
 
 /* MeDium devices*/
