@@ -1,186 +1,97 @@
 /* what's here?
 
-	Here is the styling for the map div and its animation
-	including the "secondary" classes which will be called
-	on the div with javascript when needed such as
-	* idle class	> 	stays where it is on 
-						the first row of the content: 
-	* static class	> 	transform in fixed div
-						so it will stay put on the page 
-						And also bring the loading animation
-	* end class		>	which actually could be the idle one
-						clears the styling e hide the div
+    Here is the styling for the map div and its animation
+    including the "secondary" classes which will be called
+    on the div with javascript when needed such as
+    * idle class    >   stays where it is on
+                        the first row of the content:
+    * static class  >   transform in fixed div
+                        so it will stay put on the page
+                        And also bring the loading animation
+    * end class     >   which actually could be the idle one
+                        clears the styling e hide the div
 
-	// MAP SHOULD BE IN THE FINAL ROW OF ITS APPEARANCE
+    // MAP SHOULD BE IN THE FINAL ROW OF ITS APPEARANCE
 
-	It will contain all the animations and special
-	styling for the pins too for
-	* positioning of single .pin-cont.pin#
-	* timings of the animations (when they'll appear)
+    It will contain all the animations and special
+    styling for the pins too for
+    * positioning of single .pin-cont.pin#
+    * timings of the animations (when they'll appear)
 
-	Every pin will have a static position but will be
-	hidden until the class that activates the animation 
-	is called with javascript. after that they'll be visible
-	and will disappear with all the map once we're through
-	on the page 
+    Every pin will have a static position but will be
+    hidden until the class that activates the animation
+    is called with javascript. after that they'll be visible
+    and will disappear with all the map once we're through
+    on the page
 
 /****************************
-		MAP styling
+        MAP styling
 ****************************/
-	img.laptop {
-		max-width:95%;
-		height: auto;
-		position:relative;
-		right:0; top:50%;
-		z-index:2;
-	}
-	img.phone {
-		max-width: 25%;
-		height:auto;
-		position:relative;
-		top: 50%;
-		right:5%;
-		z-index:3;
-	}
+    img.laptop {
+        max-width:95%;
+        height: auto;
+        position:relative;
+        right:0; top:50%;
+        z-index:2;
+    }
+    img.phone {
+        max-width: 25%;
+        height:auto;
+        position:relative;
+        top: 50%;
+        right:5%;
+        z-index:3;
+    }
 
-	.phone-cont {
-		position:fixed;
-		max-height: 200px;
-		max-width: auto;
-		margin: 0 auto;
-		right: 240px;
-		top:0%;
-		margin-bottom: 10%;
-	}
-	.laptop-cont {										/*container for laptop*/
-		position:fixed;
-		max-width:800px;
-		max-height: 386px;
-		margin: 0 auto;
-		right:50px;
-		opacity: 0;
-	  	bottom:50%;
-	  	margin-bottom:-10%; 		
-	}
-	.lap-on {
-	    -webkit-animation: laptopload 0.1s ease-in-out forwards;
-	    -moz-animation: laptopload 0.1s ease-in-out forwards;
-	    -o-animation: laptopload 0.1s ease-in-out forwards;
-	    -ms-animation: laptopload 0.1s ease-in-out forwards;
-	    animation: laptopload 0.1s ease-in-out forwards;	
-		}
-	.lap-visible {opacity:1;}
-	.lap-off {
-		position:absolute;
-	  	bottom:50%;
-	  	margin-bottom:-10%;
-	  	opacity: 1; 
-	    -webkit-animation: laptopfade 0.35s ease-out forwards;
-	    -moz-animation: laptopfade 0.35s ease-out forwards;
-	    -o-animation: laptopfade 0.35s ease-out forwards;
-	    -ms-animation: laptopfade 0.35s ease-out forwards;
-	    animation: laptopfade 0.35s ease-out forwards;	
-	}
-	.lap-off2 {
-		position:absolute;
-	  	bottom:50%;
-	  	margin-bottom:-10%;
-	  	opacity: 1; 
-	    -webkit-animation: laptopfadedown 0.35s ease-out forwards;
-	    -moz-animation: laptopfadedown 0.35s ease-out forwards;
-	    -o-animation: laptopfadedown 0.35s ease-out forwards;
-	    -ms-animation: laptopfadedown 0.35s ease-out forwards;
-	    animation: laptopfadedown 0.35s ease-out forwards;	
+    .phone-cont {
+        position:fixed;
+        max-height: 200px;
+        max-width: auto;
+        margin: 0 auto;
+        right: 240px;
+        top:0%;
+        margin-bottom: 10%;
+    }
+    .laptop-cont {                                      /*container for laptop*/
+        position:fixed;
+        max-width:800px;
+        max-height: 386px;
+        margin: 0 auto;
+        right:50px;
+        opacity: 0;
+        bottom:50%;
+        margin-bottom:-10%;
+        opacity: 0;
+        -webkit-transition: opacity 0.2s ease-in-out;
+        -moz-transition: opacity 0.2s ease-in-out;
+        -o-transition: opacity 0.2s ease-in-out;
+        -ms-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+    }
+    .lap-on {
+        opacity: 1;
+        -webkit-transition: opacity 1.5s ease-in-out;
+        -moz-transition: opacity 1.5s ease-in-out;
+        -o-transition: opacity 1.5s ease-in-out;
+        -ms-transition: opacity 1.5s ease-in-out;
+        transition: opacity 1.5s ease-in-out;
+    }
 
-	}
-/****************************
-		MAP animations
-****************************/
-
-
-	@keyframes laptopload {						/* anim for map appear */
-	  from {
-	  	bottom: 45%; 
-	  	opacity: 0;
-	  } 
-	  to {
-	  	bottom:50%;
-	  	margin-bottom:-10%; 
-	  	opacity: 1;
-	  }
-	}
-
-	@keyframes laptopfade {						/* anim for map disappear */
-	  0% {
-	  	bottom:50%;
-	  	margin-bottom: -10%;
-	  	opacity: 1; 
-	  } 
-	  100% {
-	  	opacity:0;
-	  	bottom:75%;
-	  	margin-bottom: 0;
-	  	display:none;
-	  }
-	}
-	@keyframes laptopfadedown {						/* anim for map disappear */
-	  0% {
-	  	bottom:50%;
-	  	margin-bottom: -10%;
-	  	opacity: 1; 
-	  } 
-	  100% {
-	  	opacity:0;
-	  	bottom:-20%;
-	  	margin-bottom: 0;
-	  	display:none;
-	  }
-	}	 
-
-		
-@media only screen  and (max-width:767px) {		/* XS and SM devices */
-	.laptop-cont {
-		max-width:600px; 
-		max-height:290.22px;
-	  	bottom:10%;
-	  	margin-bottom:-5%; 		
-	  	right:50%;
-	  	margin-right:-45%;
-	}
-
-	@keyframes laptopload {
-	  from {
-	  	bottom:-200px; 
-	  	opacity: 0;
-	  	right:50%;
-	  	margin-right:-45%;
-	  } 
-	  to {
-	  	bottom:10%;
-	  	margin-bottom:-5%; 
-	  	opacity:1;
-	  }
-	}
-	@keyframes laptopfade {						/* anim for map disappear */
-	  0% {
-	  	bottom:10%;
-	  	margin-bottom: -5%;
-	  	opacity: 1; 
-	  } 
-	  100% {
-	  	opacity:0;
-	  	bottom:10%;
-	  	margin-bottom: 0%;
-	  	display:none;
-	  }
-	}	 
-
+@media only screen  and (max-width:767px) {     /* XS and SM devices */
+    .laptop-cont {
+        max-width:600px;
+        max-height:290.22px;
+        bottom:10%;
+        margin-bottom:-5%;
+        right:50%;
+        margin-right:-45%;
+    }
 }
-@media only screen and (min-width: 769px) {		/* MD and LG devices */
-	.laptop-cont {
-		bottom: 50%;
-		margin-bottom: -10%;		
-	}
+@media only screen and (min-width: 769px) {     /* MD and LG devices */
+    .laptop-cont {
+        bottom: 50%;
+        margin-bottom: -10%;
+    }
 }
 
 
