@@ -12,6 +12,10 @@ $(document).ready(function () {
   $('.nav a').on('click', function(){
     $('.navbar-toggle').click(); //bootstrap 3.x by Richard
 });
+  $('.carousel').carousel ({
+      //sets timeout for image change (ms)
+      interval: 3000
+      });  
 
 // Initialize fullpage
 $('#fullpage').fullpage({
