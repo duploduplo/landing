@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 /*
-This css styles the marker for the map. 
-* First section   | the GENERAL STYLING and the fallback styles for the PIN. 
+This css styles the marker for the map.
+* First section   | the GENERAL STYLING and the fallback styles for the PIN.
 * Second section  | the PULSE CLASS for the bottom pulsing div
 * Third section   | the ANIMATION for both the PIN and the PULSE
 * Fourth section  | CUSTOMIZATION for the PIN content and color
@@ -11,11 +11,11 @@ This css styles the marker for the map.
 
 the reference which has been used to build this can be found here
       http://codepen.io/andreasstorm/pen/ClguF
-      
+
 */
-/*********************************/ 
+/*********************************/
 /******   POIs WATERDROPS   ******/
-/*********************************/ 
+/*********************************/
 
   .pin-cont {                         /*this is meant to create an extra external container for positioning the pin and extra effects (like rotation) */
     position:absolute;
@@ -26,7 +26,7 @@ the reference which has been used to build this can be found here
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     }
-    
+
   .pin {                                      /* main pin shape*/
     width: 20px;  height: 20px;             /* pin sizes*/
     -webkit-border-radius: 50% 50% 50% 0;
@@ -139,7 +139,7 @@ the reference which has been used to build this can be found here
     -o-animation-delay: 1.1s;
     -ms-animation-delay: 1.1s;
     animation-delay: 1.1s;
-    }      
+    }
 /*************************************************/
 /*    CUSTOMIZATIONS FOR PIN CONTENT & COLORS    */
 /*************************************************/
@@ -149,7 +149,7 @@ the reference which has been used to build this can be found here
 
   * .pin.<name>       sets the primary color
   * .pin.<name>:after   sets the icon (see fontAwesome cheatsheet) and color
-  * .pulse.<name>:after sets the matching shadow-color for the pulse effect 
+  * .pulse.<name>:after sets the matching shadow-color for the pulse effect
 
   to get the white circle leave the properties as they are (just change content and color)
   to remove the white circle add a background color to .pin.<name>:after matching the main color
@@ -162,7 +162,7 @@ the reference which has been used to build this can be found here
     .pin.dangers:after {
       content:'\f071';                /*icon | see fontawesome cheatsheet*/
       color:white;                    /*icon text color*/
-      background:red;                 /*icon circle background color*/  
+      background:red;                 /*icon circle background color*/
       z-index:10;
     }
     .pulse.dangers:after {
@@ -180,14 +180,14 @@ the reference which has been used to build this can be found here
         box-shadow: 0 0 1px 2px #00AF13;
     }
   /*** pin FRIEND ***/
-    .pin.friend {background:#42D7B9}              /*primary color*/
+    .pin.friend {background:#3B5998}              /*primary color*/
     .pin.friend:after {
       content:'\f1ae';                /*icon | see fontawesome cheatsheet*/
-      color:#42D7B9;                  /*icon circle background color*/
+      color:#3B5998;                  /*icon circle background color*/
       }
     .pulse.friend:after {
-      -webkit-box-shadow: 0 0 1px 2px #42D7B9;      /*pulsating shadow color*/
-      box-shadow: 0 0 1px 2px #42D7B9;
+      -webkit-box-shadow: 0 0 1px 2px #3B5998;      /*pulsating shadow color*/
+      box-shadow: 0 0 1px 2px #3B5998;
     }
   /*** pin INFOrmation ***/
     .pin.info {background:#82A0CF}              /*primary color*/
@@ -220,7 +220,7 @@ the reference which has been used to build this can be found here
     .pulse.shop:after {
         -webkit-box-shadow: 0 0 1px 2px #E98A01;      /*pulsating shadow color*/
         box-shadow: 0 0 1px 2px #E98A01;
-    }  
+    }
   /*** pin HOTEL ***/
     .pin.hotel {background:#E000A0;}
     .pin.hotel:after {content:'\f236'; color:#E000A0;}
@@ -248,7 +248,7 @@ the reference which has been used to build this can be found here
     .pulse.trainer:after {
         -webkit-box-shadow: 0 0 1px 2px #E98A01;      /*pulsating shadow color*/
         box-shadow: 0 0 1px 2px #E98A01;
-    }  
+    }
 
 
   .pin-cont.opaque {                              /*adds opacity to pin-cont*/
@@ -272,7 +272,7 @@ the reference which has been used to build this can be found here
 /*        CUSTOMIZATIONS FOR PIN POSITION        */
 /*************************************************/
   /*
-  this is meant for the landing page 
+  this is meant for the landing page
   sets the position for the PIN CONTainers on the map so that they can be placed around a fake map
   add the NUMBER class at the .pin-cont element to set its position
   in case it's needed add a Z-INDEX property to manage pins' visibility
@@ -395,7 +395,7 @@ the reference which has been used to build this can be found here
       -o-transform: scale(1);
       transform: scale(1);
     }
-  };
+  }
   @-moz-keyframes favsin {
     from {
       opacity: 0;
@@ -414,7 +414,7 @@ the reference which has been used to build this can be found here
       -o-transform: scale(1);
       transform: scale(1);
     }
-  };
+  }
   @-ms-keyframes favsin {
     from {
       opacity: 0;
@@ -433,7 +433,7 @@ the reference which has been used to build this can be found here
       -o-transform: scale(1);
       transform: scale(1);
     }
-  };
+  }
   @-o-keyframes favsin {
     from {
       opacity: 0;
@@ -452,7 +452,7 @@ the reference which has been used to build this can be found here
       -o-transform: scale(1);
       transform: scale(1);
     }
-  };
+  }
   @keyframes favsin {
     from {
       opacity: 0;
@@ -471,7 +471,7 @@ the reference which has been used to build this can be found here
       -o-transform: scale(1);
       transform: scale(1);
     }
-  };
+  }
   .fav-appear {
     -webkit-animation: favsin 1s ease-in forwards;
     -moz-animation: favsin 1s ease-in forwards;
@@ -482,45 +482,45 @@ the reference which has been used to build this can be found here
  @-webkit-keyframes shadow {
     from {
       opacity:0
-      } 
+      }
     to {
       opacity:0.5
       }
-  };
+  }
   @-moz-keyframes shadow {
     from {
       opacity:0
-      } 
+      }
     to {
       opacity:0.5
       }
-  };
+  }
   @-ms-keyframes shadow {
     from {
       opacity:0
-      } 
+      }
     to {
       opacity:0.5
       }
-  };
+  }
   @-o-keyframes shadow {
     from {
       opacity:0
-      } 
+      }
     to {
       opacity:0.5
       }
-  };
+  }
   @keyframes shadow {
     from {
       opacity:0
-      } 
+      }
     to {
       opacity:0.5
       }
-  };
+  }
     .pin-visible {display:block; opacity:1;}
-    .pin {                                  /*this manages the general timing for the pins to come down*/  
+    .pin {                                  /*this manages the general timing for the pins to come down*/
       -webkit-animation-delay: 0.1s;
       -moz-animation-delay: 0.1s;
       -o-animation-delay: 0.1s;
@@ -530,7 +530,7 @@ the reference which has been used to build this can be found here
 
   .shadow-load {                                /*this load the animation for the bottom shadow (pulse)*/
     opacity:0;
-    display:block;                        /*this is for the animation to function*/  
+    display:block;                        /*this is for the animation to function*/
     -webkit-animation: shadow 0.2s linear forwards;
     -moz-animation: shadow 0.2s linear forwards;
     -o-animation: shadow 0.2s linear forwards;
@@ -545,7 +545,7 @@ the reference which has been used to build this can be found here
     animation-delay: 1.1s;
    }
 
-  
+
 /*************************************************/
 /*         MEDIA QUERIES FOR SMALL DEVICE        */
 /*************************************************/
