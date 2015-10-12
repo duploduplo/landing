@@ -13,9 +13,9 @@ $(document).ready(function () {
     $('.navbar-toggle').click(); //bootstrap 3.x by Richard
 });
   $('.carousel').carousel ({
-      //sets timeout for image change (ms)
-      interval: 3000
-      });  
+    //sets timeout for image change (ms)
+    interval: 3000
+  });
 
 // Initialize fullpage
 $('#fullpage').fullpage({
@@ -76,7 +76,7 @@ $('#fullpage').fullpage({
       $('.favs').removeClass('fav-appear');
     }
 
-    var $items, $others;
+    var $items, $previous, $others;
     if (anchorLink == 'safety') {
       $items = $('.pin-cont[data-section-poi="safety"]');
       $items.removeClass('opaque');
@@ -96,6 +96,9 @@ $('#fullpage').fullpage({
       $items.children('.pin').addClass('pin-load');
       $items.children('.pulse').addClass('shadow-load pulse-load');
 
+      $previous = $('.pin-cont[data-section-poi="safety"]');
+      $previous.addClass('opaque');
+
       $others = $('.pin-cont:not([data-section-poi="safety"])' +
           ':not([data-section-poi="business"])');
       $others.addClass('opaque');
@@ -110,11 +113,15 @@ $('#fullpage').fullpage({
       $items.children('.pin').addClass('pin-load');
       $items.children('.pulse').addClass('shadow-load pulse-load');
 
+      $previous = $('.pin-cont:not(:has(div.favs))');
+      $previous.addClass('opaque');
+
       $others = $('.pin-cont:not([data-section-poi="safety"])' +
           ':not([data-section-poi="business"])');
       $others.addClass('opaque');
       $others.children('.pin').removeClass('pin-load');
       $others.children('.pulse').removeClass('shadow-load pulse-load');
+
       $('.favs').addClass('fav-appear');
     }
     if (anchorLink == 'connect') {
@@ -124,6 +131,10 @@ $('#fullpage').fullpage({
       $items.removeClass('opaque');
       $items.children('.pin').addClass('pin-load');
       $items.children('.pulse').addClass('shadow-load pulse-load');
+
+      $previous = $('.pin-cont[data-section-poi="safety"], ' +
+          '.pin-cont[data-section-poi="business"]');
+      $previous.addClass('opaque');
 
       $('.favs').addClass('fav-appear');
     }
