@@ -20,11 +20,11 @@ the reference which has been used to build this can be found here
   .pin-cont {                         /*this is meant to create an extra external container for positioning the pin and extra effects (like rotation) */
     position:absolute;
     z-index:3;
-    -webkit-webkit-: transition: all 0.5s ease-in-out;
-    -moz-webkit-: transition: all 0.5s ease-in-out;
-    -ms-webkit-: transition: all 0.5s ease-in-out;
-    -o-webkit-: transition: all 0.5s ease-in-out;
-    webkit-: transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     }
     
   .pin {                                      /* main pin shape*/

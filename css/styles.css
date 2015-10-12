@@ -58,6 +58,8 @@ h1.title span {
     font-variant: small-caps;
 }
 
+input, textarea, button {border-radius: 15px!important;}
+
 /****************************
     #topbar styling
 ****************************/
@@ -230,78 +232,219 @@ h1.title span {
 }
 
 /****************************
-Header styling #landing
+Header styling #carousel
 ****************************/
+#carousel a:link, #carousel a:visited {color: #f5f5f5}
+#carousel a:hover, #carousel a:active {color: #f5f5f5}
 
-/* main style for the header */
-#landing {
-    background-image: url(img/header.jpg);
-    background-size: cover;
-    background-position: 50% 0;
-    color:#F5F5F5;
-    box-shadow: 0 0 5px rgba(0,0,0,0.7);
-    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.7);
-    z-index: 51;
+/* styling for static elements */
+#carousel .headings {
     position:absolute;
-    top:0;
-    left:0;
-    right:0;
-}
-/* removes jumbotron bg on #landing*/
-#landing .jumbotron {
-    background:transparent;
-}
-
-/* style for header image overlay */
-.overlay {
-    position:absolute;
-    background:rgba(0,0,0,0.5);
     top:0; bottom:0;
+    color:#ffffff;
+    border-bottom: 1px solid #2b2b2b;
+    text-shadow: 0 0 3px black;    
+}
+
+#carousel .scrolldown {
+    position:absolute;
+    bottom:0;
+    color: #f5f5f5;
+    cursor: pointer;
+}
+
+#carousel .scrolldown span {
+    font-size:3em;
+    opacity: 0.3;
+    margin-left:-0.9em;
+    -webkit-animation:scrollit 1s ease infinite;
+    -moz-animation:scrollit 1s ease infinite;
+    -ms-animation:scrollit 1s ease infinite;
+    -o-animation:scrollit 1s ease infinite;
+    animation:scrollit 1s ease infinite;
+}
+#carousel .scrolldown p {
+    color: #f5f5f5;
+    opacity:0.5;
+    font-size:1.5em;
+    font-variant: small-caps;
+    margin-left:-1.8em;    
+}
+.headings .logo {
+    margin-top:150px;
+}
+.headings .logo h1, .headings .logo h3{
+    margin-left:-25px;
+}
+.headings .top-form {
+    position:relative;
+    margin-top:75%;
+    min-height: 50px;
+    border-radius: 15px;
+    padding:15px;
+/*  background: rgba(255,255,255,0.2); */
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+@media only screen and (max-width: 992px){
+    .headings .top-form {
+     margin-top: 15%;
+    }
+}
+.headings .top-form p,
+.headings .top-form span,
+.headings .top-form h1,
+.headings .top-form h3,
+.headings .top-form h4 { color:#f5f5f5!important; text-shadow:none;}
+.headings .form-group {width:75%; margin:0 auto;}
+.headings .top-form input {
+    text-align: center;
+    background:rgba(43,43,43,0.4);
+    border:#2b2b2b;
+    color:#f5f5f5;
     width:100%;
+    margin: 5% auto;
+    box-shadow: inset 0 0 2px rgba(135,135,135,0.5);
+    transition:all 0.4s;
+}
+.headings .top-form input:focus {
+    background:rgba(43,43,43,0.8);
+
+        box-shadow:  0 1px 1px rgba(0, 0, 0, 0.5) inset,
+                     0 0 3px rgba(255, 255, 255, 0.5);
+
+}
+.headings .top-form button {
+    border:#2b2b2b;
+    background:#9e1d20;
+    color:#f5f5f5;
+    transition:all 0.4s;    
+}
+.headings .top-form button:hover {
+    background:#7e171a;
+}
+.headings .top-form button:focus {
+    color:#f5f5f5;
+    box-shadow:  0 1px 1px rgba(0, 0, 0, 0.5) inset;
+}
+/*this sets the height of the carousel*/
+#carousel,
+#carouse-header,
+.carousel-inner {
+    height:100%;    
+}
+.carousel,.item,.active{height:100%;}
+.carousel-inner{height:100%;}
+[class*="fill"]{
+    width:100%;
+    height:100%;
+    background-position:center; /*fallback positioning*/
+    background-size:cover;
+    opacity:0.4!important;
+}
+/*classes for carousel images */
+.fill1 {
+    background-image: url(img/caro6.jpg);
+}
+.fill2 {
+    background-image: url(img/caro7.jpg);
+    background-position: top;
+}
+.fill3 {
+    background-image: url(img/caro8.jpg);
+    background-position: right;
+}
+.fill4 {
+    background-image: url(img/caro10.jpg);
+}
+.fill5 {
+    background-image: url(img/caro11.jpg);
+    opacity:0.7;
+}
+.fill6 {
+    background-image: url(img/caro12.jpg);
+}
+.fill7 {
+    background-image: url(img/caro12.jpg);
+}
+
+/* Carousel Styling */
+#carousel-header {
+    background: #000;
+}
+.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 15;
+  margin: 0;
+  padding: 0 25px 25px 0;
+  text-align: right;
+  opacity:0.2;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none;
+}
+/*  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
+  CSS from:       http://codepen.io/transportedman/pen/NPWRGq
+  and:            http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
+  Inspired from:  http://codepen.io/Rowno/pen/Afykb 
+    */
+    .carousel-fade .carousel-inner .item {
+      opacity: 0;
+      transition-property: opacity;
+      -webkit-transition: opacity 1.5s; /*adjust timing here */
+         -moz-transition: opacity 1.5s;
+           -o-transition: opacity 1.5s;
+              transition: opacity 1.5s;      
     }
 
-#landing .row {margin:0;}
-#landing .col-xs-12, #bottomlanding .col-xs-12, #bottomlanding .col-xs-6 {
-    margin:0;
-    padding:0;
-}
+    .carousel-fade .carousel-inner .active {
+      opacity: 1;
+    }
+
+    .carousel-fade .carousel-inner .active.left,
+    .carousel-fade .carousel-inner .active.right {
+      left: 0;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .carousel-fade .carousel-inner .next.left,
+    .carousel-fade .carousel-inner .prev.right {
+      opacity: 1;
+    }
 
 
-#bottomlanding {
-    position: absolute;
-    bottom:0;
-    width:100%;
-    background: #F5F5F5;
-    font-variant: small-caps;
-}
-/* manages the bottom line of the header */
-#bottomlanding .learnmore {
-    margin: 0 auto;
-    color:#000000;
-    font-size: 1em;
-    margin-top:2%;
-}
-/* sets all the items vertically aligned */
-.firstbutton *, .scrolldown * {
-    display:inline-block;
-    margin:0 auto;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-
-/* little extra styling for texts */
-#bottomlanding h2 {
-    color:#000000;
-
-    /* overwrites bootstrap margin-top style */
-    margin-top:0;
-    margin-left:0px;
-    font-weight: 500;
-}
-#landing p {
-    color:#F5F5F5;
-}
+    /*
+    WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+    Need to override the 3.3 new styles for modern browsers & apply opacity
+    */
+    @media all and (transform-3d), (-webkit-transform-3d) {
+        .carousel-fade .carousel-inner > .item.next,
+        .carousel-fade .carousel-inner > .item.active.right {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 0, 0);
+                  transform: translate3d(0, 0, 0);
+        }
+        .carousel-fade .carousel-inner > .item.prev,
+        .carousel-fade .carousel-inner > .item.active.left {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 0, 0);
+                  transform: translate3d(0, 0, 0);
+        }
+        .carousel-fade .carousel-inner > .item.next.left,
+        .carousel-fade .carousel-inner > .item.prev.right,
+        .carousel-fade .carousel-inner > .item.active {
+          opacity: 1;
+          -webkit-transform: translate3d(0, 0, 0);
+                  transform: translate3d(0, 0, 0);
+        }
+    }
 
 /****************************
     form customs
@@ -426,20 +569,20 @@ Header styling #landing
 
 /* custom || retina display */
 @media only screen and (min-width:320px) {
-    #landing {
-        height:75%;
+    #carousel {
+        height:100%;
     }
-    #landing img {
+    #carousel img {
         width:50%;
         min-width:90px;
         height:auto;
     }
-    #landing h1.title {
+    #carousel h1.title {
         font-size: 4em;
         color:#f5f5f5;
         margin-top: -5px;
     }
-    #landing h3 {
+    #carousel h3 {
         margin-top: -10px;
         font-size: 1em;
     }
@@ -490,10 +633,10 @@ Header styling #landing
 
 /* eXtraSmall devices || mobile phones */
 @media only screen and (min-width:480px) {
-    #landing h1.title {
+    #carousel h1.title {
         font-size:5em;
     }
-    #landing h3 {
+    #carousel h3 {
         font-size: 1.2em;
     }
     #bottomlanding h2 {
@@ -513,13 +656,13 @@ Header styling #landing
 
 /* SMall devices */
 @media only screen and (min-width:768px) {
-    #landing img {
+    #carousel img {
         min-width:130px;
     }
-    #landing h1.title {
+    #carousel h1.title {
         font-size:6em;
     }
-    #landing h3 {
+    #carousel h3 {
         font-size: 1.5em;
     }
     #bottomlanding h2 {
@@ -614,17 +757,17 @@ Header styling #landing
 
 /* MeDium devices*/
 @media only screen and (min-width:992px) {
-    #landing {
-        height:80%;
+    #carousel {
+        height:100%;
     }
-    #landing img {
+    #carousel img {
         min-width: 150px;
     }
-    #landing h1.title {
+    #carousel h1.title {
         font-size: 8em;
     }
-    #landing h3 {
-        font-size: 2em;
+    #carousel h3 {
+        font-size: 1.7em;
     }
     #bottomlanding {
         height:20%;
@@ -644,13 +787,78 @@ Header styling #landing
 
 /* LarGe devices*/
 @media only screen and (min-width:1200px) {
-    #landing img {
+    #carousel img {
         max-width: 220px;
     }
-    #landing h1.title {
-        font-size: 10em;
+    #carousel h1.title {
+        font-size: 8em;
+        margin-top:-10px;
     }
-    #landing h3 {
-        font-size: 2.5em;
+    #carousel h3 {
+        font-size: 2em;
     }
+}
+
+
+/*****************
+* KEYFRAMES
+******************/
+
+/* scroll down arrow on headings*/
+@-moz-keyframes scrollit {
+  0%, 50%, 100% {
+    -moz-transform: translateY(-2px);
+    transform: translateY(-2px);
+    opacity:0.4;
+  }
+  50% {
+    -moz-transform: translateY(15px);
+    transform: translateY(15px);
+    opacity:0.8;
+  }
+  100% {
+   -moz-transform: translateY(-2px);
+    transform: translateY(-2px); 
+    opacity:0.4;
+  }
+}
+@-webkit-keyframes scrollit {
+  0%, 50%, 100% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+    opacity:0.4;
+  }
+  50% {
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+    opacity:0.8;  
+  }
+  100% {
+   -moz-transform: translateY(-2px);
+    transform: translateY(-2px); 
+    opacity:0.4;
+  }
+}
+@keyframes scrollit {
+  0%, 50%, 100% {
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+    opacity:0.4;
+  }
+  50% {
+    -moz-transform: translateY(15px);
+    -ms-transform: translateY(15px);
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+    opacity:0.8;
+  }
+  100% {
+   -moz-transform: translateY(-2px);
+   -ms-transform: translateY(-2px); 
+   -webkit-transform: translateY(-2px); 
+   transform: translateY(-2px); 
+    opacity:0.4;
+  }  
 }
