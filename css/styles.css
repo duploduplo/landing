@@ -289,8 +289,9 @@ Header styling #carousel
 }
 @media only screen and (max-width: 992px){
     .caro-fixed .top-form {
-     margin-top: 5%;
+     margin-top: 0%;
     }
+    #carousel .scrolldown {font-size: 0.5em}
 }
 .caro-fixed .top-form p,
 .caro-fixed .top-form span,
