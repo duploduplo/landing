@@ -88,15 +88,13 @@ input, textarea, button {border-radius: 15px!important;}
     background-color: rgba(255, 255, 255, 1);
 }
 
-#topbar.navbar-default .navbar-nav>li>a:hover,
-#topbar.navbar-default .navbar-nav>li>a:focus {
+#topbar.navbar-default .navbar-nav>li>a:hover {
     color: rgba(245, 245, 245, 1);
     background-color: rgba(158, 29, 32, 1);
 }
 
 #topbar.navbar-default .navbar-nav>.active>a,
-#topbar.navbar-default .navbar-nav>.active>a:hover,
-#topbar.navbar-default .navbar-nav>.active>a:focus {
+#topbar.navbar-default .navbar-nav>.active>a:hover  {
     color: rgba(245, 245, 245, 1);
     background-color: rgba(158, 29, 32, 1);
 }
@@ -106,8 +104,7 @@ input, textarea, button {border-radius: 15px!important;}
     border-color: transparent;
 }
 
-#topbar.navbar-default .navbar-toggle:hover,
-#topbar.navbar-default .navbar-toggle:focus {
+#topbar.navbar-default .navbar-toggle:hover {
     background-color: #ffffff;
 }
 
@@ -115,8 +112,7 @@ input, textarea, button {border-radius: 15px!important;}
     background-color: #000000;
 }
 
-#topbar.navbar-default .navbar-toggle:hover .icon-bar,
-#topbar.navbar-default .navbar-toggle:focus .icon-bar {
+#topbar.navbar-default .navbar-toggle:hover .icon-bar {
     background-color: #9e1d20;
 }
 
