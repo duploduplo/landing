@@ -7,19 +7,18 @@ structured already to allow it easily
 
 ## Localization
 
-Localization is done in a pretty rough way, but since we have static content it should be ok.
+Localization is done in a pretty rough way, but since we have static content
+served from gh pages it should be ok and I didn't find another way.
 
-To localize the website copy the current version of the `en` folder, that
-contains the english version, into a separate folder named with the
-[ISO Alpha-2](https://www.iso.org/obp/ui/) name of the language, then translate
-the content.
+There are 3 steps needed:
 
-After this open `assets/js/localization.js` and add a `case` statement for the
-new localized content inside the `getNewPath` function.
+* Copy the current `en` version to a dedicated language folder and translate your content (duh!)
+* Inside `assets/js/localization.js` add the correct `case`s to the switch statement in `getNewPath()`
+* _Boring part_: edit the menu on each version, adding your new language
 
-The boring part is to add to every existing version the menu item to
-allow user's language selection.
+For naming convention and flag names use [ISO Alpha-2](https://www.iso.org/obp/ui/) names.
+Flags for the link are added using [this](https://github.com/lipis/flag-icon-css
 
-Flags for the link are added using [this](https://github.com/lipis/flag-icon-css)
-small library: just copy one of the existing one and change the `flag-icon-<language>`
-class in the span, using the appropriate ISO alpha-2 code
+At the moment the detection uses the first part of the language name, so `en-US` and `en` are read as `en`.
+
+The default language is set to _English_
