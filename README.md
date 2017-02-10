@@ -3,7 +3,13 @@
 This branch contains the new landing page for our project, simplified but
 updated with all the information we need and developed for our MVP.
 The landing page will be localized in a few languages and the content is
-structured already to allow it easily
+structured already to allow it easily.
+
+## Theming and layouts
+
+The website is based upon [Alpha by HTML5UP](https://html5up.net/uploads/demos/alpha/);
+On the link you can find the demo as well as layout pages. The theme is free to download
+so if we ever need to create new pages we can just download, copy and edit.
 
 ## Localization
 
@@ -21,7 +27,7 @@ Flags for the link are added using [this](https://github.com/lipis/flag-icon-css
 
 At the moment the detection uses the first part of the language name, so `en-US` and `en` are read as `en`.
 
-The default language is set to _English_
+The default language is set to _English_.
 
 ## TODO
 
