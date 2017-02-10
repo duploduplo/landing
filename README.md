@@ -23,7 +23,7 @@ There are 3 steps needed:
 * _Boring part_: edit the menu on each version, adding your new language
 
 For naming convention and flag names use [ISO Alpha-2](https://www.iso.org/obp/ui/) names.
-Flags for the link are added using [this](https://github.com/lipis/flag-icon-css
+Flags for the link are added using [this](https://github.com/lipis/flag-icon-css) library.
 
 At the moment the detection uses the first part of the language name, so `en-US` and `en` are read as `en`.
 
@@ -31,9 +31,9 @@ The default language is set to _English_.
 
 ## TODO
 
+- [x] Integrate mailchimp
 - [ ] Check and validate content
 - [ ] Cleanup page code
 - [ ] Remove unused pages from `en`
-- [ ] Integrate mailchimp
 - [ ] Translate in Italian
 - [ ] Translate in Suomi
