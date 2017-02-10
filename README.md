@@ -28,4 +28,6 @@ The default language is set to _English_
 - [ ] Check and validate content
 - [ ] Cleanup page code
 - [ ] Remove unused pages from `en`
+- [ ] Integrate mailchimp
 - [ ] Translate in Italian
+- [ ] Translate in Suomi
