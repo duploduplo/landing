@@ -2806,7 +2806,7 @@
 	}
 
 	#header {
-		background: #444;
+		background: rgba(68,68,68,0.95);
 		color: #bbb;
 		cursor: default;
 		height: 3.25em;
@@ -3052,7 +3052,7 @@
 	#banner {
 		background-attachment: scroll,							fixed;
 		background-color: #666;
-		background-image: url("images/overlay.png"), url("../../images/road.png");
+		background-image: url("images/overlay.png"), url("../../assets/images/road.png");
 		background-position: top left,						center center;
 		background-repeat: repeat,							no-repeat;
 		background-size: auto,							cover;
