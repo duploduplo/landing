@@ -6,7 +6,7 @@
 /**
  * Create the new path for the browser address
  */
-function getLocalePath(lang) {
+function getNewPath(lang) {
   var _path
 
   switch (lang) {
@@ -30,7 +30,7 @@ function getLocalePath(lang) {
   lang = lang.split("-")[0]
 
   // get the new path from the detected language (if any)
-  newPath = getLocalePath(lang)
+  newPath = getNewPath(lang)
 
   // if a new path has been built redirect the browser there
   if (newPath) {
