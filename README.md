@@ -19,6 +19,7 @@ served from gh pages it should be ok and I didn't find another way.
 There are 3 steps needed:
 
 * Copy the current `en` version to a dedicated language folder and translate your content (duh!)
+* Translate/change the `meta` tags for `description`, `keywords` and `Language`
 * Inside `assets/js/localization.js` add the correct `case`s to the switch statement in `getNewPath()`
 * _Boring part_: edit the menu on each version, adding your new language
 
@@ -33,8 +34,8 @@ The default language is set to _English_.
 
 - [x] Integrate mailchimp
 - [x] Add Google Analytics from previous version
-- [ ] Check and validate content
+- [x] Check and validate content
 - [ ] Cleanup page code
-- [ ] Remove unused pages from `en`
-- [ ] Translate in Italian
+- [x] Remove unused pages from `en`
+- [x] Translate in Italian
 - [ ] Translate in Suomi
