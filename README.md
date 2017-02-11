@@ -35,7 +35,8 @@ The default language is set to _English_.
 - [x] Integrate mailchimp
 - [x] Add Google Analytics from previous version
 - [x] Check and validate content
-- [ ] Cleanup page code
+- [x] Cleanup page code
 - [x] Remove unused pages from `en`
 - [x] Translate in Italian
 - [ ] Translate in Suomi
+- [ ] Find a way to localize the survey automatically (pass to mailchimp the language of the viewed page? ask the user for the language?)
