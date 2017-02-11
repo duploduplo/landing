@@ -32,6 +32,7 @@ The default language is set to _English_.
 ## TODO
 
 - [x] Integrate mailchimp
+- [x] Add Google Analytics from previous version
 - [ ] Check and validate content
 - [ ] Cleanup page code
 - [ ] Remove unused pages from `en`
