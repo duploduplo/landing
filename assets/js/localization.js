@@ -13,6 +13,9 @@ function getNewPath(lang) {
     case "it":
       _path = "/it/"
       break
+      case "fi":
+      _path = "/fi/"
+      break
     default:
       _path = "/en/"
   }
