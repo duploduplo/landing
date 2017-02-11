@@ -69,13 +69,13 @@
 					delay: 0,
 
 				// Hide panel on link click.
-					hideOnClick: false,
+					hideOnClick: true,
 
 				// Hide panel on escape keypress.
-					hideOnEscape: false,
+					hideOnEscape: true,
 
 				// Hide panel on swipe.
-					hideOnSwipe: false,
+					hideOnSwipe: true,
 
 				// Reset scroll position on hide.
 					resetScroll: false,
