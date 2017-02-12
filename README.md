@@ -40,3 +40,4 @@ The default language is set to _English_.
 - [x] Translate in Italian
 - [ ] Translate in Suomi
 - [ ] Find a way to localize the survey automatically (pass to mailchimp the language of the viewed page? ask the user for the language?)
+- [ ] Check for cookie usage and if so add disclaimer
