@@ -38,7 +38,8 @@ The default language is set to _English_.
 - [x] Cleanup page code
 - [x] Remove unused pages from `en`
 - [x] Translate in Italian
-- [ ] Translate in Suomi
-- [ ] Find a way to localize the survey automatically (pass to mailchimp the language of the viewed page? ask the user for the language?)
+- [x] Translate in Suomi
 - [ ] Check for cookie usage and if so add disclaimer
-- [ ] (Maybe?) Add signup button in top menu
+- [ ] Add signup button in top menu (Maybe?)
+- [ ] Localize mailchimp subscription response if possible
+- [ ] Find a way to localize the survey automatically (pass to mailchimp the language of the viewed page? ask the user for the language?)
